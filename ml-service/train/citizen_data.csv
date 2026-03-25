@@ -1,0 +1,2001 @@
+age,gender,annual_income,caste,state,occupation,family_size,land_owned,has_bank_account,eligible
+56,Female,418377,ST,Madhya Pradesh,Salaried,9,9.25,1,1
+69,Male,647093,ST,West Bengal,Small Business Owner,7,3.54,1,1
+46,Other,471280,General,Madhya Pradesh,Small Business Owner,6,6.62,0,0
+32,Female,391207,SC,Bihar,Daily Wage Worker,9,9.99,1,1
+60,Other,314598,OBC,Maharashtra,Self Employed,7,2.63,1,1
+25,Female,333022,ST,Maharashtra,Unemployed,5,5.76,1,1
+38,Other,232170,OBC,Rajasthan,Unemployed,9,6.96,1,1
+56,Male,243226,OBC,Karnataka,Self Employed,6,1.65,1,1
+36,Male,194063,SC,West Bengal,Farmer,6,1.49,1,1
+40,Male,642632,ST,Andhra Pradesh,Unemployed,4,4.56,0,1
+28,Female,610881,OBC,Rajasthan,Small Business Owner,1,3.86,0,0
+28,Other,610592,ST,Rajasthan,Daily Wage Worker,5,7.14,1,1
+41,Male,473602,General,Karnataka,Salaried,9,0.7,1,0
+70,Other,760580,General,Gujarat,Student,8,9.72,1,0
+53,Other,163613,OBC,West Bengal,Farmer,8,0.14,1,1
+57,Male,774698,ST,Andhra Pradesh,Unemployed,5,6.01,1,1
+41,Male,537505,OBC,Maharashtra,Salaried,9,5.63,1,0
+20,Other,464299,ST,Karnataka,Student,3,1.35,1,1
+39,Male,592642,ST,Andhra Pradesh,Self Employed,3,1.51,1,1
+70,Male,334334,SC,Bihar,Self Employed,1,7.93,1,1
+19,Male,580430,SC,Rajasthan,Daily Wage Worker,9,8.88,1,1
+41,Female,471614,SC,Karnataka,Student,6,2.83,1,1
+61,Other,233043,OBC,Maharashtra,Self Employed,2,4.38,1,1
+47,Other,758770,SC,Madhya Pradesh,Self Employed,8,3.55,1,1
+55,Female,200575,SC,Maharashtra,Small Business Owner,9,0.73,1,1
+19,Other,175438,General,Bihar,Unemployed,9,6.73,1,1
+38,Male,622744,ST,Karnataka,Daily Wage Worker,2,8.25,1,1
+50,Other,674455,ST,Bihar,Salaried,2,3.05,1,1
+29,Male,314528,SC,West Bengal,Self Employed,7,9.9,1,1
+39,Female,243392,ST,West Bengal,Small Business Owner,4,0.76,0,1
+61,Male,458288,General,Madhya Pradesh,Farmer,1,6.62,1,1
+42,Other,152239,General,Rajasthan,Farmer,8,4.48,1,1
+66,Other,685719,SC,Gujarat,Salaried,2,4.47,1,0
+44,Other,614798,General,Uttar Pradesh,Student,3,4.58,1,0
+59,Female,754293,ST,Andhra Pradesh,Daily Wage Worker,5,2.59,1,1
+45,Female,380170,OBC,Bihar,Small Business Owner,3,7.16,1,1
+33,Other,171668,ST,Andhra Pradesh,Unemployed,7,7.22,1,1
+32,Male,468734,OBC,Madhya Pradesh,Small Business Owner,7,2.82,1,1
+64,Female,598333,SC,Andhra Pradesh,Farmer,2,8.35,1,1
+68,Other,231948,OBC,Andhra Pradesh,Farmer,7,3.17,1,1
+61,Other,535662,General,Maharashtra,Salaried,6,7.25,1,0
+72,Female,664390,ST,Karnataka,Student,9,1.21,0,0
+69,Female,364063,OBC,Rajasthan,Student,9,1.69,1,0
+74,Female,673729,ST,Uttar Pradesh,Salaried,2,3.16,1,0
+20,Male,208175,SC,Karnataka,Small Business Owner,7,5.94,1,1
+54,Male,299877,SC,Maharashtra,Farmer,5,6.46,1,1
+68,Other,186917,General,Andhra Pradesh,Small Business Owner,6,3.96,1,1
+24,Female,267770,SC,Uttar Pradesh,Small Business Owner,1,0.78,1,1
+38,Male,692613,OBC,Maharashtra,Daily Wage Worker,7,3.74,1,1
+26,Female,593625,SC,Maharashtra,Farmer,6,6.89,0,1
+56,Other,727673,General,Maharashtra,Student,4,6.71,1,0
+35,Male,390093,ST,West Bengal,Unemployed,1,1.6,1,1
+21,Male,363295,ST,Uttar Pradesh,Small Business Owner,9,0.08,0,1
+42,Male,717304,SC,Maharashtra,Farmer,4,7.53,1,1
+31,Other,655730,OBC,Gujarat,Small Business Owner,2,1.06,1,1
+67,Female,99847,General,Andhra Pradesh,Daily Wage Worker,8,0.82,1,1
+26,Male,108653,OBC,Uttar Pradesh,Self Employed,2,0.03,1,1
+43,Other,791432,General,West Bengal,Farmer,5,4.33,1,1
+70,Female,368766,SC,Bihar,Salaried,6,5.03,1,1
+19,Other,339954,General,Bihar,Self Employed,8,6.38,1,0
+37,Female,127842,General,Rajasthan,Small Business Owner,1,2.96,1,1
+45,Other,322647,SC,Tamil Nadu,Salaried,1,7.1,1,1
+64,Female,134761,OBC,Gujarat,Salaried,4,1.69,1,1
+24,Male,480192,SC,Bihar,Salaried,5,8.32,0,0
+61,Female,566637,General,West Bengal,Farmer,9,5.72,1,0
+25,Other,716246,SC,Tamil Nadu,Student,7,5.84,1,1
+64,Other,378768,General,Maharashtra,Small Business Owner,7,2.1,1,0
+52,Female,738152,SC,Maharashtra,Self Employed,8,0.74,0,1
+31,Male,452980,ST,Madhya Pradesh,Daily Wage Worker,5,4.65,1,1
+34,Male,170356,ST,Andhra Pradesh,Student,5,6.16,1,1
+53,Female,267228,SC,Tamil Nadu,Small Business Owner,1,0.95,1,1
+67,Female,92727,OBC,Andhra Pradesh,Farmer,9,9.51,1,1
+57,Other,390615,General,West Bengal,Salaried,6,9.8,1,0
+21,Male,582356,ST,Gujarat,Daily Wage Worker,9,5.45,1,1
+19,Female,691211,OBC,Tamil Nadu,Small Business Owner,3,9.5,1,0
+23,Male,450511,General,Bihar,Self Employed,5,1.79,0,0
+71,Female,484376,ST,Gujarat,Small Business Owner,2,0.25,1,1
+59,Female,61390,ST,Madhya Pradesh,Student,5,0.39,1,1
+21,Male,681040,SC,Andhra Pradesh,Unemployed,8,5.88,1,1
+71,Female,406898,General,Andhra Pradesh,Student,2,0.62,1,0
+46,Female,388113,OBC,Gujarat,Small Business Owner,8,9.59,0,1
+35,Other,720398,OBC,Maharashtra,Daily Wage Worker,4,1.42,1,1
+43,Female,799078,OBC,Andhra Pradesh,Small Business Owner,1,3.05,1,1
+61,Female,389208,General,Madhya Pradesh,Small Business Owner,5,8.23,1,0
+51,Female,71281,OBC,Bihar,Farmer,1,2.19,0,1
+27,Other,104189,OBC,Uttar Pradesh,Self Employed,7,2.43,1,1
+53,Male,312093,OBC,Bihar,Daily Wage Worker,8,6.42,1,1
+31,Other,360655,SC,Bihar,Small Business Owner,3,2.76,1,1
+48,Other,696403,SC,Andhra Pradesh,Salaried,3,2.17,1,1
+65,Male,582893,General,Karnataka,Self Employed,7,2.54,1,0
+32,Other,412462,General,Maharashtra,Student,4,4.91,1,0
+25,Male,444597,OBC,Andhra Pradesh,Daily Wage Worker,3,9.66,1,1
+31,Other,299415,SC,Maharashtra,Student,8,8.32,1,1
+40,Male,729682,ST,West Bengal,Small Business Owner,3,2.85,1,1
+74,Female,91869,ST,Karnataka,Student,7,3.63,1,1
+57,Other,607243,OBC,Andhra Pradesh,Student,2,4.65,1,0
+38,Other,635676,OBC,Rajasthan,Farmer,1,9.79,1,1
+33,Other,60207,SC,Bihar,Student,6,1.72,1,1
+62,Other,268401,SC,West Bengal,Salaried,8,3.57,1,1
+35,Female,209292,SC,Karnataka,Salaried,1,7.29,1,1
+64,Other,527266,General,Andhra Pradesh,Self Employed,9,9.64,0,0
+70,Female,546762,General,Madhya Pradesh,Small Business Owner,3,1.56,0,0
+41,Female,255157,OBC,Gujarat,Unemployed,3,2.27,1,1
+43,Female,72031,General,Gujarat,Student,4,2.26,1,1
+42,Female,513937,SC,Maharashtra,Student,1,0.21,1,1
+62,Male,645600,SC,Karnataka,Daily Wage Worker,9,6.04,1,1
+58,Male,634054,General,Bihar,Farmer,3,6.71,1,1
+46,Other,193521,ST,Bihar,Unemployed,4,6.03,1,1
+32,Male,401977,OBC,Uttar Pradesh,Self Employed,1,0.71,1,1
+62,Male,237771,ST,Gujarat,Unemployed,4,0.69,1,1
+18,Other,287199,OBC,West Bengal,Student,1,2.1,1,1
+42,Other,685329,ST,Karnataka,Daily Wage Worker,5,2.9,0,1
+24,Other,690473,General,Bihar,Small Business Owner,5,7.87,0,0
+26,Male,227164,OBC,Uttar Pradesh,Farmer,7,1.59,1,1
+41,Male,506887,OBC,Karnataka,Small Business Owner,8,0.44,1,1
+18,Other,584638,OBC,Tamil Nadu,Self Employed,4,3.94,1,0
+61,Female,563313,SC,Bihar,Unemployed,7,4.16,0,1
+25,Other,118487,SC,Tamil Nadu,Self Employed,4,4.51,0,1
+41,Female,198694,ST,Karnataka,Student,3,8.27,1,1
+28,Female,173853,General,Bihar,Self Employed,6,0.98,1,1
+68,Other,365261,SC,Tamil Nadu,Small Business Owner,4,7.04,1,1
+34,Other,285062,OBC,Rajasthan,Daily Wage Worker,3,3.38,1,1
+25,Other,501610,SC,Uttar Pradesh,Self Employed,9,3.1,1,1
+52,Male,283077,General,West Bengal,Salaried,5,9.33,1,1
+52,Female,73782,SC,Gujarat,Daily Wage Worker,7,2.48,1,1
+50,Male,559492,OBC,Uttar Pradesh,Unemployed,6,6.43,1,1
+22,Male,704224,ST,Tamil Nadu,Farmer,5,2.75,1,1
+59,Other,458808,OBC,Bihar,Farmer,7,5.07,1,1
+56,Male,203245,General,Rajasthan,Student,6,7.86,1,1
+58,Other,172258,ST,Rajasthan,Student,2,8.82,1,1
+45,Female,685956,SC,Gujarat,Salaried,3,8.39,1,1
+24,Other,504418,SC,Rajasthan,Unemployed,2,5.82,0,1
+26,Male,532616,SC,Uttar Pradesh,Small Business Owner,3,2.49,0,1
+25,Male,436328,ST,Andhra Pradesh,Farmer,1,6.61,0,1
+29,Other,556581,OBC,Rajasthan,Farmer,8,7.1,0,1
+51,Other,473966,ST,Gujarat,Farmer,6,0.11,1,1
+50,Male,328710,ST,Rajasthan,Small Business Owner,2,4.39,1,1
+65,Female,712550,General,Rajasthan,Farmer,8,8.43,0,0
+72,Female,612621,ST,Madhya Pradesh,Self Employed,6,4.9,1,1
+40,Other,434073,SC,Uttar Pradesh,Unemployed,7,3.11,1,1
+41,Female,786265,OBC,Tamil Nadu,Daily Wage Worker,1,8.72,1,1
+54,Male,663859,OBC,Maharashtra,Daily Wage Worker,7,1.56,1,1
+52,Other,170263,OBC,Andhra Pradesh,Salaried,3,2.06,1,1
+61,Male,599523,SC,Rajasthan,Self Employed,8,6.87,0,0
+57,Male,50159,SC,West Bengal,Farmer,6,3.52,1,1
+39,Female,717505,SC,Rajasthan,Farmer,4,7.13,0,1
+44,Other,212993,SC,Madhya Pradesh,Student,8,1.58,1,1
+52,Other,417003,SC,Tamil Nadu,Student,9,2.52,1,1
+18,Female,197309,ST,West Bengal,Salaried,2,1.57,1,1
+52,Male,157507,SC,Andhra Pradesh,Farmer,6,9.53,1,1
+54,Male,64743,SC,West Bengal,Salaried,5,4.05,1,1
+64,Male,96101,SC,Uttar Pradesh,Self Employed,5,3.37,0,1
+31,Male,292717,SC,Gujarat,Daily Wage Worker,3,0.14,1,1
+20,Other,695822,OBC,Gujarat,Farmer,8,1.53,1,1
+18,Other,396371,SC,Andhra Pradesh,Unemployed,8,4.21,1,1
+22,Female,280604,ST,Tamil Nadu,Small Business Owner,5,0.69,1,1
+43,Female,237450,ST,Gujarat,Self Employed,8,5.11,1,1
+72,Other,776481,ST,Karnataka,Farmer,8,4.55,1,1
+31,Other,386907,General,Madhya Pradesh,Small Business Owner,3,7.67,1,1
+56,Male,537030,OBC,Andhra Pradesh,Unemployed,2,6.6,1,1
+44,Male,455453,SC,Andhra Pradesh,Student,9,4.46,1,1
+26,Female,721009,General,Maharashtra,Salaried,2,2.25,1,0
+32,Other,218785,SC,Maharashtra,Student,9,7.27,1,1
+32,Female,254535,General,Uttar Pradesh,Daily Wage Worker,4,7.08,1,1
+43,Other,750769,General,Uttar Pradesh,Student,2,1.53,1,0
+59,Male,229838,ST,Maharashtra,Farmer,1,9.15,1,1
+30,Female,620442,ST,Gujarat,Unemployed,4,0.64,0,1
+68,Female,319160,General,Bihar,Student,9,0.55,1,0
+49,Other,522779,ST,Andhra Pradesh,Farmer,9,1.87,1,1
+56,Male,491904,General,Karnataka,Daily Wage Worker,4,9.09,1,1
+66,Female,628526,OBC,Andhra Pradesh,Small Business Owner,9,5.2,0,0
+69,Male,370752,ST,Rajasthan,Unemployed,6,7.88,1,1
+49,Female,663369,ST,Tamil Nadu,Student,1,2.28,0,0
+21,Male,297644,ST,Madhya Pradesh,Salaried,6,4.9,1,1
+47,Other,249775,OBC,Bihar,Salaried,9,3.58,1,1
+54,Female,112551,General,Karnataka,Unemployed,2,8.28,1,1
+40,Female,784983,SC,Rajasthan,Salaried,6,0.23,1,1
+56,Male,727800,ST,Uttar Pradesh,Student,2,2.44,0,0
+62,Male,216277,General,Karnataka,Student,4,1.53,0,0
+32,Female,130811,OBC,Maharashtra,Unemployed,8,8.59,1,1
+60,Other,514028,SC,Andhra Pradesh,Student,7,4.68,1,1
+46,Male,418266,ST,Karnataka,Small Business Owner,9,4.04,1,1
+53,Male,284104,OBC,Tamil Nadu,Farmer,7,4.49,1,1
+30,Male,593296,OBC,West Bengal,Daily Wage Worker,1,9.72,1,1
+49,Female,252346,SC,Uttar Pradesh,Small Business Owner,2,8.5,1,1
+24,Female,606690,General,Madhya Pradesh,Small Business Owner,6,7.06,1,0
+68,Female,234456,ST,Madhya Pradesh,Salaried,7,2.9,1,1
+39,Female,449009,ST,Karnataka,Farmer,3,1.65,1,1
+45,Other,546043,General,West Bengal,Unemployed,9,9.21,1,1
+19,Other,186643,General,Andhra Pradesh,Salaried,7,4.23,1,0
+59,Female,540083,General,Rajasthan,Farmer,6,2.79,1,1
+62,Other,163550,SC,Bihar,Student,6,4.71,0,1
+74,Male,534146,SC,Andhra Pradesh,Unemployed,1,9.18,1,1
+70,Male,141218,ST,Rajasthan,Unemployed,5,3.87,1,1
+23,Male,183296,SC,Bihar,Salaried,3,5.63,1,1
+45,Female,549909,OBC,West Bengal,Student,7,8.03,1,0
+45,Male,568767,ST,Bihar,Salaried,3,4.27,1,1
+61,Other,229767,SC,Andhra Pradesh,Self Employed,5,2.34,1,1
+61,Female,441858,General,Tamil Nadu,Farmer,7,9.95,1,1
+37,Other,290016,OBC,Karnataka,Self Employed,3,9.57,1,1
+47,Male,82441,General,Rajasthan,Farmer,2,8.43,1,1
+28,Male,288038,ST,Tamil Nadu,Daily Wage Worker,6,6.88,0,1
+72,Male,744489,General,Rajasthan,Small Business Owner,8,2.95,0,0
+45,Female,666410,SC,Karnataka,Unemployed,4,9.13,1,1
+42,Other,94760,SC,Gujarat,Salaried,9,2.76,0,1
+56,Female,335622,ST,Bihar,Daily Wage Worker,8,8.01,1,1
+50,Female,397860,General,West Bengal,Daily Wage Worker,7,9.18,1,1
+18,Male,717540,ST,Gujarat,Unemployed,7,6.03,1,1
+74,Female,148538,General,Gujarat,Unemployed,3,8.03,1,1
+44,Female,589660,OBC,Madhya Pradesh,Farmer,6,7.92,0,1
+74,Male,561511,SC,Maharashtra,Self Employed,5,1.93,1,1
+69,Female,271035,ST,Andhra Pradesh,Student,1,6.68,1,1
+30,Male,432736,OBC,Tamil Nadu,Farmer,3,0.93,1,1
+58,Male,405779,OBC,Tamil Nadu,Student,1,5.08,1,1
+20,Male,685310,ST,Tamil Nadu,Daily Wage Worker,4,1.62,0,1
+56,Male,628328,ST,Tamil Nadu,Student,3,4.16,1,1
+23,Female,776728,OBC,Andhra Pradesh,Self Employed,4,8.33,1,0
+25,Male,652644,General,Gujarat,Farmer,9,9.87,1,1
+44,Male,328355,OBC,Andhra Pradesh,Unemployed,3,3.18,1,1
+26,Female,417570,ST,Tamil Nadu,Self Employed,6,5.32,1,1
+54,Female,317986,OBC,Maharashtra,Small Business Owner,6,5.11,1,1
+50,Other,506331,General,Uttar Pradesh,Self Employed,7,9.54,1,0
+68,Female,437881,SC,Karnataka,Small Business Owner,9,4.79,1,1
+59,Female,358112,SC,Tamil Nadu,Farmer,7,6.99,1,1
+61,Other,203077,OBC,West Bengal,Unemployed,1,9.22,1,1
+41,Female,104575,General,Uttar Pradesh,Self Employed,8,3.73,0,1
+32,Female,523958,SC,Andhra Pradesh,Small Business Owner,5,9.02,0,1
+71,Female,724331,OBC,West Bengal,Unemployed,9,9.17,1,1
+49,Female,468815,OBC,West Bengal,Salaried,5,9.31,1,1
+49,Other,530808,General,Rajasthan,Salaried,5,2.7,1,0
+41,Female,641202,ST,West Bengal,Salaried,2,4.0,1,1
+58,Female,641343,OBC,Tamil Nadu,Student,3,8.7,1,0
+69,Other,661985,ST,Rajasthan,Self Employed,9,3.59,1,1
+66,Male,680527,ST,Madhya Pradesh,Farmer,7,6.0,1,1
+66,Other,285469,SC,Gujarat,Farmer,1,1.18,0,1
+69,Male,173106,ST,West Bengal,Student,3,0.56,1,1
+29,Other,517835,General,Maharashtra,Farmer,2,4.12,1,1
+56,Other,350486,SC,Karnataka,Small Business Owner,1,5.79,1,1
+19,Female,52257,SC,West Bengal,Salaried,9,3.93,0,1
+20,Male,339508,SC,Madhya Pradesh,Self Employed,8,5.78,0,1
+66,Female,730332,OBC,Bihar,Farmer,5,5.15,1,1
+54,Male,161715,OBC,Andhra Pradesh,Farmer,2,6.86,1,1
+66,Other,76654,ST,Andhra Pradesh,Daily Wage Worker,1,6.5,1,1
+73,Other,786129,SC,Madhya Pradesh,Daily Wage Worker,7,4.24,1,1
+34,Male,393567,SC,Bihar,Daily Wage Worker,2,4.25,1,1
+66,Female,341464,General,Andhra Pradesh,Self Employed,1,1.41,0,0
+19,Female,595096,ST,Andhra Pradesh,Salaried,2,5.13,0,0
+19,Female,626677,General,Andhra Pradesh,Unemployed,7,5.87,1,0
+45,Female,538906,ST,Madhya Pradesh,Salaried,7,4.76,1,1
+71,Other,168581,ST,Gujarat,Salaried,6,3.26,0,1
+40,Other,177927,OBC,Karnataka,Self Employed,5,7.22,1,1
+54,Other,84773,OBC,Madhya Pradesh,Small Business Owner,3,0.75,0,1
+49,Other,756528,General,Bihar,Small Business Owner,3,9.14,1,0
+50,Other,470963,ST,West Bengal,Self Employed,9,0.21,1,1
+18,Female,388540,SC,Gujarat,Daily Wage Worker,4,9.62,1,1
+36,Female,551590,OBC,Gujarat,Farmer,9,4.62,0,1
+19,Female,419836,SC,West Bengal,Student,4,4.13,1,1
+70,Female,264764,General,Maharashtra,Student,2,2.56,0,0
+61,Other,631793,OBC,Rajasthan,Unemployed,4,0.1,1,1
+43,Other,592423,OBC,Karnataka,Farmer,6,2.75,1,1
+49,Other,665175,ST,Karnataka,Unemployed,6,1.09,0,1
+23,Male,172118,General,Maharashtra,Daily Wage Worker,5,6.6,1,1
+49,Female,359521,ST,Rajasthan,Unemployed,1,3.19,1,1
+72,Female,204626,OBC,Karnataka,Farmer,3,7.67,1,1
+21,Other,295739,General,Bihar,Farmer,5,2.07,0,1
+72,Female,528356,OBC,Uttar Pradesh,Student,6,9.0,0,0
+28,Female,329067,General,Uttar Pradesh,Small Business Owner,1,5.23,0,0
+73,Other,359735,OBC,Karnataka,Daily Wage Worker,9,1.15,0,1
+34,Male,636549,SC,Tamil Nadu,Self Employed,3,4.01,1,1
+55,Male,366480,SC,Karnataka,Unemployed,3,2.07,1,1
+41,Male,386227,ST,West Bengal,Student,2,2.0,1,1
+22,Other,635236,SC,West Bengal,Unemployed,8,5.06,1,1
+69,Female,290891,OBC,Rajasthan,Unemployed,3,6.72,1,1
+51,Other,214074,OBC,Andhra Pradesh,Self Employed,6,9.12,1,1
+23,Other,523314,SC,Gujarat,Daily Wage Worker,2,5.02,1,1
+39,Female,559452,ST,Bihar,Farmer,7,9.66,1,1
+28,Male,338816,SC,Maharashtra,Salaried,4,9.42,1,1
+65,Male,191365,General,Karnataka,Unemployed,9,8.65,0,1
+33,Other,499076,General,Andhra Pradesh,Salaried,9,5.0,1,0
+50,Male,112507,General,Andhra Pradesh,Daily Wage Worker,7,1.41,0,1
+26,Other,107134,SC,Bihar,Salaried,8,2.18,0,1
+23,Other,183172,SC,Maharashtra,Unemployed,3,6.48,1,1
+33,Female,291225,SC,West Bengal,Self Employed,5,4.22,1,1
+46,Female,243069,General,Madhya Pradesh,Salaried,2,1.47,1,1
+20,Female,610897,ST,Bihar,Daily Wage Worker,7,4.79,1,1
+37,Other,224037,OBC,Andhra Pradesh,Daily Wage Worker,8,0.17,1,1
+53,Female,713376,SC,Uttar Pradesh,Small Business Owner,9,7.34,0,1
+36,Male,482995,ST,Karnataka,Small Business Owner,7,0.74,1,1
+43,Male,546013,OBC,Rajasthan,Self Employed,8,6.29,1,1
+20,Other,344025,OBC,Uttar Pradesh,Salaried,9,7.93,0,0
+36,Other,787954,OBC,Andhra Pradesh,Salaried,6,1.33,1,0
+37,Female,550098,ST,Gujarat,Small Business Owner,2,5.19,1,1
+49,Other,757173,ST,Tamil Nadu,Farmer,2,7.79,0,1
+24,Other,307803,General,Maharashtra,Student,4,2.61,0,0
+69,Male,741381,ST,West Bengal,Daily Wage Worker,9,1.63,1,1
+58,Male,366275,ST,Karnataka,Farmer,7,3.37,0,1
+50,Female,729447,ST,Rajasthan,Daily Wage Worker,2,5.55,1,1
+57,Other,62828,OBC,Madhya Pradesh,Farmer,8,5.75,1,1
+56,Other,566835,SC,West Bengal,Small Business Owner,7,1.31,1,1
+35,Male,706761,General,Karnataka,Small Business Owner,9,4.58,0,0
+57,Other,273461,SC,Madhya Pradesh,Student,8,2.68,1,1
+18,Male,488080,SC,Rajasthan,Farmer,3,8.42,1,1
+28,Female,463523,ST,Andhra Pradesh,Daily Wage Worker,1,3.14,1,1
+45,Male,414662,General,Tamil Nadu,Salaried,2,8.39,1,0
+74,Other,331755,SC,Uttar Pradesh,Daily Wage Worker,2,4.29,1,1
+42,Female,749151,SC,Uttar Pradesh,Unemployed,4,7.27,1,1
+67,Male,388384,General,Andhra Pradesh,Small Business Owner,6,5.1,1,0
+40,Male,289719,ST,West Bengal,Self Employed,4,6.22,1,1
+48,Female,782763,SC,Andhra Pradesh,Self Employed,9,3.95,1,1
+47,Female,316010,OBC,Andhra Pradesh,Small Business Owner,4,7.68,1,1
+59,Male,737605,SC,Karnataka,Unemployed,6,4.25,1,1
+52,Other,487940,OBC,Karnataka,Self Employed,6,4.57,1,1
+24,Male,645642,ST,Rajasthan,Small Business Owner,1,5.18,1,1
+33,Female,101374,SC,Tamil Nadu,Self Employed,8,8.32,1,1
+43,Male,164397,General,Karnataka,Small Business Owner,3,6.59,0,1
+65,Female,298552,General,Rajasthan,Student,6,3.49,0,0
+74,Female,436721,SC,Gujarat,Salaried,3,6.7,1,1
+69,Other,473332,ST,Andhra Pradesh,Salaried,2,6.42,0,0
+66,Female,342575,ST,Andhra Pradesh,Daily Wage Worker,5,9.31,1,1
+19,Female,461124,General,West Bengal,Unemployed,1,8.41,1,1
+18,Other,79336,SC,Gujarat,Small Business Owner,9,6.47,0,1
+65,Female,105350,ST,West Bengal,Farmer,7,3.42,1,1
+29,Other,643849,General,Madhya Pradesh,Daily Wage Worker,3,7.8,1,1
+22,Other,560470,OBC,Rajasthan,Daily Wage Worker,4,5.75,1,1
+54,Female,111240,SC,Rajasthan,Small Business Owner,6,9.85,1,1
+49,Female,725453,OBC,Andhra Pradesh,Small Business Owner,3,2.48,1,1
+72,Male,449371,OBC,Bihar,Daily Wage Worker,7,0.8,1,1
+26,Other,620895,ST,Madhya Pradesh,Daily Wage Worker,6,0.7,0,1
+58,Male,761028,ST,Rajasthan,Salaried,9,6.4,1,1
+52,Female,231196,ST,Karnataka,Farmer,5,9.39,1,1
+36,Male,365014,SC,Andhra Pradesh,Daily Wage Worker,4,0.02,0,1
+65,Other,499763,OBC,West Bengal,Salaried,3,7.26,1,0
+33,Male,638398,SC,Gujarat,Daily Wage Worker,1,6.57,1,1
+20,Other,234626,ST,West Bengal,Self Employed,3,7.32,1,1
+37,Female,726296,OBC,Uttar Pradesh,Daily Wage Worker,3,3.55,1,1
+41,Female,429039,SC,Bihar,Small Business Owner,7,8.2,1,1
+71,Other,578714,SC,Rajasthan,Unemployed,7,0.45,1,1
+73,Female,794199,General,Tamil Nadu,Unemployed,1,7.55,1,0
+50,Female,491048,SC,Maharashtra,Daily Wage Worker,3,2.67,1,1
+41,Female,602439,ST,Bihar,Student,8,4.77,1,1
+69,Female,323452,SC,Andhra Pradesh,Self Employed,9,8.23,1,1
+28,Other,290853,OBC,Rajasthan,Farmer,7,2.71,1,1
+66,Male,226743,SC,Gujarat,Daily Wage Worker,7,1.85,0,1
+25,Male,140306,General,Rajasthan,Farmer,8,6.81,0,1
+53,Female,799468,OBC,Maharashtra,Self Employed,6,5.33,1,1
+55,Male,576492,OBC,Gujarat,Daily Wage Worker,3,5.14,0,1
+57,Male,142769,General,West Bengal,Student,1,2.57,0,0
+37,Female,137265,ST,Gujarat,Salaried,7,0.35,0,1
+52,Female,102428,OBC,Bihar,Student,1,4.1,1,1
+65,Male,608158,ST,West Bengal,Small Business Owner,1,1.07,1,1
+42,Other,677835,OBC,Rajasthan,Student,9,9.06,1,0
+52,Female,99067,OBC,Andhra Pradesh,Salaried,7,0.41,1,1
+42,Other,162217,ST,Madhya Pradesh,Small Business Owner,4,4.32,1,1
+46,Male,468184,OBC,Andhra Pradesh,Salaried,6,0.52,1,1
+35,Female,673222,ST,Rajasthan,Unemployed,1,0.96,0,1
+63,Other,192980,General,Maharashtra,Salaried,7,6.59,1,0
+35,Female,552367,ST,Madhya Pradesh,Daily Wage Worker,6,6.47,1,1
+19,Male,386851,General,Rajasthan,Farmer,4,0.33,1,1
+71,Other,259329,OBC,Tamil Nadu,Unemployed,7,0.01,1,1
+52,Male,307354,ST,Bihar,Unemployed,3,0.79,1,1
+33,Male,573406,OBC,Tamil Nadu,Farmer,1,7.63,1,1
+58,Female,111215,ST,West Bengal,Unemployed,4,5.85,1,1
+53,Other,761195,General,Uttar Pradesh,Salaried,3,0.38,1,0
+50,Male,361573,General,Rajasthan,Student,1,4.88,1,0
+21,Male,682336,ST,Karnataka,Self Employed,2,7.12,1,1
+50,Other,219530,General,Karnataka,Salaried,5,8.69,1,1
+31,Male,227241,OBC,Gujarat,Small Business Owner,8,9.34,0,1
+38,Male,188731,OBC,Andhra Pradesh,Small Business Owner,1,3.27,1,1
+65,Other,503830,SC,Andhra Pradesh,Student,4,1.36,1,0
+37,Other,389384,General,Andhra Pradesh,Student,4,2.37,1,0
+73,Other,476009,OBC,Tamil Nadu,Unemployed,5,7.76,1,1
+25,Other,163688,ST,Bihar,Daily Wage Worker,7,9.71,1,1
+24,Female,358617,General,Rajasthan,Daily Wage Worker,8,4.66,1,1
+20,Other,794748,OBC,Maharashtra,Unemployed,6,3.05,1,1
+34,Female,540834,General,Gujarat,Unemployed,1,4.29,1,1
+50,Female,430596,ST,West Bengal,Farmer,7,3.05,1,1
+65,Female,761111,OBC,Madhya Pradesh,Farmer,3,2.56,0,0
+29,Male,784275,SC,West Bengal,Self Employed,6,5.94,1,1
+68,Female,319150,SC,Rajasthan,Self Employed,8,0.16,1,1
+39,Female,299243,General,Uttar Pradesh,Self Employed,7,2.6,1,1
+72,Male,648506,ST,Andhra Pradesh,Self Employed,6,6.61,1,1
+39,Male,246416,OBC,Madhya Pradesh,Student,9,0.32,1,1
+63,Male,606718,ST,Tamil Nadu,Student,9,0.83,1,0
+47,Other,73091,OBC,Rajasthan,Farmer,1,2.93,1,1
+55,Male,598277,General,Uttar Pradesh,Daily Wage Worker,1,8.78,1,1
+55,Male,125451,OBC,Tamil Nadu,Unemployed,1,7.65,1,1
+62,Female,68990,ST,Uttar Pradesh,Small Business Owner,8,0.22,1,1
+68,Male,402414,ST,Andhra Pradesh,Daily Wage Worker,7,5.02,1,1
+71,Other,300541,General,Tamil Nadu,Salaried,3,2.75,1,0
+25,Male,716393,ST,Bihar,Student,2,6.49,0,0
+44,Other,420416,OBC,Karnataka,Self Employed,4,7.22,1,1
+44,Male,174932,General,West Bengal,Self Employed,3,8.63,1,1
+51,Male,318083,OBC,Bihar,Salaried,7,4.75,1,1
+38,Male,163000,ST,Madhya Pradesh,Daily Wage Worker,8,9.94,0,1
+47,Male,752922,General,Gujarat,Self Employed,6,9.8,1,0
+50,Other,609351,OBC,Karnataka,Daily Wage Worker,3,8.82,0,1
+45,Other,543216,ST,Bihar,Unemployed,6,5.75,1,1
+64,Female,782081,ST,Rajasthan,Salaried,2,3.98,1,0
+50,Other,732405,SC,Uttar Pradesh,Small Business Owner,7,3.64,1,1
+22,Male,559850,ST,Madhya Pradesh,Daily Wage Worker,7,0.12,0,1
+65,Female,487985,OBC,Rajasthan,Unemployed,4,2.49,1,1
+36,Female,134703,General,Karnataka,Daily Wage Worker,8,7.19,1,1
+21,Female,545164,SC,Uttar Pradesh,Daily Wage Worker,4,6.04,1,1
+52,Male,464841,ST,Madhya Pradesh,Self Employed,7,9.16,1,1
+66,Other,702845,ST,Gujarat,Farmer,4,0.5,1,1
+34,Male,339220,ST,Karnataka,Student,5,1.55,1,1
+61,Female,303317,OBC,Madhya Pradesh,Daily Wage Worker,7,7.89,1,1
+45,Male,245877,SC,Bihar,Daily Wage Worker,3,3.59,1,1
+47,Male,396709,OBC,Madhya Pradesh,Daily Wage Worker,5,1.18,1,1
+46,Other,531725,SC,Karnataka,Farmer,3,9.96,0,1
+63,Other,617597,General,Andhra Pradesh,Unemployed,5,7.87,1,0
+70,Female,487470,OBC,Bihar,Small Business Owner,3,4.09,1,1
+23,Male,408402,OBC,Rajasthan,Small Business Owner,7,8.23,1,1
+52,Male,617815,General,Karnataka,Salaried,1,6.81,1,0
+58,Other,798778,SC,Andhra Pradesh,Self Employed,9,7.9,1,1
+54,Male,189883,ST,Maharashtra,Farmer,9,8.15,1,1
+41,Male,667632,General,Gujarat,Unemployed,5,0.85,0,0
+46,Male,205344,ST,Andhra Pradesh,Daily Wage Worker,9,6.23,1,1
+66,Other,515226,ST,Maharashtra,Unemployed,6,0.07,1,1
+63,Female,797852,General,West Bengal,Farmer,5,0.43,1,0
+70,Female,621441,SC,Uttar Pradesh,Farmer,3,9.04,1,1
+48,Male,158042,ST,Andhra Pradesh,Farmer,8,5.28,1,1
+52,Female,104110,General,Tamil Nadu,Salaried,4,7.36,1,1
+50,Other,195051,OBC,Gujarat,Student,3,8.39,1,1
+69,Other,78328,OBC,Andhra Pradesh,Self Employed,6,9.5,1,1
+38,Female,687199,OBC,Maharashtra,Salaried,8,8.69,1,0
+49,Female,325011,General,Tamil Nadu,Salaried,9,4.83,1,0
+40,Male,109234,OBC,Gujarat,Student,6,3.36,1,1
+50,Female,277135,ST,Tamil Nadu,Salaried,5,1.54,1,1
+20,Male,647690,OBC,Bihar,Farmer,2,4.0,1,1
+35,Male,388365,OBC,Maharashtra,Farmer,2,3.66,1,1
+42,Other,579739,ST,Madhya Pradesh,Unemployed,9,5.6,1,1
+59,Other,137178,OBC,Bihar,Daily Wage Worker,2,6.66,1,1
+48,Other,286562,ST,Gujarat,Salaried,2,9.78,1,1
+71,Other,351014,OBC,Gujarat,Daily Wage Worker,3,7.28,1,1
+20,Female,408710,ST,Karnataka,Self Employed,3,6.44,1,1
+57,Other,435893,OBC,Maharashtra,Small Business Owner,4,3.35,1,1
+63,Female,173765,ST,West Bengal,Farmer,7,0.35,1,1
+41,Other,437025,General,West Bengal,Unemployed,9,2.88,1,1
+67,Female,178389,ST,Gujarat,Self Employed,2,7.68,1,1
+49,Male,763987,OBC,West Bengal,Unemployed,4,2.05,1,1
+64,Female,247227,OBC,Uttar Pradesh,Small Business Owner,9,7.12,1,1
+39,Female,542402,SC,Karnataka,Small Business Owner,2,5.8,1,1
+40,Other,310220,ST,Gujarat,Student,1,1.72,0,1
+19,Female,471217,General,West Bengal,Farmer,8,2.62,1,1
+44,Male,346208,ST,Maharashtra,Self Employed,9,4.96,0,1
+59,Male,118431,ST,Andhra Pradesh,Student,7,4.18,1,1
+19,Other,105745,General,Madhya Pradesh,Small Business Owner,8,7.79,1,1
+43,Male,100081,ST,Bihar,Self Employed,4,7.34,0,1
+34,Female,266204,General,Bihar,Unemployed,4,5.75,0,1
+57,Male,451415,General,Uttar Pradesh,Student,2,8.22,1,0
+50,Other,650541,ST,Tamil Nadu,Student,8,5.63,0,0
+26,Female,348335,ST,Maharashtra,Farmer,2,9.64,1,1
+60,Other,161086,OBC,Tamil Nadu,Daily Wage Worker,9,2.17,0,1
+71,Female,506285,OBC,Karnataka,Unemployed,4,7.14,1,1
+65,Male,464758,SC,Madhya Pradesh,Unemployed,1,3.7,1,1
+56,Other,474528,SC,Karnataka,Student,4,2.79,1,1
+46,Other,488458,ST,Gujarat,Student,3,1.8,1,1
+59,Female,668071,General,Maharashtra,Farmer,6,5.53,1,1
+72,Other,699969,SC,Gujarat,Daily Wage Worker,7,2.15,1,1
+43,Female,662181,ST,Rajasthan,Unemployed,8,2.0,1,1
+52,Female,549797,SC,West Bengal,Small Business Owner,2,9.91,1,1
+67,Female,208763,General,Bihar,Salaried,6,8.02,0,0
+42,Female,652248,ST,Andhra Pradesh,Salaried,6,7.48,1,1
+41,Male,72601,General,Gujarat,Daily Wage Worker,5,7.94,1,1
+30,Female,461236,ST,Tamil Nadu,Self Employed,7,9.69,1,1
+24,Other,189227,SC,Rajasthan,Farmer,3,5.73,1,1
+74,Male,774479,OBC,Bihar,Daily Wage Worker,4,2.2,1,1
+53,Other,742137,SC,Gujarat,Salaried,9,8.62,1,1
+62,Male,331854,SC,Rajasthan,Student,4,7.43,1,1
+37,Female,420858,OBC,Rajasthan,Salaried,3,4.14,1,1
+18,Male,729892,OBC,Maharashtra,Student,2,4.74,1,0
+25,Male,703015,ST,Karnataka,Farmer,5,4.11,0,1
+63,Other,637515,ST,Rajasthan,Student,4,9.3,1,0
+33,Other,710327,General,Uttar Pradesh,Daily Wage Worker,8,3.44,1,1
+31,Female,658577,General,Karnataka,Student,7,9.63,1,0
+29,Male,201094,SC,Bihar,Self Employed,6,9.1,1,1
+68,Male,486679,OBC,Bihar,Daily Wage Worker,2,6.31,1,1
+40,Male,780031,General,Bihar,Farmer,3,5.8,0,0
+32,Female,732773,SC,Bihar,Daily Wage Worker,9,3.7,1,1
+45,Female,552648,OBC,Uttar Pradesh,Self Employed,9,0.18,1,1
+51,Female,529083,ST,Gujarat,Farmer,5,1.28,1,1
+19,Female,395740,SC,Madhya Pradesh,Salaried,3,7.54,1,1
+49,Female,455513,ST,Rajasthan,Self Employed,2,4.72,1,1
+40,Other,118323,General,Bihar,Farmer,8,1.5,0,1
+39,Male,335960,General,Karnataka,Small Business Owner,6,2.64,0,0
+68,Male,614983,OBC,Karnataka,Student,7,9.48,0,0
+42,Male,462918,SC,Rajasthan,Daily Wage Worker,1,3.67,1,1
+39,Male,468458,ST,Gujarat,Farmer,1,9.08,1,1
+39,Male,105841,OBC,Andhra Pradesh,Daily Wage Worker,2,3.05,1,1
+66,Male,440642,General,Andhra Pradesh,Student,3,5.43,1,0
+69,Male,248784,General,Madhya Pradesh,Farmer,1,0.2,1,1
+59,Male,157096,SC,Gujarat,Salaried,5,5.22,0,1
+23,Other,142764,ST,Rajasthan,Small Business Owner,3,6.37,0,1
+32,Male,496790,SC,Andhra Pradesh,Small Business Owner,1,2.34,1,1
+71,Other,660032,ST,Andhra Pradesh,Self Employed,8,5.79,1,1
+60,Female,583459,ST,Andhra Pradesh,Farmer,6,6.47,1,1
+54,Male,675043,SC,Tamil Nadu,Student,9,6.87,1,1
+50,Female,542148,OBC,Uttar Pradesh,Farmer,3,7.76,1,1
+25,Female,682413,SC,Rajasthan,Daily Wage Worker,9,3.11,1,1
+70,Female,418226,SC,West Bengal,Unemployed,9,5.68,1,1
+61,Other,53696,General,Maharashtra,Farmer,1,9.82,1,1
+61,Female,176310,General,Maharashtra,Small Business Owner,3,8.98,1,1
+22,Female,725673,SC,Gujarat,Small Business Owner,6,9.53,1,1
+56,Female,95740,SC,Rajasthan,Small Business Owner,8,3.86,1,1
+21,Male,156611,General,Rajasthan,Salaried,4,7.87,1,0
+23,Male,448172,ST,Maharashtra,Farmer,5,6.2,1,1
+62,Other,518947,SC,Madhya Pradesh,Self Employed,9,0.83,1,1
+49,Other,525828,OBC,Maharashtra,Farmer,6,8.24,1,1
+69,Male,378785,OBC,Rajasthan,Unemployed,7,6.77,1,1
+47,Other,638099,OBC,Andhra Pradesh,Small Business Owner,7,1.99,1,1
+64,Male,495376,SC,Madhya Pradesh,Daily Wage Worker,4,0.8,0,1
+52,Female,756673,ST,Bihar,Small Business Owner,4,8.37,1,1
+72,Female,637520,ST,West Bengal,Farmer,4,0.79,1,1
+57,Other,730089,General,Tamil Nadu,Salaried,5,0.91,1,0
+69,Male,162492,SC,Uttar Pradesh,Student,5,4.27,0,1
+33,Male,80099,ST,Bihar,Farmer,8,1.35,0,1
+30,Other,473177,SC,Karnataka,Farmer,9,9.14,1,1
+67,Male,692762,General,Maharashtra,Self Employed,2,4.7,0,0
+59,Female,321400,General,West Bengal,Salaried,7,5.69,0,0
+47,Other,529336,General,Maharashtra,Unemployed,1,9.28,1,1
+36,Other,608969,OBC,Maharashtra,Student,1,5.3,0,0
+34,Male,141328,SC,Bihar,Small Business Owner,4,3.54,0,1
+73,Other,792800,General,Andhra Pradesh,Daily Wage Worker,7,7.97,1,0
+36,Male,355505,SC,Andhra Pradesh,Farmer,2,4.43,1,1
+45,Male,507719,OBC,Tamil Nadu,Unemployed,2,3.18,1,1
+72,Male,84540,OBC,Madhya Pradesh,Student,1,7.23,0,0
+43,Male,207608,General,Maharashtra,Daily Wage Worker,2,8.02,1,1
+54,Male,134700,General,Gujarat,Unemployed,7,7.92,1,1
+43,Other,390676,ST,Andhra Pradesh,Salaried,9,9.78,0,1
+70,Female,761935,SC,Rajasthan,Salaried,6,7.87,0,0
+40,Female,439770,General,West Bengal,Student,2,7.7,0,0
+26,Other,446087,ST,Gujarat,Small Business Owner,9,8.57,1,1
+29,Other,96002,SC,Bihar,Daily Wage Worker,7,0.0,1,1
+70,Female,99812,General,Bihar,Salaried,1,3.62,1,0
+18,Female,465842,ST,Tamil Nadu,Student,9,7.38,1,1
+18,Female,765339,ST,Tamil Nadu,Salaried,2,6.0,1,0
+64,Female,307906,SC,Madhya Pradesh,Salaried,4,1.78,1,1
+51,Female,158946,ST,Rajasthan,Unemployed,9,3.04,1,1
+49,Male,116668,SC,West Bengal,Unemployed,4,3.37,1,1
+71,Other,149003,SC,Rajasthan,Salaried,3,5.68,1,1
+65,Male,785430,SC,Karnataka,Self Employed,1,8.32,1,1
+42,Female,270462,OBC,Tamil Nadu,Unemployed,7,9.32,1,1
+57,Female,769174,ST,Madhya Pradesh,Daily Wage Worker,6,7.5,1,1
+62,Female,678889,SC,Uttar Pradesh,Student,4,8.43,1,0
+70,Male,319956,General,Maharashtra,Student,6,4.7,1,0
+18,Male,111844,OBC,Maharashtra,Small Business Owner,6,3.9,0,1
+33,Female,775453,OBC,Uttar Pradesh,Daily Wage Worker,4,3.93,1,1
+56,Male,445395,ST,Andhra Pradesh,Daily Wage Worker,6,6.16,1,1
+22,Male,749158,SC,Rajasthan,Daily Wage Worker,8,1.24,1,1
+39,Female,124601,ST,Uttar Pradesh,Small Business Owner,3,5.79,0,1
+46,Male,360001,OBC,Madhya Pradesh,Daily Wage Worker,4,6.65,0,1
+72,Other,437699,SC,West Bengal,Farmer,1,4.39,1,1
+20,Other,544700,General,Uttar Pradesh,Small Business Owner,4,9.53,1,0
+29,Other,332844,SC,Madhya Pradesh,Student,9,6.08,1,1
+43,Other,482680,OBC,Tamil Nadu,Farmer,8,2.2,1,1
+33,Female,223423,General,Gujarat,Small Business Owner,4,4.79,1,1
+68,Female,143330,SC,Bihar,Salaried,7,6.75,1,1
+54,Female,275391,General,Bihar,Salaried,3,3.24,0,0
+39,Other,263606,General,Karnataka,Student,9,0.8,0,0
+74,Other,457085,OBC,Rajasthan,Salaried,4,5.83,1,0
+46,Male,241387,General,West Bengal,Daily Wage Worker,2,9.48,1,1
+31,Male,291133,ST,Gujarat,Small Business Owner,5,4.85,1,1
+45,Other,536904,OBC,Gujarat,Farmer,2,9.06,1,1
+22,Other,464170,ST,Tamil Nadu,Daily Wage Worker,6,8.35,0,1
+64,Other,736915,General,Uttar Pradesh,Salaried,1,1.47,1,0
+66,Other,375497,ST,Rajasthan,Unemployed,6,7.08,1,1
+47,Male,525406,SC,Maharashtra,Farmer,4,4.35,1,1
+63,Other,488242,General,Gujarat,Daily Wage Worker,3,2.5,0,0
+69,Male,412916,SC,Madhya Pradesh,Small Business Owner,2,6.87,1,1
+22,Other,228048,ST,Maharashtra,Student,7,7.43,1,1
+29,Other,403646,SC,Karnataka,Daily Wage Worker,9,1.8,1,1
+33,Other,426087,General,Uttar Pradesh,Unemployed,3,9.14,1,1
+43,Male,421994,SC,Uttar Pradesh,Salaried,6,7.51,0,1
+43,Male,619383,ST,West Bengal,Farmer,9,9.33,0,1
+65,Female,195342,ST,Gujarat,Student,2,3.17,0,1
+38,Other,736268,ST,Tamil Nadu,Farmer,7,9.39,1,1
+56,Female,112433,General,Andhra Pradesh,Student,5,3.69,1,1
+53,Female,594279,ST,Andhra Pradesh,Small Business Owner,5,0.54,1,1
+50,Male,322919,General,Bihar,Farmer,7,7.63,0,1
+47,Male,521017,SC,Madhya Pradesh,Salaried,9,7.04,1,1
+54,Female,397139,ST,Maharashtra,Small Business Owner,4,5.98,1,1
+40,Other,197745,SC,Karnataka,Small Business Owner,9,4.9,1,1
+27,Male,697096,OBC,Bihar,Student,9,0.32,1,0
+71,Other,732416,SC,Uttar Pradesh,Self Employed,4,6.25,1,1
+22,Other,187686,OBC,Maharashtra,Farmer,3,4.17,1,1
+53,Female,57415,SC,Rajasthan,Farmer,2,5.6,1,1
+51,Female,487100,General,Gujarat,Daily Wage Worker,9,4.29,1,1
+69,Female,349188,SC,Karnataka,Student,2,9.66,1,1
+48,Female,762509,General,Rajasthan,Unemployed,6,6.04,1,1
+27,Male,218616,General,Tamil Nadu,Self Employed,5,7.49,1,1
+36,Male,99976,ST,Gujarat,Salaried,5,9.36,1,1
+49,Female,475468,General,Maharashtra,Daily Wage Worker,4,5.92,1,1
+18,Male,315976,OBC,Gujarat,Self Employed,6,0.12,1,1
+73,Female,271883,ST,Bihar,Student,5,0.34,1,1
+22,Other,261509,ST,West Bengal,Self Employed,4,7.02,1,1
+62,Other,546965,SC,Bihar,Small Business Owner,9,2.79,0,0
+21,Other,568823,General,Tamil Nadu,Farmer,6,5.79,1,0
+33,Female,269526,General,Madhya Pradesh,Small Business Owner,3,2.02,1,1
+41,Other,397220,OBC,Rajasthan,Farmer,6,2.7,1,1
+33,Male,763087,SC,Bihar,Daily Wage Worker,1,5.05,1,1
+72,Other,88578,SC,West Bengal,Student,5,9.76,0,1
+19,Other,664741,ST,Madhya Pradesh,Student,6,6.16,1,0
+66,Other,465534,ST,Bihar,Self Employed,8,9.36,1,1
+45,Male,258859,ST,Uttar Pradesh,Daily Wage Worker,9,9.59,0,1
+49,Female,161435,OBC,West Bengal,Student,3,2.08,1,1
+44,Male,790389,OBC,Rajasthan,Unemployed,2,3.11,1,1
+37,Female,201538,ST,Karnataka,Unemployed,4,7.7,1,1
+41,Female,95475,SC,Andhra Pradesh,Small Business Owner,8,8.67,1,1
+29,Other,790520,OBC,Madhya Pradesh,Farmer,8,5.19,0,1
+67,Female,207636,SC,Uttar Pradesh,Self Employed,3,9.93,1,1
+52,Male,203484,SC,Karnataka,Salaried,4,0.12,1,1
+50,Male,143526,General,Maharashtra,Farmer,3,3.0,1,1
+50,Female,101001,ST,West Bengal,Daily Wage Worker,2,6.23,0,1
+68,Other,242029,General,Uttar Pradesh,Student,4,4.69,1,0
+60,Other,478733,ST,Gujarat,Farmer,6,1.17,1,1
+54,Male,718516,ST,Maharashtra,Salaried,5,3.68,1,1
+29,Other,599999,SC,Maharashtra,Salaried,3,0.25,1,1
+20,Female,604394,ST,Madhya Pradesh,Unemployed,2,6.43,1,1
+18,Female,532488,SC,West Bengal,Daily Wage Worker,9,8.93,0,1
+50,Male,442573,SC,Uttar Pradesh,Farmer,1,8.85,1,1
+57,Female,267583,ST,Tamil Nadu,Self Employed,9,7.0,1,1
+27,Male,413898,SC,Uttar Pradesh,Farmer,1,4.66,1,1
+60,Female,188286,SC,Bihar,Unemployed,7,5.12,1,1
+61,Male,277189,SC,Maharashtra,Small Business Owner,6,1.37,1,1
+46,Other,176479,OBC,Rajasthan,Salaried,7,3.41,1,1
+30,Female,470343,SC,Maharashtra,Daily Wage Worker,3,1.88,1,1
+29,Female,186213,OBC,Maharashtra,Daily Wage Worker,3,8.21,1,1
+48,Male,603172,OBC,Andhra Pradesh,Self Employed,1,9.15,0,0
+63,Male,314852,SC,Gujarat,Daily Wage Worker,4,5.37,1,1
+19,Female,589376,SC,Tamil Nadu,Unemployed,2,7.28,1,1
+68,Male,369759,OBC,Karnataka,Unemployed,8,1.21,1,1
+67,Female,422282,OBC,Karnataka,Unemployed,3,6.09,0,1
+52,Other,750406,SC,Gujarat,Daily Wage Worker,7,7.03,0,1
+40,Male,322158,SC,Maharashtra,Daily Wage Worker,7,4.53,0,1
+34,Female,769785,ST,Karnataka,Unemployed,9,2.43,1,1
+43,Other,446489,OBC,West Bengal,Daily Wage Worker,6,8.77,1,1
+25,Other,752495,OBC,Tamil Nadu,Daily Wage Worker,1,7.43,1,1
+46,Female,414986,ST,Karnataka,Salaried,8,9.0,1,1
+43,Male,540238,OBC,Gujarat,Farmer,1,8.18,1,1
+27,Female,128077,General,Bihar,Student,3,9.9,0,0
+43,Other,189784,OBC,Karnataka,Daily Wage Worker,5,1.92,1,1
+51,Female,255776,ST,Tamil Nadu,Student,8,0.87,1,1
+68,Male,365018,General,Madhya Pradesh,Small Business Owner,9,3.37,1,0
+58,Other,119087,SC,Madhya Pradesh,Student,7,1.29,1,1
+24,Female,642656,ST,West Bengal,Salaried,9,5.23,1,0
+21,Male,793859,ST,Uttar Pradesh,Daily Wage Worker,3,6.33,1,1
+70,Other,391102,SC,Uttar Pradesh,Unemployed,5,5.78,1,1
+67,Male,345064,ST,Karnataka,Student,8,2.59,1,1
+62,Other,301514,OBC,Rajasthan,Daily Wage Worker,1,9.09,0,1
+28,Female,192180,SC,Bihar,Self Employed,8,0.21,1,1
+46,Male,485928,ST,Gujarat,Small Business Owner,7,3.48,1,1
+73,Other,651891,SC,Bihar,Unemployed,1,7.19,1,1
+53,Male,83872,SC,Madhya Pradesh,Self Employed,6,7.67,1,1
+42,Male,322872,SC,Karnataka,Self Employed,1,4.16,1,1
+38,Female,407246,General,Tamil Nadu,Student,2,0.17,0,0
+74,Male,538535,ST,Gujarat,Self Employed,5,6.18,0,0
+53,Other,434193,General,Bihar,Salaried,2,0.63,1,0
+27,Other,135774,ST,Tamil Nadu,Salaried,1,1.08,1,1
+54,Other,438518,OBC,Gujarat,Student,6,6.5,1,1
+26,Other,248522,OBC,Bihar,Daily Wage Worker,8,3.12,1,1
+41,Female,270357,OBC,West Bengal,Farmer,8,3.48,1,1
+52,Male,462672,ST,Madhya Pradesh,Daily Wage Worker,8,4.87,1,1
+66,Female,115942,SC,Maharashtra,Daily Wage Worker,6,9.79,1,1
+52,Male,587977,SC,Gujarat,Daily Wage Worker,3,9.65,1,1
+65,Male,607564,General,Madhya Pradesh,Daily Wage Worker,1,4.16,1,0
+53,Male,559565,General,Andhra Pradesh,Unemployed,2,2.65,1,1
+35,Female,572552,OBC,Rajasthan,Farmer,5,3.03,1,1
+66,Male,676256,General,Karnataka,Unemployed,5,2.69,0,0
+56,Female,463089,ST,Andhra Pradesh,Self Employed,1,5.32,1,1
+49,Other,640504,ST,Tamil Nadu,Small Business Owner,1,6.07,0,1
+41,Other,789804,General,Gujarat,Daily Wage Worker,9,4.89,0,0
+40,Male,396184,General,Karnataka,Small Business Owner,2,4.08,0,0
+49,Female,595932,General,Karnataka,Salaried,7,2.11,1,0
+54,Other,112021,General,Andhra Pradesh,Student,4,4.83,1,1
+29,Female,742485,OBC,Andhra Pradesh,Student,7,3.41,1,0
+66,Female,510115,OBC,Maharashtra,Unemployed,8,5.42,1,1
+72,Male,92291,General,Bihar,Unemployed,5,6.75,1,1
+30,Other,478276,ST,Gujarat,Salaried,1,6.33,1,1
+40,Male,444754,OBC,Madhya Pradesh,Daily Wage Worker,4,4.62,1,1
+42,Male,353664,ST,Uttar Pradesh,Small Business Owner,3,5.56,1,1
+52,Other,75675,SC,Gujarat,Small Business Owner,5,2.85,1,1
+58,Other,723647,ST,Gujarat,Farmer,6,0.24,1,1
+47,Female,312318,General,Gujarat,Self Employed,2,6.25,1,1
+34,Other,142268,SC,Karnataka,Student,7,2.53,1,1
+66,Female,347142,OBC,Tamil Nadu,Self Employed,3,6.69,1,1
+37,Female,758672,OBC,Karnataka,Farmer,1,7.47,1,1
+65,Female,679698,SC,Tamil Nadu,Unemployed,3,9.16,1,1
+42,Other,387369,ST,Andhra Pradesh,Small Business Owner,9,9.58,1,1
+39,Male,397235,OBC,Uttar Pradesh,Student,6,0.11,1,1
+30,Female,362863,General,Karnataka,Self Employed,6,9.9,1,1
+36,Male,179887,SC,Tamil Nadu,Unemployed,4,6.83,1,1
+66,Male,346063,General,Karnataka,Farmer,8,6.44,0,0
+53,Other,385299,SC,Rajasthan,Self Employed,5,0.15,1,1
+29,Male,383713,OBC,Karnataka,Small Business Owner,7,8.61,1,1
+58,Male,251554,ST,Uttar Pradesh,Daily Wage Worker,9,1.45,1,1
+36,Other,608963,SC,Uttar Pradesh,Unemployed,5,8.37,1,1
+29,Female,545010,SC,Tamil Nadu,Farmer,5,0.16,1,1
+26,Male,421513,General,Tamil Nadu,Self Employed,4,6.46,1,1
+24,Other,231517,OBC,Andhra Pradesh,Small Business Owner,6,4.35,1,1
+45,Male,120305,General,Uttar Pradesh,Daily Wage Worker,2,2.01,1,1
+31,Male,742924,OBC,Uttar Pradesh,Daily Wage Worker,3,1.08,1,1
+48,Female,489030,General,Maharashtra,Farmer,1,4.4,1,1
+69,Male,522963,SC,Gujarat,Salaried,2,1.23,1,0
+36,Other,663079,General,West Bengal,Small Business Owner,2,4.86,1,0
+64,Male,209034,ST,Karnataka,Small Business Owner,8,6.25,1,1
+33,Female,528108,OBC,Bihar,Student,8,8.27,0,0
+70,Female,644821,OBC,Andhra Pradesh,Farmer,2,6.79,1,1
+22,Other,237256,SC,Gujarat,Daily Wage Worker,6,0.65,1,1
+52,Female,526128,OBC,West Bengal,Daily Wage Worker,5,3.07,0,1
+29,Male,715938,ST,Maharashtra,Farmer,3,2.88,1,1
+42,Female,705348,General,Bihar,Salaried,5,9.15,1,0
+69,Other,723984,SC,Tamil Nadu,Student,5,8.68,1,0
+38,Female,422047,ST,Uttar Pradesh,Self Employed,5,3.7,1,1
+53,Female,443605,OBC,Rajasthan,Farmer,3,0.71,1,1
+70,Female,411447,OBC,Andhra Pradesh,Student,3,8.94,0,0
+40,Other,292188,ST,Madhya Pradesh,Small Business Owner,4,8.88,1,1
+33,Female,426047,General,Uttar Pradesh,Student,7,8.55,1,0
+74,Female,287501,General,Rajasthan,Unemployed,2,8.45,1,1
+56,Male,370146,SC,West Bengal,Daily Wage Worker,4,4.8,1,1
+62,Other,347675,OBC,Tamil Nadu,Self Employed,4,1.77,1,1
+70,Female,758175,ST,Bihar,Farmer,1,4.77,1,1
+59,Other,579274,General,West Bengal,Daily Wage Worker,8,4.95,0,0
+56,Female,313625,SC,Uttar Pradesh,Unemployed,1,4.9,1,1
+31,Female,250339,OBC,Uttar Pradesh,Unemployed,8,5.39,1,1
+48,Female,696238,OBC,Bihar,Daily Wage Worker,7,2.58,1,1
+22,Male,175355,SC,Madhya Pradesh,Salaried,9,3.66,1,1
+52,Male,77798,SC,Rajasthan,Student,8,4.34,1,1
+40,Male,665937,General,West Bengal,Farmer,5,1.31,1,1
+46,Other,377031,ST,Tamil Nadu,Farmer,8,4.55,1,1
+60,Other,69477,OBC,Uttar Pradesh,Farmer,3,8.1,1,1
+28,Male,460482,ST,West Bengal,Daily Wage Worker,7,8.28,1,1
+35,Other,267400,OBC,Madhya Pradesh,Small Business Owner,4,4.12,1,1
+64,Female,267060,OBC,West Bengal,Salaried,5,5.19,1,1
+29,Female,439959,ST,Bihar,Self Employed,9,0.34,1,1
+26,Female,561181,SC,Tamil Nadu,Unemployed,7,6.74,1,1
+27,Male,557831,General,Maharashtra,Daily Wage Worker,4,4.05,0,0
+61,Other,455105,OBC,Bihar,Small Business Owner,6,4.45,1,1
+34,Male,336479,SC,West Bengal,Self Employed,7,8.74,1,1
+55,Other,398754,OBC,Maharashtra,Unemployed,9,4.62,0,1
+24,Female,323586,General,Uttar Pradesh,Unemployed,4,0.21,0,0
+63,Male,384971,OBC,Maharashtra,Salaried,3,2.27,1,0
+30,Other,680752,General,Madhya Pradesh,Student,8,4.76,1,0
+57,Other,181184,General,Karnataka,Farmer,1,4.24,1,1
+59,Female,137051,OBC,Madhya Pradesh,Self Employed,9,8.6,0,1
+26,Male,200653,OBC,Bihar,Daily Wage Worker,1,5.42,1,1
+67,Male,295300,General,Karnataka,Self Employed,2,6.9,1,1
+44,Male,634010,SC,Bihar,Student,8,4.69,1,1
+19,Female,142036,ST,Andhra Pradesh,Farmer,9,4.4,1,1
+22,Male,197595,General,Tamil Nadu,Self Employed,7,4.46,1,1
+46,Female,331696,OBC,Gujarat,Student,3,4.11,1,1
+54,Female,566612,OBC,Uttar Pradesh,Daily Wage Worker,7,5.39,1,1
+55,Female,191880,SC,Uttar Pradesh,Salaried,6,2.5,1,1
+36,Other,285419,ST,Andhra Pradesh,Small Business Owner,2,8.91,1,1
+25,Male,204692,General,West Bengal,Unemployed,3,3.33,1,1
+65,Male,313031,General,Rajasthan,Daily Wage Worker,5,1.48,1,1
+62,Female,343946,ST,Bihar,Farmer,4,0.97,1,1
+18,Female,659312,General,Gujarat,Unemployed,2,0.13,1,0
+39,Male,538765,ST,Gujarat,Small Business Owner,4,4.23,0,1
+69,Female,692927,OBC,Madhya Pradesh,Daily Wage Worker,8,1.88,1,1
+34,Male,656226,ST,Madhya Pradesh,Daily Wage Worker,5,0.22,0,1
+24,Other,267813,General,Rajasthan,Daily Wage Worker,5,5.2,1,1
+42,Female,434890,ST,West Bengal,Daily Wage Worker,3,6.8,0,1
+62,Male,389933,SC,Andhra Pradesh,Unemployed,8,0.86,1,1
+21,Female,658814,OBC,Maharashtra,Farmer,6,4.61,1,1
+53,Male,451062,OBC,Madhya Pradesh,Small Business Owner,2,7.44,1,1
+23,Male,533779,ST,West Bengal,Student,2,9.86,1,0
+48,Female,547952,General,Tamil Nadu,Self Employed,9,6.67,1,0
+36,Other,620508,SC,Uttar Pradesh,Salaried,7,2.45,1,1
+61,Male,446981,OBC,Uttar Pradesh,Small Business Owner,9,7.17,1,1
+71,Male,429270,OBC,West Bengal,Self Employed,6,5.98,1,1
+56,Male,125277,General,Rajasthan,Self Employed,5,2.12,0,1
+44,Other,569570,General,Andhra Pradesh,Salaried,1,8.51,1,0
+27,Other,533455,SC,Gujarat,Small Business Owner,6,4.27,1,1
+43,Female,172332,ST,Rajasthan,Unemployed,6,9.62,1,1
+36,Other,284231,General,West Bengal,Farmer,3,7.23,1,1
+56,Female,597219,ST,Andhra Pradesh,Salaried,3,6.45,1,1
+20,Female,139116,SC,Andhra Pradesh,Farmer,3,7.28,1,1
+62,Other,301671,ST,Bihar,Unemployed,3,4.78,1,1
+30,Female,523918,OBC,Karnataka,Self Employed,7,5.05,1,1
+67,Other,626201,ST,Uttar Pradesh,Farmer,2,8.51,1,1
+45,Female,669064,SC,West Bengal,Unemployed,2,6.81,1,1
+37,Other,75991,SC,Gujarat,Unemployed,3,8.97,1,1
+45,Other,564265,SC,Karnataka,Student,7,8.91,1,1
+25,Female,760205,ST,Tamil Nadu,Salaried,3,9.76,1,1
+58,Male,678380,OBC,Madhya Pradesh,Student,7,7.0,0,0
+56,Female,279577,General,Bihar,Self Employed,9,5.02,0,1
+18,Other,760672,OBC,Madhya Pradesh,Salaried,4,1.66,1,0
+20,Male,453777,ST,Karnataka,Self Employed,7,7.05,1,1
+30,Female,145556,ST,Karnataka,Student,9,2.92,1,1
+45,Female,206989,General,Madhya Pradesh,Small Business Owner,8,2.83,0,1
+74,Female,374264,ST,Gujarat,Unemployed,8,2.38,1,1
+66,Male,445204,SC,Gujarat,Self Employed,9,8.75,0,1
+42,Other,556961,SC,Maharashtra,Salaried,5,8.68,1,1
+73,Female,702755,SC,Tamil Nadu,Salaried,5,6.31,1,0
+50,Female,570616,SC,Gujarat,Self Employed,3,4.73,1,1
+55,Female,457472,SC,Tamil Nadu,Salaried,5,6.72,1,1
+70,Female,430634,ST,Tamil Nadu,Unemployed,8,6.07,1,1
+23,Female,793088,General,Karnataka,Small Business Owner,5,4.16,1,0
+61,Other,700443,General,Tamil Nadu,Unemployed,4,3.8,1,0
+62,Other,340374,SC,Bihar,Salaried,8,3.83,1,1
+49,Female,548682,ST,Madhya Pradesh,Self Employed,7,5.89,0,1
+62,Male,109778,OBC,Maharashtra,Student,6,6.48,1,1
+64,Other,95833,OBC,West Bengal,Salaried,5,4.52,0,0
+38,Male,606376,ST,Rajasthan,Salaried,5,9.69,0,0
+33,Other,785010,SC,Maharashtra,Salaried,2,0.84,1,1
+71,Female,416081,General,Bihar,Salaried,4,3.47,1,0
+38,Other,514507,ST,Maharashtra,Self Employed,8,4.19,1,1
+28,Female,246375,OBC,Tamil Nadu,Student,8,0.17,1,1
+54,Other,126361,OBC,Karnataka,Student,1,3.65,0,1
+53,Female,400373,OBC,Rajasthan,Farmer,2,2.74,1,1
+52,Female,185189,SC,Gujarat,Salaried,5,5.06,0,1
+36,Female,664553,OBC,Karnataka,Salaried,9,3.36,1,0
+37,Female,572154,ST,Tamil Nadu,Farmer,7,7.26,0,1
+74,Male,672006,ST,Tamil Nadu,Student,5,5.1,1,0
+35,Female,372854,OBC,Rajasthan,Daily Wage Worker,1,1.3,1,1
+64,Male,669164,ST,Rajasthan,Unemployed,6,7.5,0,1
+58,Male,80949,OBC,Uttar Pradesh,Daily Wage Worker,8,0.99,1,1
+66,Female,787242,OBC,Andhra Pradesh,Student,7,8.39,0,0
+31,Male,161541,General,Andhra Pradesh,Small Business Owner,2,9.31,1,1
+32,Other,769979,SC,Karnataka,Salaried,5,3.22,1,1
+48,Female,111842,SC,Gujarat,Daily Wage Worker,4,9.26,1,1
+18,Male,538019,General,Maharashtra,Self Employed,9,7.93,1,0
+70,Female,282930,General,Tamil Nadu,Self Employed,1,9.22,0,0
+71,Female,339134,SC,Tamil Nadu,Farmer,6,6.66,1,1
+71,Female,721553,OBC,Uttar Pradesh,Student,3,2.36,1,0
+20,Male,342253,OBC,Karnataka,Student,9,8.95,1,0
+33,Other,180356,SC,Karnataka,Daily Wage Worker,5,1.84,1,1
+40,Other,787090,OBC,Madhya Pradesh,Salaried,6,2.13,1,0
+74,Male,739870,General,Rajasthan,Student,9,2.71,1,0
+28,Female,53849,OBC,Gujarat,Daily Wage Worker,9,3.04,1,1
+29,Male,62360,OBC,Rajasthan,Daily Wage Worker,8,5.14,1,1
+27,Male,423216,ST,Gujarat,Unemployed,9,7.13,1,1
+49,Male,669055,ST,Bihar,Unemployed,4,9.26,1,1
+33,Female,311445,ST,West Bengal,Student,6,0.88,1,1
+25,Male,751160,OBC,Andhra Pradesh,Daily Wage Worker,5,9.54,0,1
+55,Female,571658,SC,Andhra Pradesh,Farmer,5,9.21,0,1
+29,Male,480179,General,Gujarat,Farmer,4,0.54,1,1
+41,Other,104330,OBC,Andhra Pradesh,Unemployed,2,3.6,1,1
+45,Male,101707,SC,Rajasthan,Student,6,8.13,1,1
+70,Male,330833,OBC,Tamil Nadu,Salaried,9,6.12,0,0
+25,Other,603372,General,Rajasthan,Small Business Owner,1,7.79,1,0
+45,Female,90387,OBC,Gujarat,Farmer,7,7.19,1,1
+53,Female,576930,General,Karnataka,Farmer,6,4.97,0,0
+43,Male,523048,OBC,Rajasthan,Unemployed,3,0.41,0,1
+25,Other,236633,General,Andhra Pradesh,Unemployed,1,5.84,1,1
+67,Female,720798,OBC,Uttar Pradesh,Student,4,0.49,1,0
+45,Male,446210,General,Madhya Pradesh,Unemployed,9,6.04,1,1
+45,Other,437988,ST,Tamil Nadu,Self Employed,2,8.0,1,1
+54,Female,411719,OBC,Andhra Pradesh,Small Business Owner,3,5.85,1,1
+58,Female,134381,OBC,Uttar Pradesh,Daily Wage Worker,2,9.97,1,1
+53,Other,243984,SC,Gujarat,Farmer,2,4.56,1,1
+44,Other,110272,SC,Bihar,Self Employed,8,7.49,1,1
+71,Other,545916,General,Uttar Pradesh,Salaried,3,6.67,1,0
+34,Other,747411,OBC,West Bengal,Self Employed,7,9.91,1,1
+26,Male,788096,General,Bihar,Student,8,7.13,1,0
+50,Other,303091,ST,Maharashtra,Salaried,3,1.64,1,1
+70,Female,314064,SC,Tamil Nadu,Salaried,2,9.56,1,1
+37,Female,156121,General,Andhra Pradesh,Unemployed,8,6.68,1,1
+30,Male,520435,General,Maharashtra,Self Employed,3,0.59,1,0
+45,Female,651160,SC,Rajasthan,Student,7,6.58,1,1
+65,Female,314237,OBC,Gujarat,Farmer,1,8.83,1,1
+46,Other,325049,General,Tamil Nadu,Small Business Owner,6,5.77,1,1
+30,Female,696047,SC,Karnataka,Unemployed,9,3.54,1,1
+63,Male,467567,OBC,Bihar,Self Employed,3,8.21,1,1
+52,Other,343125,ST,Karnataka,Farmer,7,7.83,1,1
+23,Other,421344,SC,Maharashtra,Self Employed,6,5.44,1,1
+35,Male,132289,General,Uttar Pradesh,Unemployed,8,1.54,1,1
+68,Other,690794,ST,Uttar Pradesh,Farmer,3,2.51,1,1
+22,Other,652801,OBC,Gujarat,Unemployed,3,7.38,1,1
+64,Male,463090,OBC,Maharashtra,Self Employed,4,8.06,1,1
+42,Other,756291,SC,Madhya Pradesh,Salaried,3,2.79,1,1
+19,Male,450890,SC,Tamil Nadu,Small Business Owner,9,3.68,1,1
+27,Male,362660,SC,Bihar,Daily Wage Worker,4,0.78,1,1
+73,Female,309480,OBC,Uttar Pradesh,Small Business Owner,6,7.13,1,1
+47,Female,766046,ST,Uttar Pradesh,Salaried,8,0.04,1,1
+67,Other,538067,OBC,Karnataka,Unemployed,8,0.47,1,1
+62,Other,381356,General,Karnataka,Small Business Owner,5,0.04,1,0
+22,Male,183498,OBC,Andhra Pradesh,Unemployed,5,6.45,1,1
+72,Other,304024,General,Rajasthan,Unemployed,6,4.17,0,0
+73,Male,705258,ST,Madhya Pradesh,Farmer,7,2.98,1,1
+50,Male,140009,SC,Karnataka,Student,7,9.13,1,1
+71,Other,773858,SC,Karnataka,Unemployed,4,1.93,1,1
+18,Male,473159,OBC,Tamil Nadu,Small Business Owner,6,3.89,1,1
+35,Female,771755,SC,Andhra Pradesh,Small Business Owner,7,9.4,1,1
+49,Other,94816,ST,Karnataka,Small Business Owner,5,4.27,0,1
+64,Female,54138,SC,Bihar,Salaried,5,5.55,1,1
+66,Other,141176,OBC,Tamil Nadu,Daily Wage Worker,2,0.8,1,1
+28,Male,388089,ST,Rajasthan,Unemployed,7,7.9,1,1
+38,Other,768316,General,Maharashtra,Unemployed,6,4.23,1,1
+43,Female,406007,OBC,Tamil Nadu,Unemployed,1,8.01,1,1
+42,Male,271552,General,Maharashtra,Farmer,4,2.54,1,1
+39,Other,93764,ST,Uttar Pradesh,Unemployed,3,4.22,0,1
+44,Other,173030,OBC,Andhra Pradesh,Salaried,3,7.87,1,1
+66,Other,669955,OBC,Rajasthan,Self Employed,7,9.74,0,0
+30,Female,366462,ST,Andhra Pradesh,Student,4,0.6,1,1
+50,Female,416142,SC,Rajasthan,Small Business Owner,8,8.12,1,1
+51,Other,110128,OBC,Andhra Pradesh,Unemployed,9,3.01,1,1
+58,Male,269128,OBC,Tamil Nadu,Farmer,3,5.51,1,1
+52,Male,283540,General,Andhra Pradesh,Salaried,5,2.9,0,0
+18,Female,55039,SC,West Bengal,Unemployed,4,6.13,0,1
+38,Male,202353,General,Rajasthan,Farmer,6,3.54,0,1
+65,Female,162935,General,Maharashtra,Self Employed,4,3.34,0,0
+72,Other,584730,SC,Rajasthan,Daily Wage Worker,8,0.38,0,1
+23,Female,339730,SC,Uttar Pradesh,Unemployed,3,1.47,1,1
+45,Female,103053,ST,Bihar,Salaried,5,9.17,1,1
+34,Other,231561,SC,West Bengal,Farmer,1,9.98,1,1
+22,Male,788464,OBC,Gujarat,Farmer,6,7.81,1,1
+48,Female,136346,SC,Rajasthan,Unemployed,5,2.87,1,1
+22,Female,379231,ST,Karnataka,Farmer,8,4.02,1,1
+55,Other,455841,ST,Tamil Nadu,Daily Wage Worker,9,7.4,1,1
+20,Male,608685,ST,Tamil Nadu,Farmer,8,9.69,1,1
+70,Female,370815,SC,Andhra Pradesh,Small Business Owner,8,4.55,1,1
+40,Other,166214,SC,Andhra Pradesh,Student,3,8.3,1,1
+54,Female,535001,General,Tamil Nadu,Small Business Owner,4,9.75,0,0
+70,Other,731509,General,Madhya Pradesh,Student,4,8.73,1,0
+54,Male,448499,OBC,West Bengal,Farmer,5,2.27,0,1
+27,Male,450826,General,West Bengal,Unemployed,9,0.08,0,1
+27,Male,486542,OBC,Maharashtra,Student,9,4.92,0,0
+36,Male,327068,ST,Rajasthan,Salaried,1,5.31,1,1
+34,Female,687431,General,Gujarat,Student,8,2.01,1,0
+38,Female,422397,SC,Tamil Nadu,Small Business Owner,1,2.85,1,1
+31,Male,412441,General,Rajasthan,Farmer,2,7.65,1,1
+26,Male,584391,OBC,West Bengal,Unemployed,7,4.7,1,1
+63,Male,525738,General,Uttar Pradesh,Self Employed,8,3.17,1,0
+18,Female,476674,ST,Tamil Nadu,Unemployed,1,6.23,1,1
+68,Male,132409,SC,Rajasthan,Unemployed,3,6.53,1,1
+62,Male,73248,OBC,West Bengal,Unemployed,7,7.69,1,1
+30,Male,532376,SC,Bihar,Salaried,9,1.57,1,1
+21,Other,748876,SC,West Bengal,Daily Wage Worker,8,7.42,1,1
+18,Male,729530,OBC,Andhra Pradesh,Small Business Owner,8,5.99,1,0
+66,Other,58024,SC,Karnataka,Farmer,9,0.58,1,1
+57,Other,525430,SC,Madhya Pradesh,Daily Wage Worker,3,7.77,1,1
+49,Male,284864,General,Madhya Pradesh,Self Employed,8,3.83,0,1
+51,Other,224875,SC,Andhra Pradesh,Daily Wage Worker,1,3.3,1,1
+45,Male,403973,SC,Andhra Pradesh,Farmer,8,4.48,0,1
+48,Female,461473,SC,Tamil Nadu,Small Business Owner,7,3.46,1,1
+25,Female,193927,SC,Bihar,Small Business Owner,8,3.38,1,1
+56,Female,135178,OBC,Bihar,Farmer,1,8.08,1,1
+43,Female,566540,ST,Tamil Nadu,Self Employed,6,1.25,1,1
+51,Other,447674,General,Rajasthan,Farmer,7,9.71,1,1
+71,Male,113610,SC,Tamil Nadu,Self Employed,5,5.55,1,1
+71,Male,645131,SC,Gujarat,Self Employed,5,1.83,1,1
+20,Male,681525,OBC,Gujarat,Farmer,7,1.31,0,0
+67,Female,527177,ST,Madhya Pradesh,Student,3,5.92,1,0
+29,Female,755191,SC,West Bengal,Small Business Owner,6,6.33,1,1
+18,Male,748787,OBC,Tamil Nadu,Self Employed,7,0.53,1,0
+71,Female,537025,General,Tamil Nadu,Farmer,1,2.43,1,0
+61,Male,704587,General,Rajasthan,Student,2,7.95,1,0
+22,Male,481722,SC,Maharashtra,Small Business Owner,4,0.5,0,1
+47,Male,55668,SC,Madhya Pradesh,Self Employed,8,8.55,1,1
+47,Male,272542,ST,Madhya Pradesh,Small Business Owner,6,6.58,0,1
+74,Male,228267,ST,Madhya Pradesh,Student,1,4.34,1,1
+34,Male,205489,SC,West Bengal,Small Business Owner,5,3.46,1,1
+65,Male,394126,OBC,Andhra Pradesh,Salaried,7,0.19,1,0
+64,Female,680421,ST,Uttar Pradesh,Unemployed,6,8.25,0,1
+40,Male,358362,SC,Maharashtra,Salaried,9,1.43,1,1
+32,Male,784412,ST,West Bengal,Student,8,3.1,1,1
+54,Female,138835,SC,Gujarat,Self Employed,4,5.69,1,1
+38,Female,671781,General,Rajasthan,Farmer,5,2.46,1,1
+31,Female,746454,SC,Andhra Pradesh,Daily Wage Worker,7,4.97,1,1
+19,Male,151948,General,Gujarat,Farmer,8,8.09,0,1
+28,Other,235194,ST,Andhra Pradesh,Small Business Owner,5,4.71,1,1
+68,Other,603781,SC,Bihar,Daily Wage Worker,9,9.49,0,1
+56,Female,516755,ST,Madhya Pradesh,Daily Wage Worker,4,8.48,1,1
+55,Other,343851,General,Andhra Pradesh,Small Business Owner,4,3.33,1,1
+51,Female,774174,SC,Karnataka,Small Business Owner,8,4.0,1,1
+55,Male,188368,ST,Madhya Pradesh,Self Employed,1,4.23,0,1
+67,Other,206470,General,Madhya Pradesh,Student,8,6.26,1,0
+51,Male,347986,ST,Rajasthan,Farmer,5,2.87,1,1
+35,Other,63261,OBC,Maharashtra,Student,1,9.69,1,1
+47,Male,126709,General,Gujarat,Salaried,4,6.09,1,1
+32,Other,670273,General,Andhra Pradesh,Self Employed,2,3.99,1,0
+44,Male,418760,General,Andhra Pradesh,Self Employed,4,6.45,1,1
+68,Male,343925,SC,Bihar,Salaried,8,3.95,0,0
+51,Other,325796,SC,Madhya Pradesh,Farmer,5,8.18,0,1
+69,Male,317247,SC,Tamil Nadu,Unemployed,1,5.68,1,1
+74,Male,337644,OBC,Uttar Pradesh,Salaried,7,0.42,1,0
+55,Male,674624,OBC,Tamil Nadu,Farmer,1,1.77,0,1
+50,Other,478745,General,Andhra Pradesh,Daily Wage Worker,9,8.65,0,1
+41,Other,687787,OBC,Tamil Nadu,Small Business Owner,3,5.63,1,1
+32,Male,723812,ST,Rajasthan,Self Employed,3,9.5,1,1
+47,Male,474390,General,Karnataka,Farmer,6,0.72,1,1
+72,Other,507666,General,Andhra Pradesh,Student,6,2.95,1,0
+59,Other,740796,ST,Andhra Pradesh,Small Business Owner,6,1.94,0,1
+68,Male,359550,General,Karnataka,Student,1,5.54,0,0
+34,Male,375203,OBC,Gujarat,Small Business Owner,5,3.83,1,1
+22,Male,721314,SC,Karnataka,Self Employed,6,1.57,1,1
+46,Female,394866,ST,Tamil Nadu,Salaried,8,6.43,1,1
+21,Other,586644,OBC,Rajasthan,Unemployed,1,5.36,1,1
+27,Female,702416,ST,Bihar,Salaried,5,2.75,1,1
+73,Other,52187,ST,Gujarat,Farmer,3,4.8,1,1
+34,Other,535687,General,West Bengal,Salaried,2,7.46,1,0
+27,Other,726585,General,Bihar,Self Employed,8,2.05,1,0
+34,Other,708966,OBC,Maharashtra,Farmer,7,2.93,1,1
+37,Other,476044,ST,Maharashtra,Daily Wage Worker,7,3.46,1,1
+41,Other,176270,General,Maharashtra,Salaried,5,7.47,1,1
+22,Other,381607,General,Maharashtra,Salaried,9,8.47,1,0
+51,Female,403827,ST,Rajasthan,Unemployed,5,3.76,1,1
+23,Male,636349,OBC,Bihar,Farmer,2,2.97,1,1
+70,Male,131257,OBC,Madhya Pradesh,Student,3,8.89,0,0
+19,Female,111753,ST,Uttar Pradesh,Salaried,4,9.99,0,1
+30,Female,454303,OBC,Gujarat,Self Employed,5,6.7,1,1
+60,Female,474032,General,West Bengal,Salaried,3,9.9,0,0
+60,Female,73408,ST,Tamil Nadu,Unemployed,7,6.6,1,1
+65,Other,174116,General,Andhra Pradesh,Daily Wage Worker,5,7.33,1,1
+28,Male,705496,SC,Maharashtra,Unemployed,5,3.89,1,1
+68,Other,67413,SC,West Bengal,Salaried,6,4.33,1,1
+64,Male,687938,OBC,Andhra Pradesh,Student,7,1.44,1,0
+74,Male,109500,SC,Uttar Pradesh,Small Business Owner,8,8.23,1,1
+40,Female,106358,General,West Bengal,Salaried,9,9.31,0,0
+72,Other,116197,SC,Bihar,Farmer,4,6.23,1,1
+33,Female,543992,General,West Bengal,Salaried,5,3.44,0,0
+48,Other,798149,OBC,Maharashtra,Student,5,1.54,1,0
+28,Male,273492,OBC,Uttar Pradesh,Farmer,8,2.65,0,1
+71,Female,476070,General,Tamil Nadu,Self Employed,9,2.55,1,0
+33,Female,126240,SC,Madhya Pradesh,Farmer,7,6.14,1,1
+25,Male,285595,OBC,Karnataka,Unemployed,5,9.45,0,1
+21,Male,572710,ST,Maharashtra,Daily Wage Worker,3,0.48,1,1
+57,Male,795423,OBC,Andhra Pradesh,Unemployed,1,0.01,1,1
+21,Female,328466,SC,Uttar Pradesh,Small Business Owner,9,6.0,1,1
+73,Other,56968,ST,Bihar,Farmer,5,2.84,1,1
+42,Female,339662,SC,Rajasthan,Self Employed,9,8.81,1,1
+20,Other,240920,General,Uttar Pradesh,Salaried,4,3.27,1,0
+49,Female,313844,ST,Andhra Pradesh,Farmer,5,2.9,1,1
+20,Female,282076,SC,Karnataka,Unemployed,4,2.7,1,1
+44,Male,73199,ST,Karnataka,Farmer,2,1.45,0,1
+46,Other,487805,SC,Gujarat,Farmer,1,5.82,1,1
+49,Female,213187,ST,Madhya Pradesh,Farmer,8,1.68,1,1
+67,Female,505150,SC,Andhra Pradesh,Self Employed,4,4.25,1,1
+68,Male,559551,General,Karnataka,Student,5,4.61,1,0
+36,Male,563942,ST,Gujarat,Student,6,0.2,1,1
+38,Other,759676,ST,Gujarat,Farmer,8,0.17,1,1
+22,Female,55520,ST,Gujarat,Self Employed,8,5.2,1,1
+35,Other,684102,ST,Uttar Pradesh,Self Employed,7,6.96,1,1
+45,Female,217527,General,Gujarat,Small Business Owner,4,9.42,1,1
+59,Other,697652,ST,Maharashtra,Farmer,6,1.79,1,1
+39,Male,589243,OBC,Andhra Pradesh,Unemployed,4,1.03,1,1
+38,Female,225121,General,Maharashtra,Unemployed,7,0.52,1,1
+23,Other,719277,OBC,Rajasthan,Daily Wage Worker,1,4.36,1,1
+18,Male,521797,ST,Karnataka,Farmer,5,6.23,1,1
+22,Male,300144,SC,Madhya Pradesh,Daily Wage Worker,4,8.41,1,1
+58,Other,114925,OBC,Gujarat,Unemployed,7,6.83,1,1
+29,Female,419360,ST,Bihar,Unemployed,9,2.08,1,1
+43,Female,644557,OBC,Bihar,Farmer,5,4.62,1,1
+63,Male,353602,ST,Karnataka,Daily Wage Worker,4,9.1,1,1
+51,Female,401181,ST,Rajasthan,Daily Wage Worker,9,3.27,1,1
+66,Female,726473,ST,Bihar,Farmer,5,4.99,0,1
+31,Female,149977,SC,Maharashtra,Small Business Owner,9,9.59,1,1
+43,Male,555838,OBC,West Bengal,Daily Wage Worker,8,7.35,1,1
+62,Other,569163,General,Uttar Pradesh,Small Business Owner,4,7.48,1,0
+44,Female,533442,General,Tamil Nadu,Salaried,7,2.52,1,0
+26,Male,79345,General,Bihar,Unemployed,5,4.15,0,1
+43,Male,422251,General,Madhya Pradesh,Student,4,0.82,1,0
+74,Other,543814,ST,Gujarat,Small Business Owner,5,6.07,0,0
+64,Female,381310,OBC,Madhya Pradesh,Small Business Owner,5,1.04,1,1
+74,Female,753221,OBC,Andhra Pradesh,Small Business Owner,9,8.36,1,0
+39,Other,147406,SC,Uttar Pradesh,Self Employed,9,8.15,1,1
+64,Other,361442,OBC,Maharashtra,Daily Wage Worker,6,5.34,1,1
+73,Male,357086,OBC,Rajasthan,Daily Wage Worker,4,1.41,1,1
+47,Male,577741,OBC,Uttar Pradesh,Self Employed,2,0.26,1,1
+60,Other,677099,SC,Tamil Nadu,Daily Wage Worker,3,7.97,1,1
+65,Female,629223,General,West Bengal,Self Employed,2,6.0,0,0
+34,Male,434583,OBC,Bihar,Small Business Owner,5,7.11,1,1
+43,Male,748730,SC,Rajasthan,Farmer,6,3.04,1,1
+53,Female,65534,SC,Rajasthan,Salaried,5,5.09,1,1
+18,Male,610608,ST,Bihar,Small Business Owner,2,7.47,1,1
+25,Female,623458,SC,Bihar,Salaried,5,4.63,1,1
+66,Female,150546,General,Bihar,Unemployed,9,6.01,1,1
+52,Female,654489,OBC,Bihar,Small Business Owner,4,7.9,1,1
+69,Other,320784,SC,Bihar,Student,2,2.15,1,1
+32,Other,281324,General,Rajasthan,Daily Wage Worker,3,0.66,1,1
+64,Other,534273,SC,Karnataka,Student,3,5.32,1,0
+73,Female,735409,SC,Karnataka,Farmer,9,0.62,1,1
+39,Female,448834,SC,Madhya Pradesh,Salaried,4,7.67,1,1
+31,Other,283612,SC,Karnataka,Small Business Owner,1,7.19,1,1
+43,Male,761413,SC,Tamil Nadu,Farmer,1,8.82,1,1
+45,Female,356081,General,Karnataka,Farmer,7,6.4,1,1
+40,Male,775084,OBC,Rajasthan,Daily Wage Worker,7,0.67,0,1
+31,Male,193279,OBC,Bihar,Farmer,2,2.53,1,1
+41,Female,246846,OBC,Gujarat,Small Business Owner,9,8.08,1,1
+19,Female,738332,OBC,Gujarat,Small Business Owner,9,1.67,1,0
+62,Male,454015,General,Tamil Nadu,Salaried,5,6.98,1,0
+43,Male,776448,ST,Andhra Pradesh,Small Business Owner,3,7.8,1,1
+31,Other,472132,ST,Rajasthan,Student,3,3.3,1,1
+73,Other,120463,General,Maharashtra,Salaried,3,3.22,1,0
+68,Female,143500,General,Uttar Pradesh,Daily Wage Worker,6,5.58,0,1
+24,Other,257772,SC,Madhya Pradesh,Salaried,4,8.61,1,1
+20,Other,611446,SC,Maharashtra,Self Employed,8,2.24,1,1
+64,Other,134607,SC,Rajasthan,Student,5,9.41,1,1
+40,Other,383840,OBC,Karnataka,Self Employed,1,5.99,1,1
+63,Male,170076,SC,Bihar,Self Employed,9,9.92,1,1
+60,Female,108692,ST,Maharashtra,Unemployed,1,0.9,1,1
+64,Other,705129,OBC,Uttar Pradesh,Small Business Owner,6,1.27,1,0
+62,Male,767104,SC,Andhra Pradesh,Daily Wage Worker,1,8.27,1,1
+35,Male,211081,OBC,Gujarat,Farmer,3,8.65,1,1
+55,Male,161718,ST,Andhra Pradesh,Self Employed,5,4.45,1,1
+52,Other,403076,SC,Uttar Pradesh,Salaried,7,7.14,1,1
+68,Other,574480,ST,Bihar,Farmer,8,8.68,1,1
+32,Female,297536,ST,Karnataka,Salaried,9,0.43,1,1
+42,Other,86413,ST,Uttar Pradesh,Salaried,6,5.74,1,1
+72,Other,193888,SC,Madhya Pradesh,Farmer,9,8.53,1,1
+54,Male,613370,General,Uttar Pradesh,Farmer,8,3.98,1,1
+45,Female,697418,SC,Rajasthan,Small Business Owner,9,3.02,1,1
+27,Other,625228,ST,Karnataka,Salaried,4,7.96,1,1
+56,Other,737490,SC,Bihar,Daily Wage Worker,9,3.36,0,1
+74,Male,614430,ST,Gujarat,Small Business Owner,7,0.03,1,1
+34,Male,572780,General,Gujarat,Student,5,9.6,1,0
+56,Other,86468,OBC,Uttar Pradesh,Unemployed,5,5.92,0,1
+39,Female,716015,General,Rajasthan,Student,1,8.2,1,0
+43,Female,228969,General,Maharashtra,Daily Wage Worker,2,8.25,1,1
+61,Male,473291,OBC,Andhra Pradesh,Small Business Owner,3,0.66,1,1
+42,Male,545413,SC,Andhra Pradesh,Unemployed,8,1.71,1,1
+34,Other,286187,OBC,Andhra Pradesh,Small Business Owner,6,3.11,1,1
+30,Male,92056,SC,Maharashtra,Farmer,5,3.21,1,1
+37,Other,101831,SC,Rajasthan,Unemployed,1,6.59,1,1
+42,Female,476488,ST,Andhra Pradesh,Salaried,9,6.23,1,1
+21,Female,682405,ST,Madhya Pradesh,Student,3,4.95,1,0
+27,Other,326815,OBC,Maharashtra,Unemployed,3,2.11,0,1
+20,Male,339192,General,Maharashtra,Salaried,2,3.82,1,0
+58,Female,618242,OBC,Bihar,Small Business Owner,4,5.44,1,1
+62,Male,515525,SC,Bihar,Daily Wage Worker,2,4.68,1,1
+35,Female,283192,ST,Karnataka,Unemployed,9,1.27,0,1
+64,Other,407574,OBC,Madhya Pradesh,Salaried,7,6.5,1,0
+53,Other,575005,OBC,Madhya Pradesh,Small Business Owner,8,0.73,1,1
+64,Other,323820,ST,Karnataka,Small Business Owner,3,3.78,1,1
+39,Female,447650,ST,Madhya Pradesh,Small Business Owner,6,7.1,1,1
+51,Male,230882,ST,Tamil Nadu,Daily Wage Worker,6,0.2,1,1
+64,Male,168696,SC,West Bengal,Farmer,1,5.7,1,1
+25,Male,54994,ST,Andhra Pradesh,Daily Wage Worker,6,3.35,1,1
+57,Female,119300,General,Bihar,Daily Wage Worker,3,0.09,1,1
+66,Female,356093,OBC,Karnataka,Student,3,1.9,1,0
+61,Female,611693,ST,Karnataka,Small Business Owner,3,9.41,1,1
+36,Female,347016,ST,Madhya Pradesh,Salaried,8,5.21,1,1
+59,Female,354359,SC,Maharashtra,Unemployed,5,9.97,1,1
+58,Male,597473,SC,Gujarat,Student,4,5.25,1,1
+54,Female,748802,OBC,Uttar Pradesh,Small Business Owner,9,5.44,1,1
+23,Female,566479,General,Uttar Pradesh,Self Employed,9,3.92,1,0
+69,Male,494975,OBC,Karnataka,Daily Wage Worker,1,3.1,0,1
+43,Female,389679,ST,Andhra Pradesh,Self Employed,2,2.52,1,1
+51,Male,707941,General,Tamil Nadu,Small Business Owner,8,3.43,1,0
+73,Male,101717,General,Andhra Pradesh,Student,5,4.6,1,0
+62,Other,52763,General,Karnataka,Salaried,7,1.92,1,0
+23,Other,405054,General,Andhra Pradesh,Student,1,2.25,1,0
+54,Other,105480,OBC,Bihar,Salaried,5,2.72,0,1
+74,Other,744119,SC,Andhra Pradesh,Salaried,3,4.49,1,0
+50,Female,257139,SC,Madhya Pradesh,Small Business Owner,2,6.53,0,1
+70,Other,168094,ST,Madhya Pradesh,Farmer,2,8.56,1,1
+39,Male,730667,SC,Tamil Nadu,Small Business Owner,9,2.87,0,1
+38,Female,585352,SC,Bihar,Daily Wage Worker,4,1.84,0,1
+23,Other,126848,SC,Gujarat,Student,4,3.79,0,1
+23,Male,611836,SC,Maharashtra,Salaried,7,8.94,1,0
+72,Female,218017,ST,Bihar,Small Business Owner,2,0.1,1,1
+65,Female,494972,OBC,Rajasthan,Small Business Owner,3,6.78,1,1
+21,Other,576670,General,West Bengal,Student,3,4.77,0,0
+47,Female,492899,SC,Karnataka,Student,6,1.61,1,1
+28,Male,531215,OBC,Rajasthan,Salaried,3,3.21,1,0
+47,Female,750636,SC,Tamil Nadu,Unemployed,5,2.25,1,1
+48,Male,535097,SC,Rajasthan,Self Employed,4,8.78,1,1
+41,Female,553516,General,Madhya Pradesh,Daily Wage Worker,3,4.82,1,1
+72,Other,470162,General,Andhra Pradesh,Daily Wage Worker,8,5.63,1,1
+26,Male,653986,General,Maharashtra,Unemployed,3,5.94,1,1
+72,Female,95095,SC,Uttar Pradesh,Farmer,6,6.4,0,1
+20,Female,523146,SC,Karnataka,Unemployed,7,4.96,1,1
+68,Female,442118,SC,Uttar Pradesh,Farmer,7,0.18,1,1
+48,Male,596298,General,Andhra Pradesh,Farmer,2,3.35,1,1
+57,Male,467339,ST,Madhya Pradesh,Unemployed,3,1.84,1,1
+54,Male,400067,OBC,Madhya Pradesh,Daily Wage Worker,4,6.8,1,1
+53,Other,708250,ST,Andhra Pradesh,Self Employed,7,0.57,1,1
+41,Other,442670,SC,Karnataka,Daily Wage Worker,2,5.64,1,1
+48,Male,159162,SC,Uttar Pradesh,Small Business Owner,3,2.11,1,1
+23,Female,433071,ST,Bihar,Daily Wage Worker,7,9.49,1,1
+19,Other,320170,SC,Madhya Pradesh,Daily Wage Worker,7,3.36,1,1
+37,Male,377069,OBC,Uttar Pradesh,Unemployed,3,3.25,0,1
+45,Female,643130,SC,Gujarat,Unemployed,1,9.23,1,1
+28,Other,345809,OBC,Uttar Pradesh,Small Business Owner,3,4.17,1,1
+21,Female,321421,ST,Gujarat,Small Business Owner,5,9.63,1,1
+32,Female,223311,ST,Gujarat,Unemployed,7,0.24,1,1
+23,Female,490880,SC,Madhya Pradesh,Daily Wage Worker,4,3.06,1,1
+71,Female,706030,OBC,Karnataka,Self Employed,1,6.66,0,0
+66,Other,270283,SC,Tamil Nadu,Farmer,6,8.91,0,1
+47,Other,723249,General,Madhya Pradesh,Student,2,2.56,0,0
+73,Other,498828,General,Karnataka,Farmer,3,9.3,1,1
+55,Male,749895,General,Karnataka,Small Business Owner,4,5.94,1,0
+68,Other,390686,General,Rajasthan,Small Business Owner,6,8.01,1,0
+74,Female,366463,SC,Andhra Pradesh,Farmer,6,3.97,1,1
+19,Other,295144,General,Andhra Pradesh,Student,7,2.12,1,0
+32,Female,726999,OBC,Andhra Pradesh,Daily Wage Worker,5,9.11,1,1
+28,Male,245784,ST,West Bengal,Self Employed,7,9.33,1,1
+25,Female,381119,ST,Madhya Pradesh,Self Employed,2,4.98,1,1
+43,Female,213244,General,Karnataka,Farmer,1,0.06,1,1
+68,Female,502413,General,Rajasthan,Student,8,1.1,1,0
+62,Male,151158,General,Gujarat,Small Business Owner,1,5.73,1,1
+61,Other,113972,SC,Tamil Nadu,Salaried,2,0.24,1,1
+22,Other,533007,ST,Tamil Nadu,Daily Wage Worker,6,3.97,0,1
+23,Male,484219,General,Gujarat,Farmer,1,3.03,0,0
+43,Female,332140,OBC,Uttar Pradesh,Self Employed,3,7.14,1,1
+71,Other,675210,General,Uttar Pradesh,Small Business Owner,7,0.56,1,0
+21,Male,610219,ST,Andhra Pradesh,Unemployed,8,4.89,0,1
+36,Other,698456,General,Madhya Pradesh,Unemployed,4,5.79,1,1
+37,Male,216782,ST,West Bengal,Student,3,6.17,1,1
+50,Female,173099,General,Rajasthan,Student,1,4.05,1,1
+37,Other,608981,OBC,Tamil Nadu,Farmer,9,3.04,1,1
+66,Male,158944,General,Andhra Pradesh,Salaried,6,6.82,0,0
+29,Other,798943,OBC,Maharashtra,Self Employed,6,8.48,0,0
+64,Other,781862,OBC,Andhra Pradesh,Farmer,9,6.94,0,0
+18,Other,297572,General,Maharashtra,Salaried,1,9.32,1,0
+43,Other,393615,OBC,Bihar,Small Business Owner,6,7.17,1,1
+31,Male,620201,SC,Karnataka,Student,5,7.65,1,1
+55,Female,247097,General,Gujarat,Unemployed,6,1.68,1,1
+54,Male,662084,General,Karnataka,Daily Wage Worker,8,4.2,1,1
+28,Male,338213,OBC,Andhra Pradesh,Small Business Owner,5,4.85,1,1
+53,Male,134811,OBC,Karnataka,Unemployed,2,2.56,0,1
+30,Female,240121,General,Rajasthan,Self Employed,2,5.29,0,1
+60,Other,430172,SC,Bihar,Self Employed,5,2.91,1,1
+20,Other,613466,OBC,West Bengal,Unemployed,3,6.88,1,1
+50,Other,504151,OBC,Bihar,Small Business Owner,3,4.7,0,0
+23,Female,591287,ST,Tamil Nadu,Unemployed,8,4.59,1,1
+67,Other,505738,SC,Rajasthan,Salaried,7,9.84,1,0
+73,Female,350856,SC,Karnataka,Farmer,1,3.92,1,1
+27,Other,245623,General,West Bengal,Student,5,3.62,0,0
+22,Other,745532,SC,Karnataka,Salaried,9,3.19,0,0
+40,Male,345866,General,Madhya Pradesh,Daily Wage Worker,4,8.95,0,1
+27,Female,248237,ST,Madhya Pradesh,Unemployed,1,4.97,1,1
+61,Male,581147,SC,Uttar Pradesh,Daily Wage Worker,8,6.0,1,1
+19,Male,685274,OBC,Bihar,Daily Wage Worker,5,1.81,1,1
+30,Male,333983,ST,West Bengal,Salaried,2,5.41,1,1
+57,Female,339360,General,Madhya Pradesh,Student,1,2.75,1,0
+19,Female,527697,ST,Uttar Pradesh,Small Business Owner,3,7.31,1,1
+37,Other,503809,General,Rajasthan,Self Employed,9,8.33,1,0
+18,Male,99522,ST,West Bengal,Farmer,1,7.15,1,1
+54,Other,280233,General,Uttar Pradesh,Self Employed,4,7.3,1,1
+26,Male,448102,SC,Gujarat,Student,8,5.12,1,1
+34,Female,423393,OBC,West Bengal,Self Employed,8,7.12,1,1
+26,Female,57485,General,Andhra Pradesh,Unemployed,8,4.23,1,1
+28,Female,474671,ST,Uttar Pradesh,Unemployed,8,6.51,0,1
+32,Male,162701,General,Karnataka,Salaried,4,2.59,1,1
+41,Female,257352,General,Andhra Pradesh,Daily Wage Worker,8,0.7,0,1
+55,Male,676926,General,Gujarat,Student,9,4.13,1,0
+72,Other,234514,ST,Madhya Pradesh,Student,7,4.62,1,1
+52,Male,495093,OBC,Maharashtra,Self Employed,2,2.56,1,1
+47,Other,667693,SC,Uttar Pradesh,Salaried,9,7.28,1,1
+48,Male,260048,OBC,Rajasthan,Self Employed,8,0.74,1,1
+66,Other,737069,General,Uttar Pradesh,Self Employed,5,2.23,1,0
+22,Female,87019,ST,Maharashtra,Student,3,7.49,1,1
+61,Other,311497,OBC,Gujarat,Self Employed,7,4.37,1,1
+67,Female,639421,General,Gujarat,Daily Wage Worker,2,7.05,0,0
+31,Female,771818,SC,Andhra Pradesh,Self Employed,3,5.67,1,1
+70,Other,429747,SC,West Bengal,Daily Wage Worker,9,9.51,0,1
+73,Male,208598,SC,Rajasthan,Student,4,5.98,1,1
+28,Male,702873,General,Andhra Pradesh,Salaried,4,0.15,0,0
+26,Male,495414,ST,Rajasthan,Unemployed,3,3.53,1,1
+51,Male,542750,OBC,Rajasthan,Daily Wage Worker,5,1.43,1,1
+29,Male,467247,SC,Maharashtra,Salaried,3,9.25,1,1
+52,Female,518758,General,Andhra Pradesh,Salaried,9,1.04,1,0
+52,Male,700102,General,Rajasthan,Daily Wage Worker,3,3.88,1,1
+18,Female,424743,OBC,Tamil Nadu,Student,2,2.26,1,0
+57,Female,75939,SC,Maharashtra,Farmer,5,8.47,1,1
+39,Female,203939,General,Gujarat,Salaried,6,3.09,1,1
+46,Other,665168,OBC,Maharashtra,Salaried,1,9.92,1,0
+25,Other,578036,ST,Karnataka,Student,6,0.39,1,1
+28,Female,286094,ST,Karnataka,Student,3,1.28,1,1
+58,Other,429413,ST,Rajasthan,Self Employed,4,2.25,1,1
+54,Male,201956,SC,Andhra Pradesh,Student,6,8.11,1,1
+31,Male,206255,OBC,Gujarat,Salaried,8,8.79,0,1
+47,Female,514462,OBC,Maharashtra,Daily Wage Worker,9,0.71,1,1
+52,Male,724619,General,Andhra Pradesh,Farmer,6,0.32,0,0
+38,Female,741319,General,Maharashtra,Small Business Owner,7,7.45,1,0
+54,Female,476673,General,Maharashtra,Self Employed,5,1.33,1,1
+22,Male,397823,OBC,Tamil Nadu,Small Business Owner,9,1.33,1,1
+36,Other,175829,General,Karnataka,Daily Wage Worker,4,0.22,0,1
+31,Male,178216,OBC,Maharashtra,Farmer,6,0.5,1,1
+43,Male,640189,OBC,Tamil Nadu,Farmer,5,2.64,0,1
+21,Female,225607,ST,Karnataka,Farmer,1,0.65,1,1
+42,Female,459319,General,Tamil Nadu,Unemployed,5,3.69,1,1
+62,Female,672334,ST,Andhra Pradesh,Daily Wage Worker,5,8.33,1,1
+59,Female,402156,SC,West Bengal,Self Employed,9,3.26,1,1
+42,Other,652566,SC,Karnataka,Self Employed,1,7.28,0,1
+35,Other,324535,SC,Madhya Pradesh,Farmer,5,0.94,1,1
+57,Other,152476,OBC,West Bengal,Daily Wage Worker,7,6.59,1,1
+25,Female,432865,OBC,Andhra Pradesh,Unemployed,6,3.17,1,1
+56,Female,671825,OBC,Maharashtra,Farmer,6,7.5,1,1
+57,Female,231429,General,Gujarat,Student,7,1.36,1,1
+31,Other,267980,ST,Andhra Pradesh,Small Business Owner,6,8.98,0,1
+49,Female,553551,OBC,Tamil Nadu,Self Employed,5,2.43,1,1
+68,Male,536675,ST,Tamil Nadu,Small Business Owner,5,3.53,1,1
+55,Male,125403,ST,Tamil Nadu,Salaried,9,9.5,0,1
+50,Female,638574,ST,Tamil Nadu,Farmer,8,5.78,1,1
+40,Male,386986,General,Andhra Pradesh,Student,4,3.66,0,0
+32,Male,154927,General,Gujarat,Self Employed,4,9.5,1,1
+50,Other,535833,SC,Uttar Pradesh,Small Business Owner,5,3.29,1,1
+42,Female,493842,SC,Tamil Nadu,Unemployed,3,0.95,0,1
+34,Female,349372,ST,Uttar Pradesh,Daily Wage Worker,8,9.97,0,1
+50,Other,73386,SC,Gujarat,Self Employed,7,2.68,0,1
+64,Male,227826,ST,Gujarat,Small Business Owner,5,8.51,1,1
+72,Male,554158,General,West Bengal,Daily Wage Worker,3,1.66,1,0
+19,Female,340446,General,Karnataka,Small Business Owner,5,7.31,0,0
+31,Male,372959,General,Madhya Pradesh,Daily Wage Worker,3,5.24,1,1
+70,Other,302156,OBC,Rajasthan,Unemployed,5,9.81,1,1
+57,Other,519450,ST,Madhya Pradesh,Unemployed,1,5.53,1,1
+57,Female,373258,General,Andhra Pradesh,Farmer,6,0.25,1,1
+68,Other,298724,ST,Rajasthan,Farmer,4,6.04,1,1
+56,Other,251202,SC,Gujarat,Self Employed,4,1.45,1,1
+68,Female,75525,SC,Madhya Pradesh,Unemployed,8,7.99,1,1
+23,Other,129818,General,Bihar,Student,2,8.57,1,0
+23,Other,164589,ST,Karnataka,Small Business Owner,4,4.82,1,1
+20,Other,195406,General,Madhya Pradesh,Small Business Owner,2,7.83,1,1
+24,Male,669003,SC,Karnataka,Small Business Owner,1,1.45,1,1
+68,Female,243839,General,Uttar Pradesh,Self Employed,3,4.92,0,0
+25,Female,413298,ST,Andhra Pradesh,Small Business Owner,8,3.94,0,1
+59,Female,556453,SC,Karnataka,Salaried,6,6.11,0,0
+69,Male,307438,OBC,Uttar Pradesh,Daily Wage Worker,7,0.44,1,1
+32,Male,476903,SC,Tamil Nadu,Small Business Owner,2,7.52,1,1
+64,Female,495872,OBC,Uttar Pradesh,Daily Wage Worker,6,0.79,1,1
+46,Male,460591,General,Andhra Pradesh,Farmer,8,6.56,1,1
+50,Female,557235,General,West Bengal,Small Business Owner,8,0.18,1,0
+69,Male,563951,ST,Tamil Nadu,Student,4,8.32,0,0
+47,Other,377350,OBC,Gujarat,Unemployed,6,1.75,1,1
+56,Other,741967,General,Maharashtra,Unemployed,5,5.15,0,0
+44,Female,657466,OBC,Uttar Pradesh,Farmer,9,2.61,0,1
+53,Male,749746,General,Uttar Pradesh,Salaried,8,7.23,1,0
+46,Male,489503,SC,Karnataka,Self Employed,2,3.21,1,1
+55,Other,136724,General,Gujarat,Self Employed,7,7.25,1,1
+74,Other,146393,ST,Madhya Pradesh,Student,7,2.85,1,1
+50,Male,650600,SC,Bihar,Farmer,1,7.52,1,1
+54,Male,645484,ST,Rajasthan,Farmer,1,0.31,1,1
+44,Male,644302,SC,Uttar Pradesh,Salaried,4,2.83,1,1
+72,Male,451426,OBC,Madhya Pradesh,Small Business Owner,5,4.99,1,1
+50,Male,716282,ST,Bihar,Self Employed,4,0.45,1,1
+21,Male,479505,General,Rajasthan,Small Business Owner,7,1.86,1,0
+39,Female,572313,OBC,Maharashtra,Farmer,3,9.35,1,1
+19,Male,83340,General,Karnataka,Small Business Owner,7,9.77,1,1
+27,Other,351994,SC,Madhya Pradesh,Unemployed,8,7.4,1,1
+22,Female,546915,SC,Karnataka,Student,6,2.52,1,0
+27,Male,687999,General,Rajasthan,Self Employed,6,2.61,1,0
+50,Other,789538,General,West Bengal,Salaried,8,6.46,1,0
+71,Female,61094,OBC,Uttar Pradesh,Student,8,1.18,1,1
+55,Other,685873,General,Tamil Nadu,Daily Wage Worker,7,9.48,1,1
+30,Male,515590,ST,Bihar,Unemployed,6,2.25,0,1
+48,Male,560491,ST,Gujarat,Salaried,6,10.0,1,1
+64,Male,434708,General,Andhra Pradesh,Student,6,4.96,1,0
+53,Male,118798,ST,Uttar Pradesh,Farmer,8,7.71,1,1
+62,Female,251604,General,Tamil Nadu,Daily Wage Worker,1,0.02,1,1
+41,Female,160130,OBC,Andhra Pradesh,Salaried,5,8.89,1,1
+69,Other,740955,ST,Madhya Pradesh,Farmer,3,2.7,0,1
+73,Male,80257,ST,Andhra Pradesh,Unemployed,8,6.68,0,1
+32,Other,457427,General,Maharashtra,Daily Wage Worker,6,8.06,1,1
+46,Female,102691,ST,Uttar Pradesh,Self Employed,2,1.64,1,1
+25,Male,654056,SC,Karnataka,Farmer,7,4.43,1,1
+22,Male,468829,OBC,West Bengal,Student,7,4.94,0,0
+46,Female,588314,OBC,Gujarat,Small Business Owner,5,3.12,0,0
+64,Female,799450,ST,Karnataka,Salaried,8,4.82,1,0
+21,Female,343052,ST,Tamil Nadu,Daily Wage Worker,5,3.18,0,1
+29,Female,593898,SC,Uttar Pradesh,Farmer,1,3.61,0,1
+62,Female,227718,SC,West Bengal,Self Employed,9,6.69,1,1
+19,Male,548357,ST,Andhra Pradesh,Small Business Owner,4,6.33,1,1
+44,Female,375329,ST,Uttar Pradesh,Salaried,2,2.32,1,1
+48,Male,228646,SC,Andhra Pradesh,Salaried,4,8.97,1,1
+68,Male,568420,General,Madhya Pradesh,Farmer,9,8.63,1,0
+68,Female,272123,SC,Maharashtra,Self Employed,2,5.09,1,1
+53,Female,545236,General,Rajasthan,Unemployed,4,4.33,1,1
+53,Male,541006,OBC,Uttar Pradesh,Small Business Owner,2,3.77,0,0
+43,Female,593576,OBC,Tamil Nadu,Unemployed,5,7.07,1,1
+60,Female,658713,SC,Andhra Pradesh,Daily Wage Worker,3,6.72,1,1
+44,Female,50917,General,Karnataka,Farmer,2,1.96,0,1
+22,Other,89104,SC,Madhya Pradesh,Small Business Owner,9,6.71,1,1
+37,Male,723422,SC,Tamil Nadu,Daily Wage Worker,5,2.52,1,1
+28,Other,329143,General,Gujarat,Unemployed,5,0.19,1,1
+27,Female,312091,SC,Rajasthan,Small Business Owner,1,6.99,1,1
+57,Other,505061,OBC,Madhya Pradesh,Salaried,6,6.45,1,0
+55,Female,453157,ST,Maharashtra,Daily Wage Worker,7,4.11,1,1
+23,Other,635457,ST,Rajasthan,Self Employed,1,5.26,1,1
+25,Female,204542,SC,Andhra Pradesh,Student,9,9.47,1,1
+40,Other,179744,General,Tamil Nadu,Unemployed,8,5.95,1,1
+64,Other,109821,General,Gujarat,Unemployed,8,6.58,0,1
+43,Other,267741,OBC,Bihar,Self Employed,7,0.64,1,1
+63,Male,299265,General,Maharashtra,Small Business Owner,5,1.66,1,1
+60,Other,487651,General,West Bengal,Small Business Owner,3,3.01,0,0
+29,Male,447745,OBC,Andhra Pradesh,Small Business Owner,9,5.39,1,1
+43,Female,264127,SC,Bihar,Daily Wage Worker,7,7.77,1,1
+30,Other,324336,ST,Uttar Pradesh,Farmer,8,3.21,1,1
+57,Female,386246,OBC,Gujarat,Salaried,6,3.56,0,0
+35,Female,253834,SC,Karnataka,Student,5,2.56,1,1
+42,Other,136795,OBC,West Bengal,Farmer,8,2.55,1,1
+50,Male,215159,SC,Tamil Nadu,Farmer,3,9.49,1,1
+64,Other,378821,OBC,Gujarat,Self Employed,7,6.35,0,0
+57,Female,709987,SC,Rajasthan,Daily Wage Worker,2,1.56,1,1
+60,Female,293877,OBC,Madhya Pradesh,Unemployed,3,7.22,1,1
+29,Other,249298,SC,Rajasthan,Unemployed,2,7.22,1,1
+61,Male,548843,OBC,Rajasthan,Self Employed,5,6.66,1,0
+53,Male,762793,ST,Uttar Pradesh,Daily Wage Worker,7,1.35,1,1
+65,Female,186285,ST,Maharashtra,Self Employed,1,4.08,1,1
+21,Female,152412,General,Karnataka,Unemployed,9,1.07,1,1
+22,Male,593692,SC,West Bengal,Farmer,1,8.17,1,1
+73,Other,166545,OBC,Maharashtra,Salaried,1,6.55,1,1
+54,Female,468596,SC,Gujarat,Small Business Owner,8,5.07,1,1
+25,Male,272128,ST,Rajasthan,Daily Wage Worker,6,3.43,0,1
+59,Female,724533,SC,Uttar Pradesh,Student,6,1.84,1,1
+66,Other,758387,OBC,Gujarat,Student,9,1.06,1,0
+45,Male,420250,SC,Madhya Pradesh,Farmer,4,9.69,0,1
+48,Female,336663,OBC,Karnataka,Self Employed,8,2.0,1,1
+26,Other,430714,ST,West Bengal,Self Employed,4,0.6,0,1
+71,Female,64995,ST,Madhya Pradesh,Unemployed,2,9.62,1,1
+68,Other,73559,ST,Uttar Pradesh,Farmer,8,5.49,1,1
+46,Other,571244,General,Karnataka,Unemployed,7,7.97,1,1
+31,Male,401193,ST,Gujarat,Unemployed,4,0.44,1,1
+57,Other,448237,SC,Rajasthan,Student,9,5.67,1,1
+58,Female,672288,General,Rajasthan,Unemployed,9,3.98,1,1
+39,Other,726479,ST,Andhra Pradesh,Small Business Owner,8,7.72,1,1
+28,Other,494755,SC,Rajasthan,Unemployed,1,0.38,1,1
+40,Male,538051,SC,Bihar,Student,7,4.02,1,1
+18,Other,489439,SC,Rajasthan,Small Business Owner,5,7.99,1,1
+63,Other,75517,OBC,Bihar,Self Employed,7,5.23,1,1
+54,Female,521869,General,Tamil Nadu,Daily Wage Worker,9,5.5,1,1
+38,Male,465466,SC,Bihar,Salaried,2,0.97,1,1
+43,Male,265558,OBC,Karnataka,Unemployed,4,1.32,1,1
+63,Male,526111,ST,Madhya Pradesh,Small Business Owner,4,6.77,0,0
+53,Other,534282,SC,Karnataka,Daily Wage Worker,2,6.75,1,1
+71,Male,510014,OBC,Madhya Pradesh,Student,3,9.79,1,0
+40,Other,497415,SC,Andhra Pradesh,Daily Wage Worker,8,7.12,1,1
+74,Other,567039,General,Tamil Nadu,Salaried,9,4.93,1,0
+18,Female,571396,General,Madhya Pradesh,Daily Wage Worker,6,8.57,1,0
+71,Female,155686,ST,Madhya Pradesh,Small Business Owner,2,1.04,0,1
+72,Female,662439,SC,Uttar Pradesh,Daily Wage Worker,2,4.49,1,1
+68,Female,315471,OBC,Maharashtra,Daily Wage Worker,7,2.87,1,1
+57,Female,694606,ST,Maharashtra,Daily Wage Worker,8,1.05,1,1
+32,Other,769778,SC,Uttar Pradesh,Farmer,8,7.64,1,1
+38,Other,537602,ST,Rajasthan,Unemployed,6,5.11,0,1
+64,Male,748148,OBC,Uttar Pradesh,Student,8,5.57,1,0
+26,Other,690233,ST,Madhya Pradesh,Salaried,1,4.11,1,1
+70,Other,263456,ST,Madhya Pradesh,Student,9,4.6,1,1
+26,Female,358974,ST,Uttar Pradesh,Farmer,1,1.16,1,1
+27,Other,102446,SC,Uttar Pradesh,Farmer,3,6.73,1,1
+69,Female,458376,OBC,Rajasthan,Small Business Owner,9,4.32,0,0
+74,Male,761943,General,Karnataka,Farmer,5,8.17,1,0
+70,Male,477214,SC,Tamil Nadu,Unemployed,9,1.96,1,1
+43,Other,190148,General,Gujarat,Farmer,9,2.05,1,1
+58,Male,643629,General,Madhya Pradesh,Daily Wage Worker,6,6.46,1,1
+52,Other,81085,SC,Tamil Nadu,Student,1,8.46,1,1
+69,Male,367715,SC,Uttar Pradesh,Self Employed,7,4.72,1,1
+42,Female,457931,OBC,Rajasthan,Salaried,6,7.27,0,0
+43,Female,574006,OBC,Bihar,Farmer,9,9.99,1,1
+28,Female,440452,ST,Rajasthan,Student,7,9.9,0,1
+55,Female,55750,General,West Bengal,Small Business Owner,4,7.44,1,1
+19,Other,390912,OBC,West Bengal,Farmer,7,7.4,1,1
+24,Male,561760,ST,Tamil Nadu,Unemployed,2,2.48,1,1
+35,Other,85903,OBC,Maharashtra,Farmer,6,8.34,1,1
+44,Female,253561,SC,West Bengal,Farmer,6,4.05,1,1
+51,Other,665324,OBC,West Bengal,Farmer,2,9.62,1,1
+44,Male,662242,General,Karnataka,Small Business Owner,4,0.81,1,0
+34,Other,562493,OBC,Bihar,Farmer,8,4.36,1,1
+60,Male,477530,General,Karnataka,Salaried,8,5.56,1,0
+61,Other,491441,SC,Bihar,Student,8,4.05,1,1
+68,Male,478395,General,Andhra Pradesh,Unemployed,8,2.11,1,1
+71,Male,691593,OBC,Gujarat,Farmer,1,5.93,0,0
+41,Female,555633,ST,Madhya Pradesh,Farmer,2,7.56,1,1
+42,Male,468554,SC,West Bengal,Farmer,4,6.45,0,1
+24,Female,535651,OBC,Madhya Pradesh,Farmer,9,2.34,1,1
+69,Female,250753,SC,West Bengal,Daily Wage Worker,3,7.32,0,1
+23,Female,82101,SC,Karnataka,Daily Wage Worker,6,2.57,0,1
+70,Other,52775,OBC,Gujarat,Self Employed,7,1.75,1,1
+41,Other,685785,OBC,Karnataka,Farmer,8,6.91,1,1
+50,Other,540399,ST,Karnataka,Self Employed,7,8.43,1,1
+66,Other,95619,SC,Bihar,Salaried,3,4.82,1,1
+46,Male,302388,SC,Maharashtra,Self Employed,6,5.31,1,1
+60,Male,462755,OBC,Rajasthan,Student,5,3.03,1,1
+39,Other,115149,General,Tamil Nadu,Daily Wage Worker,4,4.95,1,1
+43,Male,76616,OBC,Madhya Pradesh,Daily Wage Worker,1,1.32,1,1
+45,Male,796055,SC,Andhra Pradesh,Farmer,7,9.56,1,1
+67,Female,235639,OBC,West Bengal,Farmer,8,8.0,1,1
+38,Female,742459,ST,Karnataka,Salaried,2,6.68,0,0
+66,Female,256903,General,Maharashtra,Unemployed,7,5.38,1,1
+24,Female,281318,OBC,Karnataka,Salaried,6,7.92,0,0
+34,Male,402365,ST,Gujarat,Student,5,4.95,1,1
+37,Other,337623,SC,Bihar,Farmer,4,3.0,1,1
+58,Male,411309,OBC,Andhra Pradesh,Farmer,2,1.6,1,1
+66,Male,105863,SC,Rajasthan,Salaried,6,6.48,1,1
+37,Male,223115,ST,Gujarat,Salaried,5,9.29,1,1
+71,Female,545654,SC,Uttar Pradesh,Salaried,2,1.54,1,0
+39,Female,553323,ST,Andhra Pradesh,Daily Wage Worker,7,1.8,1,1
+45,Female,458624,ST,Karnataka,Self Employed,6,4.34,1,1
+57,Other,763340,ST,Gujarat,Self Employed,9,8.07,1,1
+66,Male,328495,OBC,Rajasthan,Farmer,5,2.94,1,1
+24,Other,185203,SC,Maharashtra,Daily Wage Worker,9,2.54,1,1
+18,Female,297908,SC,Maharashtra,Salaried,9,6.2,1,1
+49,Other,242003,General,Madhya Pradesh,Farmer,1,5.36,1,1
+30,Male,547599,General,Rajasthan,Daily Wage Worker,5,0.6,1,1
+47,Male,324597,General,Maharashtra,Student,9,0.81,1,0
+40,Female,724174,General,Gujarat,Unemployed,7,6.43,1,1
+68,Female,723623,SC,Madhya Pradesh,Daily Wage Worker,6,4.65,1,1
+73,Other,651982,ST,Maharashtra,Small Business Owner,6,9.71,1,1
+36,Female,590023,ST,Andhra Pradesh,Farmer,7,6.79,1,1
+49,Female,750033,OBC,Bihar,Self Employed,1,0.1,1,1
+47,Male,794822,ST,Uttar Pradesh,Small Business Owner,4,4.81,1,1
+46,Female,619354,SC,Rajasthan,Salaried,1,4.14,1,1
+66,Female,184445,SC,Gujarat,Unemployed,6,1.07,1,1
+62,Male,453551,SC,West Bengal,Student,4,9.23,0,0
+46,Male,619829,OBC,Karnataka,Unemployed,1,8.05,0,1
+47,Other,215129,General,Gujarat,Unemployed,9,2.3,1,1
+33,Female,641271,ST,Maharashtra,Daily Wage Worker,4,2.56,1,1
+57,Male,724943,SC,Gujarat,Farmer,6,0.32,1,1
+36,Other,203837,SC,West Bengal,Farmer,7,2.97,1,1
+35,Other,764647,General,Karnataka,Unemployed,8,5.85,1,1
+18,Female,785035,SC,Madhya Pradesh,Salaried,9,4.21,0,0
+31,Female,227597,ST,Maharashtra,Farmer,9,9.69,1,1
+68,Other,743590,OBC,Tamil Nadu,Unemployed,8,0.56,1,1
+64,Male,462736,SC,Maharashtra,Farmer,3,5.91,1,1
+67,Other,528454,ST,Uttar Pradesh,Salaried,2,8.58,0,0
+19,Female,495150,SC,Tamil Nadu,Student,5,4.81,1,1
+71,Male,337710,General,Uttar Pradesh,Small Business Owner,1,0.03,1,0
+45,Male,546440,SC,West Bengal,Unemployed,3,2.43,1,1
+66,Other,473350,SC,Rajasthan,Self Employed,1,3.24,1,1
+67,Female,453561,OBC,Karnataka,Self Employed,3,9.66,1,1
+47,Other,695303,General,Bihar,Unemployed,4,9.12,1,1
+55,Other,222257,General,Madhya Pradesh,Daily Wage Worker,7,9.49,0,1
+68,Other,274021,OBC,Bihar,Student,5,8.26,1,1
+21,Male,705244,SC,Andhra Pradesh,Daily Wage Worker,5,3.52,1,1
+18,Male,645032,ST,Andhra Pradesh,Small Business Owner,1,9.06,1,1
+25,Female,345599,General,West Bengal,Self Employed,8,9.82,0,0
+46,Female,558433,General,Rajasthan,Salaried,4,3.5,1,0
+72,Other,366363,SC,Andhra Pradesh,Unemployed,5,2.61,0,1
+56,Other,647904,SC,Maharashtra,Small Business Owner,2,5.47,0,1
+20,Other,661726,General,Gujarat,Farmer,1,1.87,1,0
+49,Female,166841,SC,Uttar Pradesh,Self Employed,9,0.33,1,1
+27,Male,714846,ST,Andhra Pradesh,Student,2,9.46,0,0
+27,Male,219934,General,West Bengal,Self Employed,6,9.26,0,1
+36,Other,633158,ST,Uttar Pradesh,Student,1,1.63,1,1
+63,Other,136694,ST,Maharashtra,Student,1,4.08,1,1
+51,Other,287068,SC,Rajasthan,Unemployed,9,8.31,1,1
+50,Other,151407,ST,Karnataka,Student,4,6.61,1,1
+40,Female,543960,SC,Bihar,Daily Wage Worker,9,3.95,1,1
+72,Male,605667,OBC,Maharashtra,Small Business Owner,5,7.44,0,0
+45,Other,471594,SC,Madhya Pradesh,Salaried,7,8.97,0,1
+49,Female,286500,ST,Tamil Nadu,Self Employed,1,9.26,1,1
+67,Other,628641,OBC,West Bengal,Salaried,6,3.79,0,0
+24,Other,755356,SC,Bihar,Small Business Owner,8,1.74,1,1
+46,Male,261144,ST,Madhya Pradesh,Farmer,1,9.13,1,1
+25,Other,640270,General,Karnataka,Small Business Owner,9,0.93,1,0
+18,Male,86683,General,Madhya Pradesh,Self Employed,3,7.22,1,1
+74,Male,164091,SC,Rajasthan,Salaried,1,1.4,1,1
+72,Male,167797,SC,Tamil Nadu,Salaried,1,3.89,0,1
+20,Female,460834,General,Uttar Pradesh,Unemployed,6,4.12,1,1
+41,Female,580875,ST,Bihar,Unemployed,6,1.59,0,1
+40,Male,374934,ST,Tamil Nadu,Small Business Owner,1,9.23,1,1
+25,Other,343624,ST,Gujarat,Small Business Owner,3,0.03,1,1
+71,Male,725887,SC,Maharashtra,Farmer,7,8.94,0,1
+74,Other,335713,OBC,Gujarat,Student,3,8.84,1,0
+64,Male,514310,OBC,Maharashtra,Self Employed,3,3.17,0,0
+54,Other,240246,OBC,Rajasthan,Unemployed,3,7.04,1,1
+20,Female,619027,OBC,Tamil Nadu,Self Employed,7,2.53,1,0
+68,Other,607242,OBC,Karnataka,Farmer,4,7.59,0,0
+50,Male,159373,SC,Andhra Pradesh,Unemployed,4,5.61,0,1
+45,Female,608988,SC,Madhya Pradesh,Unemployed,3,3.0,1,1
+64,Other,173728,OBC,Andhra Pradesh,Student,9,4.0,1,1
+25,Other,645333,SC,Tamil Nadu,Self Employed,2,6.9,0,1
+51,Other,481058,SC,Gujarat,Self Employed,4,9.06,1,1
+52,Other,719260,OBC,Andhra Pradesh,Self Employed,8,1.31,1,1
+49,Other,576169,ST,West Bengal,Student,6,5.71,0,0
+41,Female,438227,SC,Andhra Pradesh,Unemployed,7,2.54,1,1
+31,Female,138059,ST,Maharashtra,Farmer,7,8.01,1,1
+49,Female,788854,SC,West Bengal,Self Employed,2,0.7,1,1
+73,Female,492136,SC,Bihar,Salaried,4,6.89,1,1
+63,Male,683676,OBC,Andhra Pradesh,Student,6,1.75,0,0
+60,Female,248303,SC,West Bengal,Daily Wage Worker,3,5.96,1,1
+33,Other,561162,General,Tamil Nadu,Farmer,9,8.36,1,1
+21,Other,523573,General,Madhya Pradesh,Salaried,4,7.55,0,0
+69,Female,315406,OBC,Bihar,Self Employed,2,7.53,0,0
+54,Other,379125,ST,Karnataka,Daily Wage Worker,6,5.18,1,1
+71,Female,131972,ST,Karnataka,Farmer,1,8.91,1,1
+38,Other,387629,ST,Rajasthan,Student,6,5.88,1,1
+31,Male,104722,General,Andhra Pradesh,Daily Wage Worker,1,9.18,1,1
+48,Male,231890,ST,Madhya Pradesh,Unemployed,8,5.47,1,1
+72,Female,319045,ST,Uttar Pradesh,Small Business Owner,5,5.06,1,1
+65,Female,167473,OBC,West Bengal,Daily Wage Worker,6,2.22,0,1
+35,Female,542239,ST,Bihar,Small Business Owner,2,5.45,1,1
+24,Other,320741,General,Tamil Nadu,Salaried,2,1.41,1,0
+27,Female,441775,General,Andhra Pradesh,Farmer,9,8.7,1,1
+24,Male,573260,General,Tamil Nadu,Salaried,3,6.76,1,0
+50,Other,789574,OBC,Uttar Pradesh,Salaried,6,9.94,1,0
+40,Female,375437,OBC,Rajasthan,Self Employed,5,0.92,1,1
+38,Other,206877,SC,Uttar Pradesh,Student,4,2.41,1,1
+36,Other,534895,ST,Maharashtra,Daily Wage Worker,2,8.77,1,1
+65,Female,586162,OBC,Gujarat,Farmer,8,3.95,1,1
+36,Other,798425,General,Bihar,Unemployed,7,4.66,0,0
+53,Male,493066,General,Gujarat,Student,2,8.61,1,0
+46,Male,384923,OBC,Uttar Pradesh,Student,6,5.22,1,1
+35,Other,669696,OBC,Rajasthan,Farmer,8,1.93,1,1
+19,Female,694894,OBC,Rajasthan,Student,7,8.92,1,0
+18,Other,170062,SC,Karnataka,Self Employed,1,0.31,1,1
+64,Male,62100,General,Andhra Pradesh,Student,5,8.95,1,0
+22,Other,369165,SC,Karnataka,Self Employed,2,0.51,1,1
+37,Other,725160,SC,Bihar,Daily Wage Worker,6,6.66,1,1
+28,Male,440270,ST,Bihar,Daily Wage Worker,7,0.72,1,1
+59,Other,244472,General,Bihar,Salaried,7,7.06,1,1
+19,Other,284196,General,Tamil Nadu,Self Employed,3,0.34,1,1
+20,Female,257609,OBC,Karnataka,Unemployed,7,8.42,1,1
+40,Female,725302,OBC,Tamil Nadu,Daily Wage Worker,5,4.66,1,1
+72,Male,333006,ST,Gujarat,Student,8,0.93,1,1
+29,Male,323813,SC,Andhra Pradesh,Farmer,8,7.07,0,1
+37,Male,759132,OBC,Uttar Pradesh,Farmer,7,4.89,1,1
+22,Female,323022,OBC,West Bengal,Small Business Owner,6,1.91,1,1
+54,Male,541121,General,Karnataka,Self Employed,2,0.16,1,0
+55,Male,254720,General,West Bengal,Unemployed,6,4.18,1,1
+47,Male,615523,OBC,Rajasthan,Salaried,9,0.86,1,0
+26,Female,331075,General,Karnataka,Student,2,0.94,1,0
+51,Other,142876,ST,Gujarat,Self Employed,1,2.67,1,1
+70,Male,574624,OBC,Karnataka,Small Business Owner,5,6.3,1,0
+61,Other,357680,General,Tamil Nadu,Farmer,6,5.3,1,1
+52,Male,643792,ST,Andhra Pradesh,Self Employed,3,0.69,1,1
+69,Other,673502,General,Uttar Pradesh,Student,8,9.68,1,0
+39,Female,232220,General,Madhya Pradesh,Unemployed,7,8.87,1,1
+61,Female,163936,General,Uttar Pradesh,Unemployed,2,2.59,1,1
+41,Male,66279,OBC,Uttar Pradesh,Daily Wage Worker,7,1.22,1,1
+34,Other,249737,SC,Rajasthan,Student,1,9.42,1,1
+27,Female,153751,General,Gujarat,Small Business Owner,9,4.61,1,1
+47,Male,416577,ST,West Bengal,Daily Wage Worker,7,3.11,0,1
+73,Male,121386,OBC,Gujarat,Daily Wage Worker,6,4.9,1,1
+63,Female,136124,OBC,Madhya Pradesh,Daily Wage Worker,2,7.73,0,1
+40,Female,417894,ST,Rajasthan,Self Employed,3,1.68,1,1
+49,Male,386199,General,Andhra Pradesh,Small Business Owner,1,7.67,0,0
+34,Other,141911,SC,Uttar Pradesh,Farmer,5,7.49,1,1
+67,Other,520489,General,Tamil Nadu,Unemployed,9,5.39,1,0
+68,Other,772030,ST,Rajasthan,Self Employed,6,8.66,1,1
+34,Male,497244,OBC,Bihar,Farmer,5,1.32,0,1
+31,Female,271094,SC,Karnataka,Unemployed,3,5.95,1,1
+26,Male,426036,OBC,Gujarat,Small Business Owner,5,4.49,1,1
+57,Female,287723,ST,Rajasthan,Small Business Owner,8,4.22,1,1
+19,Other,383272,General,Bihar,Student,2,2.53,1,0
+62,Other,461324,SC,West Bengal,Unemployed,5,3.72,1,1
+42,Female,132806,OBC,Madhya Pradesh,Unemployed,6,1.08,1,1
+56,Female,781893,OBC,Madhya Pradesh,Small Business Owner,8,2.52,0,0
+26,Male,280097,OBC,Uttar Pradesh,Unemployed,8,2.72,0,1
+71,Other,247478,General,Uttar Pradesh,Salaried,5,7.21,1,0
+39,Male,537436,SC,Rajasthan,Student,9,0.49,1,1
+60,Male,744879,General,Rajasthan,Self Employed,4,6.51,1,0
+63,Male,361793,General,Andhra Pradesh,Self Employed,9,2.21,1,0
+21,Other,739884,General,Karnataka,Farmer,7,0.82,0,0
+43,Male,539709,ST,Maharashtra,Self Employed,6,3.01,1,1
+46,Male,739245,ST,West Bengal,Daily Wage Worker,4,2.24,1,1
+62,Male,487585,ST,Uttar Pradesh,Unemployed,2,5.52,1,1
+51,Male,282204,SC,Maharashtra,Self Employed,8,3.57,1,1
+40,Male,407546,General,Maharashtra,Farmer,6,9.66,1,1
+54,Male,490980,General,Karnataka,Farmer,3,9.64,1,1
+28,Other,231871,ST,Tamil Nadu,Daily Wage Worker,7,4.44,0,1
+23,Male,391558,General,Tamil Nadu,Farmer,7,7.95,1,1
+35,Female,548512,General,Uttar Pradesh,Small Business Owner,6,0.13,1,0
+38,Male,405239,OBC,Bihar,Salaried,2,5.48,1,1
+59,Male,646595,General,Karnataka,Small Business Owner,8,7.43,1,0
+53,Other,525278,OBC,Karnataka,Unemployed,1,2.17,1,1
+58,Other,344067,General,Gujarat,Unemployed,1,0.61,1,1
+55,Female,429593,SC,Maharashtra,Unemployed,6,1.56,0,1
+51,Female,544955,ST,Gujarat,Student,5,4.42,1,1
+34,Other,285998,OBC,Maharashtra,Self Employed,9,5.06,1,1
+54,Other,521604,ST,Tamil Nadu,Salaried,7,3.81,1,1
+42,Male,486607,OBC,Uttar Pradesh,Self Employed,2,4.4,1,1
+55,Other,696045,OBC,West Bengal,Salaried,7,4.7,1,0
+29,Female,627952,OBC,Tamil Nadu,Self Employed,3,7.69,0,0
+40,Male,740824,SC,Karnataka,Daily Wage Worker,1,1.05,1,1
+70,Female,346629,General,West Bengal,Small Business Owner,8,7.69,1,0
+59,Male,309438,OBC,Rajasthan,Farmer,3,6.89,1,1
+39,Other,200528,SC,West Bengal,Farmer,8,7.42,1,1
+38,Female,518011,OBC,West Bengal,Small Business Owner,7,7.34,1,1
+44,Male,347698,General,Tamil Nadu,Daily Wage Worker,2,4.71,1,1
+74,Male,359066,OBC,Karnataka,Salaried,1,2.11,1,0
+48,Other,325553,SC,West Bengal,Small Business Owner,7,5.37,0,1
+23,Other,774687,General,Tamil Nadu,Student,1,9.58,1,0
+44,Other,796760,SC,Tamil Nadu,Salaried,6,5.89,1,1
+57,Female,348783,General,West Bengal,Farmer,8,0.11,1,1
+51,Male,281182,General,Maharashtra,Student,7,0.6,0,0
+29,Other,506843,ST,Karnataka,Self Employed,4,9.93,1,1
+62,Female,139037,ST,Madhya Pradesh,Student,1,0.72,1,1
+74,Female,784200,ST,West Bengal,Salaried,1,0.46,1,0
+70,Female,759560,General,Gujarat,Daily Wage Worker,4,3.53,1,0
+24,Other,798423,OBC,Gujarat,Self Employed,5,9.69,1,0
+27,Other,238487,SC,Rajasthan,Salaried,7,3.19,1,1
+62,Male,68074,SC,Karnataka,Self Employed,4,4.1,1,1
+34,Male,720909,SC,Tamil Nadu,Student,1,6.34,0,0
+43,Other,342107,ST,Andhra Pradesh,Farmer,7,0.24,1,1
+38,Female,534672,General,Uttar Pradesh,Salaried,2,8.98,1,0
+45,Female,626553,ST,Bihar,Daily Wage Worker,2,5.19,0,1
+63,Female,66061,OBC,Andhra Pradesh,Small Business Owner,8,4.67,0,1
+19,Male,501442,General,Karnataka,Student,5,8.61,1,0
+71,Female,209882,SC,Karnataka,Salaried,2,9.53,0,1
+60,Male,503222,ST,West Bengal,Daily Wage Worker,5,4.23,1,1
+18,Male,687790,ST,West Bengal,Salaried,8,1.72,1,0
+68,Female,334944,OBC,Andhra Pradesh,Student,6,8.16,1,0
+70,Female,428336,OBC,Tamil Nadu,Salaried,3,4.03,0,0
+53,Other,552175,ST,Rajasthan,Self Employed,8,9.36,1,1
+68,Other,306505,OBC,West Bengal,Student,9,9.5,1,0
+43,Female,681516,SC,Bihar,Salaried,5,1.15,1,1
+46,Male,256548,OBC,Bihar,Small Business Owner,2,9.57,0,1
+38,Male,512676,OBC,Rajasthan,Farmer,2,3.68,1,1
+28,Male,500983,ST,Maharashtra,Salaried,7,6.46,1,1
+57,Male,518535,ST,Maharashtra,Self Employed,1,0.35,1,1
+28,Male,546005,General,Karnataka,Daily Wage Worker,2,8.89,1,1
+53,Other,750757,General,West Bengal,Small Business Owner,4,6.42,0,0
+66,Female,63233,ST,Gujarat,Daily Wage Worker,1,6.44,1,1
+56,Other,533236,OBC,Andhra Pradesh,Small Business Owner,4,9.02,1,1
+57,Male,730428,OBC,Madhya Pradesh,Daily Wage Worker,5,5.08,1,1
+52,Male,382597,General,Rajasthan,Farmer,9,4.11,1,1
+71,Male,678423,General,Karnataka,Self Employed,1,8.66,1,0
+51,Male,469048,General,Gujarat,Student,5,7.42,1,0
+72,Female,420608,SC,West Bengal,Daily Wage Worker,2,9.49,0,1
+64,Male,267314,SC,Gujarat,Small Business Owner,9,9.4,1,1
+41,Female,587970,General,Gujarat,Self Employed,6,3.82,1,0
+71,Male,535514,OBC,Rajasthan,Salaried,2,4.47,1,0
+39,Female,204455,General,Karnataka,Farmer,3,2.56,1,1
+22,Other,370304,SC,Tamil Nadu,Self Employed,8,6.61,1,1
+73,Male,798692,OBC,Bihar,Self Employed,1,3.65,1,0
+50,Female,335810,SC,Andhra Pradesh,Student,3,7.86,1,1
+53,Other,370961,OBC,Karnataka,Self Employed,1,1.22,1,1
+64,Male,665486,SC,Madhya Pradesh,Student,8,1.16,1,0
+37,Male,477858,OBC,Gujarat,Farmer,1,2.04,1,1
+36,Male,616118,OBC,Tamil Nadu,Farmer,5,0.84,1,1
+52,Female,546283,OBC,Rajasthan,Salaried,4,6.2,1,0
+69,Female,584522,OBC,Uttar Pradesh,Student,7,1.47,1,0
+60,Other,631904,ST,Andhra Pradesh,Student,5,1.6,0,0
+34,Female,321365,SC,Andhra Pradesh,Daily Wage Worker,8,0.14,1,1
+62,Female,192482,SC,Bihar,Daily Wage Worker,1,7.82,1,1
+60,Male,785415,ST,Uttar Pradesh,Salaried,5,8.12,1,1
+51,Male,766773,OBC,West Bengal,Farmer,4,1.62,1,1
+26,Male,51051,OBC,Uttar Pradesh,Unemployed,3,7.4,1,1
+43,Male,651206,SC,Gujarat,Daily Wage Worker,5,4.34,1,1
+19,Male,128116,ST,Gujarat,Self Employed,3,2.4,0,1
+70,Male,434370,OBC,Gujarat,Farmer,8,6.21,0,1
+26,Male,278931,OBC,Gujarat,Unemployed,3,1.78,1,1
+26,Other,356901,OBC,Karnataka,Self Employed,1,7.57,1,1
+57,Other,569385,General,Andhra Pradesh,Small Business Owner,9,0.48,1,0
+34,Other,433152,ST,Uttar Pradesh,Student,9,9.59,1,1
+18,Other,573562,OBC,Andhra Pradesh,Farmer,6,0.72,1,1
+42,Male,782835,General,Madhya Pradesh,Small Business Owner,1,5.79,1,0
+60,Other,276572,ST,Uttar Pradesh,Salaried,8,9.02,1,1
+57,Male,181379,OBC,Karnataka,Student,2,0.12,1,1
+59,Other,631177,SC,Madhya Pradesh,Student,9,4.99,1,1
+42,Female,276256,General,Andhra Pradesh,Self Employed,8,3.5,1,1
+56,Other,612422,General,Madhya Pradesh,Small Business Owner,3,5.8,1,0
+52,Other,470539,OBC,Bihar,Student,5,2.25,1,1
+20,Male,559421,OBC,Madhya Pradesh,Daily Wage Worker,9,0.65,0,0
+67,Other,252834,General,Uttar Pradesh,Farmer,1,6.26,1,1
+54,Female,530441,SC,Gujarat,Daily Wage Worker,9,4.17,1,1
+61,Male,277579,SC,Gujarat,Self Employed,4,6.22,1,1
+61,Male,600242,ST,West Bengal,Unemployed,4,2.11,1,1
+68,Other,760381,OBC,Andhra Pradesh,Self Employed,4,3.39,1,0
+47,Male,402103,SC,Bihar,Farmer,9,5.62,1,1
+55,Male,785226,ST,Uttar Pradesh,Student,6,5.93,1,1
+51,Male,775787,SC,Uttar Pradesh,Small Business Owner,8,3.72,1,1
+29,Male,317136,OBC,Rajasthan,Small Business Owner,4,2.8,1,1
+36,Male,576249,ST,Maharashtra,Salaried,3,2.74,1,1
+54,Male,586785,ST,Andhra Pradesh,Self Employed,1,1.75,1,1
+61,Female,475767,ST,Uttar Pradesh,Farmer,7,3.25,0,1
+66,Other,185639,SC,Tamil Nadu,Salaried,4,1.99,1,1
+34,Female,753363,OBC,Uttar Pradesh,Student,8,6.34,1,0
+27,Male,70389,ST,Rajasthan,Unemployed,3,5.69,1,1
+74,Male,225595,General,Madhya Pradesh,Self Employed,1,3.83,1,1
+72,Other,435946,OBC,Karnataka,Unemployed,5,3.26,1,1
+66,Female,373720,General,Karnataka,Farmer,2,2.38,0,0
+64,Other,787463,General,Tamil Nadu,Unemployed,3,5.35,1,0
+29,Female,53358,ST,Tamil Nadu,Unemployed,6,9.19,1,1
+33,Male,400679,ST,West Bengal,Farmer,3,6.86,1,1
+41,Other,551110,SC,Karnataka,Farmer,3,7.44,1,1
+36,Other,302557,SC,Madhya Pradesh,Self Employed,6,8.34,1,1
+25,Male,257596,SC,Karnataka,Unemployed,5,3.52,1,1
+48,Other,680270,OBC,Maharashtra,Salaried,9,0.63,1,0
+38,Female,278129,SC,Andhra Pradesh,Farmer,1,6.23,1,1
+34,Female,378953,General,Karnataka,Student,3,1.89,0,0
+40,Female,667367,SC,Gujarat,Unemployed,3,5.69,1,1
+54,Female,105805,ST,West Bengal,Farmer,6,7.4,1,1
+71,Male,212421,SC,Rajasthan,Salaried,8,7.84,0,1
+33,Other,257849,OBC,Tamil Nadu,Small Business Owner,3,3.02,1,1
+23,Female,288483,OBC,Maharashtra,Self Employed,3,5.12,1,1
+25,Male,442551,General,Tamil Nadu,Unemployed,6,6.21,1,1
+42,Other,94041,OBC,West Bengal,Small Business Owner,8,8.19,0,1
+35,Other,320146,SC,Uttar Pradesh,Farmer,6,7.61,1,1
+42,Male,381927,ST,Maharashtra,Farmer,3,9.88,1,1
+29,Male,157524,OBC,Bihar,Student,4,0.08,1,1
+32,Female,268306,General,Maharashtra,Student,1,4.37,1,1
+43,Other,594026,SC,West Bengal,Unemployed,8,2.56,1,1
+58,Other,163776,General,Rajasthan,Small Business Owner,4,1.2,1,1
+62,Male,230494,OBC,Maharashtra,Small Business Owner,6,9.12,1,1
+43,Other,242971,OBC,West Bengal,Farmer,3,9.98,0,1
+64,Female,327785,General,Madhya Pradesh,Unemployed,6,1.81,1,1
+49,Other,391678,SC,Andhra Pradesh,Farmer,9,0.38,1,1
+27,Male,318449,OBC,Karnataka,Student,9,2.75,1,1
+33,Male,330926,ST,Madhya Pradesh,Salaried,3,8.35,0,1
+24,Female,390401,OBC,West Bengal,Daily Wage Worker,3,2.94,1,1
+34,Female,286371,SC,Gujarat,Daily Wage Worker,4,0.57,1,1
+40,Other,652251,OBC,Uttar Pradesh,Farmer,7,0.52,0,1
+43,Other,696275,General,Karnataka,Small Business Owner,3,4.27,1,0
+38,Male,725926,OBC,Gujarat,Student,8,9.32,1,0
+39,Female,174591,OBC,Rajasthan,Self Employed,8,2.86,1,1
+24,Female,642054,SC,Tamil Nadu,Self Employed,6,4.27,1,1
+31,Female,580799,General,Bihar,Daily Wage Worker,4,1.02,0,0
+32,Other,689104,SC,Karnataka,Salaried,5,4.94,1,1
+70,Female,550981,OBC,Madhya Pradesh,Daily Wage Worker,2,6.97,0,0
+24,Male,316909,ST,Uttar Pradesh,Farmer,6,2.71,1,1
+26,Male,201426,OBC,Gujarat,Salaried,3,2.97,1,1
+68,Other,336073,SC,West Bengal,Self Employed,6,8.42,1,1
+65,Other,209892,ST,Karnataka,Small Business Owner,5,0.1,1,1
+25,Female,161576,SC,Tamil Nadu,Student,2,6.36,1,1
+67,Other,472739,SC,West Bengal,Student,5,3.94,1,1
+40,Male,645376,General,Gujarat,Farmer,5,2.98,1,1
+46,Female,127525,ST,Uttar Pradesh,Daily Wage Worker,9,6.58,0,1
+35,Male,63780,OBC,Maharashtra,Farmer,8,8.35,1,1
+48,Female,318733,SC,Tamil Nadu,Student,7,5.58,1,1
+47,Other,494709,OBC,West Bengal,Self Employed,3,0.31,1,1
+69,Female,154188,General,Tamil Nadu,Student,4,4.61,1,0
+56,Female,667614,General,Rajasthan,Salaried,6,4.63,1,0
+52,Male,640073,ST,West Bengal,Small Business Owner,3,5.44,1,1
+35,Male,593597,General,Karnataka,Small Business Owner,9,6.71,1,0
+59,Female,628483,General,Maharashtra,Unemployed,8,0.19,1,1
+56,Other,75901,OBC,Maharashtra,Student,6,5.02,1,1
+34,Other,728936,General,Bihar,Student,4,5.88,0,0
+31,Male,474724,General,Tamil Nadu,Small Business Owner,7,3.43,1,1
+48,Other,517927,SC,Madhya Pradesh,Unemployed,3,6.68,1,1
+41,Male,599752,General,Maharashtra,Salaried,8,2.28,1,0
+52,Other,328404,SC,Maharashtra,Daily Wage Worker,1,3.17,1,1
+61,Female,699285,General,Rajasthan,Student,3,9.63,1,0
+62,Male,347584,General,Andhra Pradesh,Small Business Owner,5,3.48,0,0
+51,Male,407226,ST,Rajasthan,Farmer,5,3.47,1,1
+20,Female,630971,ST,Rajasthan,Student,2,5.96,1,0
+54,Male,436350,SC,Andhra Pradesh,Farmer,8,9.71,1,1
+60,Other,222502,General,Tamil Nadu,Salaried,5,9.83,1,1
+57,Other,557994,OBC,West Bengal,Student,7,5.8,1,0
+43,Male,730465,ST,Uttar Pradesh,Small Business Owner,7,0.01,1,1
+72,Other,652772,OBC,Madhya Pradesh,Salaried,5,9.01,1,0
+40,Male,256486,ST,Maharashtra,Salaried,8,5.7,1,1
+61,Female,499777,ST,Bihar,Daily Wage Worker,9,3.66,0,1
+56,Male,191449,General,Madhya Pradesh,Student,4,8.29,1,1
+32,Female,627880,ST,West Bengal,Farmer,4,4.0,0,1
+73,Other,188419,OBC,Andhra Pradesh,Farmer,8,0.34,0,1
+66,Female,345920,ST,Madhya Pradesh,Student,1,8.21,1,1
+21,Other,630086,SC,Maharashtra,Unemployed,4,5.46,0,1
+46,Male,185370,General,Madhya Pradesh,Daily Wage Worker,6,3.38,0,1
+39,Other,498377,General,Uttar Pradesh,Daily Wage Worker,4,2.51,1,1
+42,Male,541830,SC,Andhra Pradesh,Daily Wage Worker,6,5.94,1,1
+30,Male,293767,SC,Madhya Pradesh,Farmer,5,2.08,1,1
+35,Female,595210,SC,Maharashtra,Salaried,9,3.24,0,0
+50,Female,477244,ST,Maharashtra,Small Business Owner,9,6.37,1,1
+33,Female,554677,General,Madhya Pradesh,Unemployed,4,8.82,1,1
+62,Female,463532,SC,Tamil Nadu,Daily Wage Worker,4,5.33,1,1
+59,Other,460184,ST,Bihar,Farmer,8,7.59,1,1
+61,Other,568895,SC,Gujarat,Farmer,4,7.63,1,1
+19,Other,276817,OBC,Rajasthan,Salaried,2,6.64,0,0
+72,Male,467216,OBC,Andhra Pradesh,Student,2,2.46,1,0
+52,Other,52866,General,Gujarat,Student,1,8.67,1,1
+59,Other,162669,ST,West Bengal,Small Business Owner,5,4.36,1,1
+51,Other,330539,OBC,West Bengal,Small Business Owner,6,0.44,1,1
+47,Female,744379,OBC,Maharashtra,Daily Wage Worker,9,2.45,0,1
+72,Other,316150,ST,West Bengal,Small Business Owner,5,7.66,1,1
+30,Male,739753,SC,Tamil Nadu,Daily Wage Worker,6,0.69,0,1
+30,Female,493258,ST,Bihar,Unemployed,6,1.47,1,1
+35,Male,539415,SC,West Bengal,Small Business Owner,3,6.94,1,1
+49,Other,407820,OBC,Uttar Pradesh,Salaried,4,8.93,1,1
+49,Female,696012,OBC,Bihar,Daily Wage Worker,1,6.34,1,1
+52,Male,637189,OBC,Tamil Nadu,Salaried,4,2.22,1,0
+56,Other,774857,General,Gujarat,Farmer,1,0.53,1,1
+63,Male,538029,General,Bihar,Daily Wage Worker,5,6.15,0,0
+69,Male,691480,General,Bihar,Farmer,8,0.47,1,0
+46,Male,222646,ST,Gujarat,Self Employed,8,6.13,1,1
+66,Other,343561,OBC,Tamil Nadu,Salaried,5,2.26,1,0
+46,Other,400164,OBC,West Bengal,Self Employed,2,9.05,1,1
+70,Male,395783,ST,Maharashtra,Daily Wage Worker,6,4.75,1,1
+61,Female,508222,General,Andhra Pradesh,Farmer,1,2.24,1,0
+74,Female,144881,ST,Gujarat,Daily Wage Worker,7,8.53,0,1
+33,Other,292934,General,Gujarat,Self Employed,4,2.54,1,1
+73,Other,182659,OBC,Gujarat,Daily Wage Worker,5,3.07,1,1
+61,Other,695976,SC,Gujarat,Unemployed,6,8.34,1,1
+64,Other,551323,General,Andhra Pradesh,Student,1,3.09,1,0
+74,Other,689872,OBC,Andhra Pradesh,Self Employed,9,4.1,1,0
+27,Female,760070,OBC,West Bengal,Daily Wage Worker,4,3.48,1,1
+47,Other,797108,SC,Madhya Pradesh,Farmer,8,1.16,1,1
+42,Male,791184,OBC,Madhya Pradesh,Daily Wage Worker,5,0.39,1,1
+56,Male,229689,OBC,Karnataka,Farmer,8,7.25,1,1
+37,Female,384517,General,Gujarat,Student,1,6.45,1,0
+22,Male,215289,General,Gujarat,Daily Wage Worker,8,2.82,1,1
+18,Female,333028,SC,Bihar,Small Business Owner,4,2.96,1,1
+47,Female,317598,SC,Madhya Pradesh,Small Business Owner,2,9.45,0,1
+66,Male,649248,OBC,West Bengal,Student,6,9.88,1,0
+20,Other,152421,General,Maharashtra,Self Employed,2,4.73,0,0
+62,Male,288245,SC,Karnataka,Farmer,5,8.02,0,1
+31,Male,617906,SC,Karnataka,Small Business Owner,2,7.37,1,1
+73,Female,97111,ST,West Bengal,Unemployed,3,2.97,1,1
+47,Male,482829,SC,Maharashtra,Self Employed,6,0.59,0,1
+67,Female,266750,OBC,Bihar,Farmer,1,1.43,1,1
+21,Other,170592,General,Andhra Pradesh,Student,6,8.38,0,0
+35,Other,284000,SC,Rajasthan,Small Business Owner,3,7.31,1,1
+54,Other,372137,ST,Madhya Pradesh,Salaried,7,6.64,0,1
+42,Male,178652,General,Gujarat,Daily Wage Worker,2,1.31,1,1
+65,Female,558069,SC,West Bengal,Student,6,6.4,1,0
+18,Other,652960,ST,Madhya Pradesh,Farmer,8,7.72,1,1
+70,Female,267516,SC,Gujarat,Farmer,1,8.61,1,1
+63,Female,429653,General,Rajasthan,Farmer,9,0.13,1,1
+32,Other,111602,General,Rajasthan,Farmer,5,6.84,1,1
+26,Other,253117,General,Andhra Pradesh,Daily Wage Worker,5,0.19,1,1
+32,Female,287069,OBC,Tamil Nadu,Self Employed,5,7.07,1,1
+66,Other,616510,SC,Rajasthan,Unemployed,6,6.36,1,1
+74,Female,291084,OBC,Madhya Pradesh,Salaried,2,1.48,1,1
+41,Female,292318,General,Uttar Pradesh,Daily Wage Worker,6,7.66,1,1
+21,Other,639621,ST,Uttar Pradesh,Farmer,4,0.68,1,1
+29,Male,758092,SC,Gujarat,Daily Wage Worker,8,8.26,1,1
+54,Other,434794,OBC,Gujarat,Student,9,2.62,1,1
+54,Male,99420,SC,Tamil Nadu,Unemployed,9,6.89,1,1
+60,Female,649792,ST,Uttar Pradesh,Farmer,8,9.24,0,1
+23,Female,576750,OBC,Gujarat,Salaried,3,3.4,0,0
+56,Male,321604,General,Rajasthan,Farmer,4,5.03,1,1
+73,Female,673607,OBC,Gujarat,Unemployed,1,4.63,1,1
+63,Male,714635,SC,Karnataka,Salaried,9,1.58,1,0
+41,Male,718629,SC,Tamil Nadu,Unemployed,5,5.9,1,1
+28,Female,703881,SC,West Bengal,Salaried,6,7.43,1,1
+30,Male,172672,SC,Maharashtra,Self Employed,3,9.17,1,1
+51,Other,509158,General,Bihar,Small Business Owner,8,8.51,1,0
+42,Other,385064,OBC,Maharashtra,Self Employed,7,5.1,0,1
+24,Female,563953,General,Maharashtra,Daily Wage Worker,1,7.19,1,0
+69,Female,467582,General,Andhra Pradesh,Daily Wage Worker,5,8.01,1,1
+21,Male,94036,General,West Bengal,Salaried,9,4.93,1,0
+25,Male,198441,SC,Gujarat,Farmer,6,1.15,1,1
+37,Male,192867,SC,Andhra Pradesh,Small Business Owner,8,4.38,1,1
+46,Male,120021,SC,Maharashtra,Student,1,8.42,0,1
+71,Other,419349,OBC,Karnataka,Student,7,5.97,1,0
+70,Other,511370,ST,Bihar,Farmer,3,7.24,1,1
+68,Female,735503,SC,Maharashtra,Farmer,9,1.85,1,1
+62,Male,472641,OBC,Uttar Pradesh,Self Employed,6,9.64,1,1
+63,Male,387283,SC,West Bengal,Student,5,4.04,1,1
+27,Female,579656,SC,West Bengal,Salaried,8,6.54,0,0
+60,Male,709981,General,West Bengal,Unemployed,8,0.19,0,0
+51,Male,633117,General,Tamil Nadu,Daily Wage Worker,3,1.27,1,1
+74,Male,441180,General,Tamil Nadu,Unemployed,2,7.82,1,1
+43,Male,503510,OBC,Rajasthan,Self Employed,2,9.68,1,1
+58,Male,603515,ST,Madhya Pradesh,Student,5,3.2,1,1
+66,Female,683718,ST,Bihar,Small Business Owner,7,0.37,1,1
+20,Male,450782,OBC,Andhra Pradesh,Farmer,8,3.61,1,1
+73,Female,62306,SC,Gujarat,Small Business Owner,8,0.17,1,1
+23,Male,628110,OBC,Maharashtra,Small Business Owner,8,1.92,1,0
+22,Other,74042,SC,Madhya Pradesh,Student,3,7.52,0,1
+22,Other,458302,OBC,Gujarat,Salaried,2,9.37,1,0
+71,Other,722747,OBC,Andhra Pradesh,Self Employed,4,0.87,1,0
+64,Other,663712,OBC,Madhya Pradesh,Farmer,1,5.58,1,1
+40,Female,232690,ST,Gujarat,Unemployed,3,2.54,0,1
+66,Female,797410,General,Karnataka,Salaried,9,1.39,1,0
+26,Male,199395,OBC,Tamil Nadu,Unemployed,7,2.19,1,1
+52,Other,592307,ST,Andhra Pradesh,Daily Wage Worker,7,5.78,1,1
+37,Female,615151,General,Bihar,Self Employed,1,0.65,1,0
+66,Male,685311,General,Uttar Pradesh,Salaried,7,4.34,1,0
+59,Male,715643,OBC,Karnataka,Salaried,7,1.35,1,0
+52,Female,359143,SC,Tamil Nadu,Unemployed,4,2.73,1,1
+67,Other,112780,SC,West Bengal,Farmer,7,1.91,1,1
+35,Male,766944,SC,Tamil Nadu,Daily Wage Worker,8,8.83,0,1
+34,Other,438422,OBC,Madhya Pradesh,Unemployed,3,7.08,1,1
+41,Other,493441,SC,Rajasthan,Salaried,2,8.68,1,1
+20,Other,743312,ST,Karnataka,Self Employed,7,3.83,1,1
+49,Male,150706,ST,West Bengal,Salaried,5,3.13,1,1
+52,Other,743023,ST,Madhya Pradesh,Student,5,3.81,1,1
+55,Male,172019,ST,Andhra Pradesh,Self Employed,5,0.19,0,1
+30,Other,421852,General,Bihar,Self Employed,7,7.25,1,1
+73,Male,766741,ST,Tamil Nadu,Salaried,9,3.5,1,0
+64,Other,229001,SC,Andhra Pradesh,Farmer,8,3.13,1,1
+42,Female,150260,OBC,West Bengal,Self Employed,6,5.98,1,1
+26,Other,220863,SC,Madhya Pradesh,Student,7,4.36,1,1
+21,Other,734494,ST,Rajasthan,Unemployed,9,9.81,1,1
+31,Male,752461,General,Tamil Nadu,Farmer,6,3.56,1,1
+54,Male,643731,ST,Bihar,Farmer,1,6.14,1,1
+51,Other,369674,OBC,Rajasthan,Farmer,4,3.12,1,1
+28,Female,490015,SC,Gujarat,Self Employed,8,9.91,1,1
+58,Female,710187,OBC,Madhya Pradesh,Farmer,7,4.45,1,1
+73,Male,146143,OBC,Andhra Pradesh,Salaried,3,6.34,1,1
+20,Female,768013,OBC,Tamil Nadu,Farmer,3,1.27,1,1
+45,Other,194771,SC,Tamil Nadu,Student,3,7.33,1,1
+46,Male,556713,ST,West Bengal,Daily Wage Worker,1,2.69,1,1
+26,Other,710673,OBC,Bihar,Student,1,4.49,1,0
+20,Male,718958,SC,Uttar Pradesh,Self Employed,6,8.83,1,1
+42,Male,161362,General,Gujarat,Farmer,1,9.71,1,1
+51,Male,340951,SC,Rajasthan,Farmer,5,4.25,1,1
+29,Male,774750,General,Karnataka,Salaried,4,8.35,1,0
+59,Female,226298,SC,Karnataka,Unemployed,5,0.53,1,1
+26,Other,633838,ST,Tamil Nadu,Farmer,7,8.48,1,1
+32,Other,523288,OBC,West Bengal,Small Business Owner,6,6.3,1,1
+57,Other,315702,ST,Maharashtra,Student,9,4.89,1,1
+42,Male,362257,SC,Tamil Nadu,Self Employed,6,8.9,1,1
+22,Female,761238,OBC,Karnataka,Daily Wage Worker,9,8.45,1,1
+28,Other,108219,General,Karnataka,Farmer,4,2.97,1,1
+51,Female,740546,SC,Gujarat,Daily Wage Worker,1,7.91,1,1
+41,Male,739129,OBC,Andhra Pradesh,Farmer,1,0.99,1,1
+32,Other,286495,General,Maharashtra,Self Employed,7,8.23,1,1
+55,Female,627506,General,Tamil Nadu,Unemployed,3,6.75,1,1
+25,Male,331373,ST,Gujarat,Student,2,0.88,0,1
+22,Female,602165,SC,West Bengal,Self Employed,6,6.83,1,1
+65,Other,239073,General,Gujarat,Daily Wage Worker,6,5.81,1,1
+43,Other,409281,OBC,Tamil Nadu,Farmer,7,5.95,1,1
+35,Male,197878,General,Madhya Pradesh,Daily Wage Worker,5,2.91,1,1
+23,Male,269707,General,Uttar Pradesh,Student,8,2.66,1,0
+54,Male,291249,ST,Tamil Nadu,Small Business Owner,7,7.63,1,1
+65,Female,87034,ST,Bihar,Self Employed,2,2.57,1,1
+30,Female,221389,OBC,Karnataka,Daily Wage Worker,1,4.46,1,1
+45,Female,462310,ST,Maharashtra,Daily Wage Worker,9,6.95,1,1
+22,Male,763156,General,Maharashtra,Student,5,0.8,1,0
+30,Other,60589,General,Andhra Pradesh,Small Business Owner,5,5.95,1,1
+34,Other,107221,ST,Uttar Pradesh,Farmer,4,5.89,0,1
+67,Female,305927,General,Bihar,Small Business Owner,2,6.84,1,0
+57,Female,410444,General,Karnataka,Daily Wage Worker,5,3.7,1,1
+62,Other,691517,OBC,Maharashtra,Student,2,4.49,1,0

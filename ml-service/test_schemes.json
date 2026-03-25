@@ -1,0 +1,217 @@
+{
+  "success": true,
+  "total_schemes_checked": 20,
+  "eligible_count": 17,
+  "results": [
+    {
+      "scheme_id": "1",
+      "scheme_name": "PM Kisan Samman Nidhi",
+      "category": "Agriculture",
+      "benefits": "\u20b96,000 per year direct income support to farmers",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "2",
+      "scheme_name": "PM Awas Yojana",
+      "category": "Housing",
+      "benefits": "Financial assistance for construction of pucca house",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "3",
+      "scheme_name": "Ayushman Bharat",
+      "category": "Health",
+      "benefits": "Health coverage up to \u20b95 lakh per family per year",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "6",
+      "scheme_name": "Sukanya Samriddhi Yojana",
+      "category": "Finance",
+      "benefits": "Savings scheme for girl child with high interest rate",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "7",
+      "scheme_name": "MGNREGA",
+      "category": "Employment",
+      "benefits": "Guaranteed 100 days of wage employment per year",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "8",
+      "scheme_name": "Atal Pension Yojana",
+      "category": "Pension",
+      "benefits": "Guaranteed minimum pension of \u20b91,000 to \u20b95,000 per month",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "9",
+      "scheme_name": "Maharashtra Rajshri Yojana",
+      "category": "Social Security",
+      "benefits": "\u20b910,00,000 life insurance cover for female citizens",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "Maharashtra"
+    },
+    {
+      "scheme_id": "10",
+      "scheme_name": "Maharashtra Mazgaon Sheli Yojana",
+      "category": "Agriculture",
+      "benefits": "Subsidy on purchase of sheep and goats for farmers",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "Maharashtra"
+    },
+    {
+      "scheme_id": "11",
+      "scheme_name": "Karnataka Raitha Belaku",
+      "category": "Agriculture",
+      "benefits": "\u20b910,000 annual input subsidy for farmers",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "Karnataka"
+    },
+    {
+      "scheme_id": "14",
+      "scheme_name": "Tamil Nadu Uzhavar Paththu",
+      "category": "Agriculture",
+      "benefits": "\u20b910,000 per year input subsidy for farmers",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "Tamil Nadu"
+    },
+    {
+      "scheme_id": "19",
+      "scheme_name": "Gujarat Mukhyamantri Amrutam Yojana",
+      "category": "Health",
+      "benefits": "Free health coverage up to \u20b95 lakh per family per year",
+      "eligibility_score": 100,
+      "eligible": true,
+      "reasons": [],
+      "state": "Gujarat"
+    },
+    {
+      "scheme_id": "4",
+      "scheme_name": "National Scholarship Portal",
+      "category": "Education",
+      "benefits": "Scholarships for students from minority and SC/ST communities",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "5",
+      "scheme_name": "PM Mudra Yojana",
+      "category": "Finance",
+      "benefits": "Loans up to \u20b910 lakh for small businesses without collateral",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "National"
+    },
+    {
+      "scheme_id": "12",
+      "scheme_name": "Karnataka Gruha Lakshmi",
+      "category": "Social Security",
+      "benefits": "\u20b92,000 monthly financial assistance to women heads of family",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "Karnataka"
+    },
+    {
+      "scheme_id": "17",
+      "scheme_name": "West Bengal Lakshmi Bhandar",
+      "category": "Social Security",
+      "benefits": "\u20b9500-1000 per month to women of BPL families",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "West Bengal"
+    },
+    {
+      "scheme_id": "18",
+      "scheme_name": "Rajasthan Bhamashah Yojana",
+      "category": "Social Security",
+      "benefits": "\u20b9500-1000 per month to women from Below Poverty Line families",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "Rajasthan"
+    },
+    {
+      "scheme_id": "20",
+      "scheme_name": "Bihar Mukhyamantri Kanya Vivah",
+      "category": "Social Security",
+      "benefits": "\u20b910,000 financial assistance for marriage of SC/ST girls",
+      "eligibility_score": 75,
+      "eligible": true,
+      "reasons": [],
+      "state": "Bihar"
+    },
+    {
+      "scheme_id": "13",
+      "scheme_name": "Tamil Nadu Kalaignar Muthulam",
+      "category": "Education",
+      "benefits": "Free education scheme for economically weaker students",
+      "eligibility_score": 50,
+      "eligible": false,
+      "reasons": [
+        "Age 30 outside range",
+        "Occupation not in eligible list"
+      ],
+      "state": "Tamil Nadu"
+    },
+    {
+      "scheme_id": "15",
+      "scheme_name": "UP Kanya Vidhan",
+      "category": "Education",
+      "benefits": "Scholarship of \u20b9300 per month for girl students",
+      "eligibility_score": 50,
+      "eligible": false,
+      "reasons": [
+        "Age 30 outside range",
+        "Occupation not in eligible list"
+      ],
+      "state": "Uttar Pradesh"
+    },
+    {
+      "scheme_id": "16",
+      "scheme_name": "UP Mukhyamantri Samaj Sewa",
+      "category": "Social Security",
+      "benefits": "Monthly pension of \u20b9500 for SC/ST citizens",
+      "eligibility_score": 50,
+      "eligible": false,
+      "reasons": [
+        "Caste category not eligible",
+        "Occupation not in eligible list"
+      ],
+      "state": "Uttar Pradesh"
+    }
+  ],
+  "message": "Found 17 schemes you are eligible for!"
+}
