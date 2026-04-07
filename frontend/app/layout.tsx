@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
-import { Inter, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: "--font-inter"
-});
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+import ChatbotWidget from "@/components/chatbot-widget";
 
 export const metadata: Metadata = {
   title: 'SchemeConnect - Government Welfare Scheme Portal',
@@ -39,9 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className="font-sans antialiased">
         {children}
         <Analytics />
+        <ChatbotWidget />
       </body>
     </html>
   )

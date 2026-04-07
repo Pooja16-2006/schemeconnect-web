@@ -5,72 +5,11 @@ import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { NativeSelect } from "@/components/ui/native-select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Loader2, ShieldCheck, Lock, Sparkles, User, Calendar, Wallet, MapPin, Briefcase, Users } from "lucide-react";
+import { ArrowRight, Loader2, ShieldCheck, Lock, Sparkles, User, Calendar, Wallet, MapPin, Briefcase, Users, Landmark, House } from "lucide-react";
 import { checkEligibility, type CitizenProfile, type EligibilityResponse } from "@/lib/api";
-
-const indianStates = [
-  "Andhra Pradesh",
-  "Arunachal Pradesh",
-  "Assam",
-  "Bihar",
-  "Chhattisgarh",
-  "Goa",
-  "Gujarat",
-  "Haryana",
-  "Himachal Pradesh",
-  "Jharkhand",
-  "Karnataka",
-  "Kerala",
-  "Madhya Pradesh",
-  "Maharashtra",
-  "Manipur",
-  "Meghalaya",
-  "Mizoram",
-  "Nagaland",
-  "Odisha",
-  "Punjab",
-  "Rajasthan",
-  "Sikkim",
-  "Tamil Nadu",
-  "Telangana",
-  "Tripura",
-  "Uttar Pradesh",
-  "Uttarakhand",
-  "West Bengal",
-  "Delhi",
-  "Jammu and Kashmir",
-  "Ladakh",
-];
-
-const casteCategories = [
-  "General",
-  "OBC (Other Backward Classes)",
-  "SC (Scheduled Caste)",
-  "ST (Scheduled Tribe)",
-  "EWS (Economically Weaker Section)",
-];
-
-const occupations = [
-  "Farmer",
-  "Self-Employed",
-  "Salaried Employee",
-  "Daily Wage Worker",
-  "Student",
-  "Homemaker",
-  "Unemployed",
-  "Retired",
-  "Business Owner",
-  "Government Employee",
-  "Other",
-];
+import { casteCategories, indianStates, occupations } from "@/lib/portal-data";
 
 interface FormData {
   fullName: string;
@@ -80,6 +19,9 @@ interface FormData {
   state: string;
   occupation: string;
   gender: string;
+  familySize: string;
+  landOwned: string;
+  hasBankAccount: string;
 }
 
 export function ProfileForm() {
@@ -89,11 +31,14 @@ export function ProfileForm() {
     fullName: "",
     age: "",
     annualIncome: "",
-    caste: "",
-    state: "",
-    occupation: "",
-    gender: "",
-  });
+      caste: "",
+      state: "",
+      occupation: "",
+      gender: "",
+      familySize: "4",
+      landOwned: "0",
+      hasBankAccount: "yes",
+    });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -108,8 +53,9 @@ export function ProfileForm() {
         caste: formData.caste,
         state: formData.state,
         occupation: formData.occupation,
-        family_size: 1,
-        has_bank_account: true,
+        family_size: parseInt(formData.familySize),
+        land_owned: parseFloat(formData.landOwned),
+        has_bank_account: formData.hasBankAccount === "yes",
       };
 
       // Call ML service
@@ -221,19 +167,17 @@ export function ProfileForm() {
                 <Users className="h-4 w-4 text-muted-foreground" />
                 Gender
               </Label>
-              <Select
+              <NativeSelect
+                id="gender"
                 value={formData.gender}
-                onValueChange={(value) => updateField("gender", value)}
+                onChange={(e) => updateField("gender", e.target.value)}
+                className="h-12"
               >
-                <SelectTrigger id="gender" className="h-12 text-base">
-                  <SelectValue placeholder="Select gender" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">Male</SelectItem>
-                  <SelectItem value="female">Female</SelectItem>
-                  <SelectItem value="other">Other</SelectItem>
-                </SelectContent>
-              </Select>
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </NativeSelect>
             </div>
           </div>
 
@@ -261,21 +205,19 @@ export function ProfileForm() {
               <ShieldCheck className="h-4 w-4 text-muted-foreground" />
               Caste Category
             </Label>
-            <Select
+            <NativeSelect
+              id="caste"
               value={formData.caste}
-              onValueChange={(value) => updateField("caste", value)}
+              onChange={(e) => updateField("caste", e.target.value)}
+              className="h-12"
             >
-              <SelectTrigger id="caste" className="h-12 text-base">
-                <SelectValue placeholder="Select category" />
-              </SelectTrigger>
-              <SelectContent>
-                {casteCategories.map((caste) => (
-                  <SelectItem key={caste} value={caste}>
-                    {caste}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              <option value="">Select category</option>
+              {casteCategories.map((caste) => (
+                <option key={caste} value={caste}>
+                  {caste}
+                </option>
+              ))}
+            </NativeSelect>
           </div>
 
           {/* State */}
@@ -284,21 +226,19 @@ export function ProfileForm() {
               <MapPin className="h-4 w-4 text-muted-foreground" />
               State of Residence
             </Label>
-            <Select
+            <NativeSelect
+              id="state"
               value={formData.state}
-              onValueChange={(value) => updateField("state", value)}
+              onChange={(e) => updateField("state", e.target.value)}
+              className="h-12"
             >
-              <SelectTrigger id="state" className="h-12 text-base">
-                <SelectValue placeholder="Select your state" />
-              </SelectTrigger>
-              <SelectContent>
-                {indianStates.map((state) => (
-                  <SelectItem key={state} value={state}>
-                    {state}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              <option value="">Select your state</option>
+              {indianStates.map((state) => (
+                <option key={state} value={state}>
+                  {state}
+                </option>
+              ))}
+            </NativeSelect>
           </div>
 
           {/* Occupation */}
@@ -307,21 +247,71 @@ export function ProfileForm() {
               <Briefcase className="h-4 w-4 text-muted-foreground" />
               Occupation
             </Label>
-            <Select
+            <NativeSelect
+              id="occupation"
               value={formData.occupation}
-              onValueChange={(value) => updateField("occupation", value)}
+              onChange={(e) => updateField("occupation", e.target.value)}
+              className="h-12"
             >
-              <SelectTrigger id="occupation" className="h-12 text-base">
-                <SelectValue placeholder="Select occupation" />
-              </SelectTrigger>
-              <SelectContent>
-                {occupations.map((occupation) => (
-                  <SelectItem key={occupation} value={occupation}>
-                    {occupation}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+              <option value="">Select occupation</option>
+              {occupations.map((occupation) => (
+                <option key={occupation} value={occupation}>
+                  {occupation}
+                </option>
+              ))}
+            </NativeSelect>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="space-y-2">
+              <Label htmlFor="familySize" className="flex items-center gap-2 text-sm font-medium">
+                <Users className="h-4 w-4 text-muted-foreground" />
+                Family Size
+              </Label>
+              <Input
+                id="familySize"
+                type="number"
+                min="1"
+                max="20"
+                value={formData.familySize}
+                onChange={(e) => updateField("familySize", e.target.value)}
+                className="h-12 text-base transition-all focus:ring-2 focus:ring-primary/20"
+                required
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="landOwned" className="flex items-center gap-2 text-sm font-medium">
+                <House className="h-4 w-4 text-muted-foreground" />
+                Land Owned (acres)
+              </Label>
+              <Input
+                id="landOwned"
+                type="number"
+                min="0"
+                step="0.1"
+                value={formData.landOwned}
+                onChange={(e) => updateField("landOwned", e.target.value)}
+                className="h-12 text-base transition-all focus:ring-2 focus:ring-primary/20"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="hasBankAccount" className="flex items-center gap-2 text-sm font-medium">
+              <Landmark className="h-4 w-4 text-muted-foreground" />
+              Bank Account Linked for DBT
+            </Label>
+            <NativeSelect
+              id="hasBankAccount"
+              value={formData.hasBankAccount}
+              onChange={(e) => updateField("hasBankAccount", e.target.value)}
+              className="h-12"
+            >
+              <option value="">Select bank account status</option>
+              <option value="yes">Yes, bank account is available</option>
+              <option value="no">No, bank account not linked yet</option>
+            </NativeSelect>
           </div>
 
           {/* Submit Button */}

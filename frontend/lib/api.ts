@@ -1,6 +1,64 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+function getApiBase() {
+  if (typeof window !== "undefined") {
+    const browserBase = `${window.location.protocol}//${window.location.hostname}:5000/api`;
 
-// Normalize frontend values to ML service expected values
+    if (!process.env.NEXT_PUBLIC_API_URL) {
+      return browserBase;
+    }
+
+    try {
+      const configuredUrl = new URL(process.env.NEXT_PUBLIC_API_URL);
+      if (configuredUrl.hostname === window.location.hostname || configuredUrl.hostname === "localhost") {
+        return process.env.NEXT_PUBLIC_API_URL;
+      }
+      return browserBase;
+    } catch {
+      return browserBase;
+    }
+  }
+
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL;
+  }
+
+  return "http://localhost:5000/api";
+}
+
+async function parseResponse<T>(response: Response, fallbackMessage: string): Promise<T> {
+  const contentType = response.headers.get("content-type") || "";
+  const isJson = contentType.includes("application/json");
+  const payload = isJson ? await response.json() : null;
+
+  if (!response.ok) {
+    const message =
+      payload && typeof payload === "object" && "message" in payload && typeof payload.message === "string"
+        ? payload.message
+        : fallbackMessage;
+    throw new Error(message);
+  }
+
+  if (payload === null) {
+    throw new Error(fallbackMessage);
+  }
+
+  return payload as T;
+}
+
+function getAuthHeaders() {
+  const headers: Record<string, string> = {};
+
+  if (typeof window === "undefined") {
+    return headers;
+  }
+
+  const token = localStorage.getItem("schemeconnect_token");
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  return headers;
+}
+
 function normalizeProfile(profile: CitizenProfile): CitizenProfile {
   const casteMap: Record<string, string> = {
     "OBC (Other Backward Classes)": "OBC",
@@ -34,28 +92,27 @@ export interface CitizenProfile {
   has_bank_account?: boolean;
 }
 
-export interface Scheme {
-  id: string;
-  name: string;
+export interface EligibilitySchemeResult {
+  scheme_id: string;
+  scheme_name: string;
   category: string;
   benefits: string;
   eligibility_score: number;
   eligible: boolean;
   reasons: string[];
   state: string;
+  documents_required?: string[];
+  next_steps?: string[];
+  match_type?: string;
+  ml_probability?: number | null;
 }
 
 export interface EligibilityResponse {
   success: boolean;
   total_schemes_checked: number;
   eligible_count: number;
-  results: Scheme[];
+  results: EligibilitySchemeResult[];
   message: string;
-}
-
-export interface ChatRequest {
-  message: string;
-  citizen_id?: string;
 }
 
 export interface ChatResponse {
@@ -63,39 +120,159 @@ export interface ChatResponse {
   response: string;
 }
 
-export async function checkEligibility(profile: CitizenProfile): Promise<EligibilityResponse> {
-  const response = await fetch(`${API_BASE}/predict-eligibility`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(normalizeProfile(profile)),
-  });
-  if (!response.ok) throw new Error("Failed to check eligibility");
-  return response.json();
+export interface AuthUser {
+  id: string;
+  name: string;
+  email: string;
+  role: "citizen" | "admin";
 }
 
-export async function getRecommendations(profile: CitizenProfile): Promise<{ recommendations: Scheme[] }> {
-  const response = await fetch(`${API_BASE}/recommend-schemes`, {
+export interface AuthResponse {
+  success: boolean;
+  token: string;
+  user: AuthUser;
+}
+
+export interface ApplicationStep {
+  id: string;
+  title: string;
+  description: string;
+  status: "completed" | "current" | "pending" | "error";
+  date?: string;
+  remarks?: string;
+}
+
+export interface ApplicationRecord {
+  id?: string;
+  _id?: string;
+  applicationId: string;
+  schemeId: string;
+  schemeName: string;
+  ministry?: string;
+  state?: string;
+  citizenName?: string;
+  status: "approved" | "pending" | "under-review" | "rejected" | "processing";
+  riskLevel: "low" | "medium" | "high";
+  fraudScore?: number;
+  fraudStatus?: string;
+  fraudFlags?: string[];
+  manualReviewRequired?: boolean;
+  nextAction: string;
+  eta: string;
+  documentsPending: string[];
+  steps: ApplicationStep[];
+  createdAt?: string;
+}
+
+export interface CreateApplicationPayload {
+  citizenName?: string;
+  schemeId: string;
+  schemeName: string;
+  ministry?: string;
+  state?: string;
+  documentsPending?: string[];
+  nextAction?: string;
+  eta?: string;
+}
+
+export async function checkEligibility(profile: CitizenProfile): Promise<EligibilityResponse> {
+  const response = await fetch(`${getApiBase()}/predict-eligibility`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(normalizeProfile(profile)),
   });
-  if (!response.ok) throw new Error("Failed to get recommendations");
-  return response.json();
+  return parseResponse<EligibilityResponse>(response, "Failed to check eligibility");
+}
+
+export async function getRecommendations(
+  profile: CitizenProfile,
+): Promise<{ recommendations: EligibilitySchemeResult[] }> {
+  const response = await fetch(`${getApiBase()}/recommend-schemes`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(normalizeProfile(profile)),
+  });
+  return parseResponse<{ recommendations: EligibilitySchemeResult[] }>(response, "Failed to get recommendations");
 }
 
 export async function chat(message: string, citizenId?: string): Promise<ChatResponse> {
-  const response = await fetch(`${API_BASE}/chat`, {
+  const response = await fetch(`${getApiBase()}/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ message, citizen_id: citizenId }),
   });
-  if (!response.ok) throw new Error("Failed to chat");
-  return response.json();
+  return parseResponse<ChatResponse>(response, "Failed to chat");
+}
+
+export async function registerUser(payload: {
+  name: string;
+  email: string;
+  password: string;
+  role: "citizen" | "admin";
+}): Promise<AuthResponse> {
+  const response = await fetch(`${getApiBase()}/auth/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  return parseResponse<AuthResponse>(response, "Failed to register");
+}
+
+export async function loginUser(payload: { email: string; password: string }): Promise<AuthResponse> {
+  const response = await fetch(`${getApiBase()}/auth/login`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload),
+  });
+  return parseResponse<AuthResponse>(response, "Failed to login");
+}
+
+export async function getCurrentUser(): Promise<{ success: boolean; user: AuthUser }> {
+  const response = await fetch(`${getApiBase()}/auth/me`, {
+    headers: {
+      ...getAuthHeaders(),
+    },
+  });
+  return parseResponse<{ success: boolean; user: AuthUser }>(response, "Failed to fetch user");
+}
+
+export async function createApplication(
+  payload: CreateApplicationPayload,
+): Promise<{ success: boolean; application: ApplicationRecord }> {
+  const response = await fetch(`${getApiBase()}/applications`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAuthHeaders(),
+    },
+    body: JSON.stringify(payload),
+  });
+  return parseResponse<{ success: boolean; application: ApplicationRecord }>(response, "Failed to create application");
+}
+
+export async function getApplications(): Promise<{ success: boolean; applications: ApplicationRecord[] }> {
+  const response = await fetch(`${getApiBase()}/applications`, {
+    headers: {
+      ...getAuthHeaders(),
+    },
+  });
+  return parseResponse<{ success: boolean; applications: ApplicationRecord[] }>(response, "Failed to fetch applications");
+}
+
+export async function getApplicationById(
+  applicationId: string,
+): Promise<{ success: boolean; application: ApplicationRecord }> {
+  const response = await fetch(`${getApiBase()}/applications/${applicationId}`, {
+    headers: {
+      ...getAuthHeaders(),
+    },
+  });
+  return parseResponse<{ success: boolean; application: ApplicationRecord }>(response, "Failed to fetch application");
 }
 
 export async function checkHealth(): Promise<boolean> {
   try {
-    const response = await fetch(`${API_BASE}/health`);
+    const response = await fetch(`${getApiBase()}/health`);
     return response.ok;
   } catch {
     return false;

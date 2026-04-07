@@ -12,7 +12,7 @@ import {
   SheetDescription,
 } from "@/components/ui/sheet";
 import { Menu, Shield, User, Bell, ChevronRight, Sparkles } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -24,6 +24,30 @@ const navigation = [
 export function Header() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [userName, setUserName] = useState<string | null>(null);
+  const [userRole, setUserRole] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("schemeconnect_user");
+    if (!storedUser) return;
+
+    try {
+      const user = JSON.parse(storedUser);
+      setUserName(user.name || null);
+      setUserRole(user.role || null);
+    } catch {
+      setUserName(null);
+      setUserRole(null);
+    }
+  }, []);
+
+  function handleLogout() {
+    localStorage.removeItem("schemeconnect_token");
+    localStorage.removeItem("schemeconnect_user");
+    setUserName(null);
+    setUserRole(null);
+    window.location.href = "/";
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
@@ -86,12 +110,40 @@ export function Header() {
             <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-accent" />
             <span className="sr-only">Notifications</span>
           </Button>
-          <Link href="/admin" className="hidden sm:block">
-            <Button variant="outline" size="sm" className="gap-2 shadow-sm">
-              <User className="h-4 w-4" />
-              <span>Admin</span>
-            </Button>
-          </Link>
+          {userName ? (
+            <>
+              <div className="hidden text-right sm:block">
+                <p className="text-sm font-medium">{userName}</p>
+                <p className="text-xs text-muted-foreground">{userRole}</p>
+              </div>
+              {userRole === "admin" ? (
+                <Link href="/admin" className="hidden sm:block">
+                  <Button variant="outline" size="sm" className="gap-2 shadow-sm">
+                    <User className="h-4 w-4" />
+                    <span>Admin</span>
+                  </Button>
+                </Link>
+              ) : null}
+              <Button variant="outline" size="sm" className="hidden sm:flex" onClick={handleLogout}>
+                Logout
+              </Button>
+            </>
+          ) : (
+            <div className="hidden items-center gap-2 sm:flex">
+              <Link href="/admin/login">
+                <Button variant="ghost" size="sm" className="gap-2">
+                  <Shield className="h-4 w-4" />
+                  <span>Admin</span>
+                </Button>
+              </Link>
+              <Link href="/auth" className="hidden sm:block">
+                <Button variant="outline" size="sm" className="gap-2 shadow-sm">
+                  <User className="h-4 w-4" />
+                  <span>Login</span>
+                </Button>
+              </Link>
+            </div>
+          )}
 
           {/* Mobile menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
@@ -150,15 +202,43 @@ export function Header() {
                 
                 {/* Sheet Footer */}
                 <div className="border-t p-4">
-                  <Link
-                    href="/admin"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <Button className="w-full gap-2">
-                      <User className="h-4 w-4" />
-                      Admin Dashboard
-                    </Button>
-                  </Link>
+                  {userName ? (
+                    <div className="space-y-3">
+                      {userRole === "admin" ? (
+                        <Link href="/admin" onClick={() => setMobileMenuOpen(false)}>
+                          <Button className="w-full gap-2">
+                            <User className="h-4 w-4" />
+                            Admin Dashboard
+                          </Button>
+                        </Link>
+                      ) : null}
+                      <Button
+                        variant="outline"
+                        className="w-full"
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          handleLogout();
+                        }}
+                      >
+                        Logout
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      <Link href="/auth" onClick={() => setMobileMenuOpen(false)}>
+                        <Button className="w-full gap-2">
+                          <User className="h-4 w-4" />
+                          Citizen Login
+                        </Button>
+                      </Link>
+                      <Link href="/admin/login" onClick={() => setMobileMenuOpen(false)}>
+                        <Button variant="outline" className="w-full gap-2">
+                          <Shield className="h-4 w-4" />
+                          Admin Login
+                        </Button>
+                      </Link>
+                    </div>
+                  )}
                 </div>
               </div>
             </SheetContent>

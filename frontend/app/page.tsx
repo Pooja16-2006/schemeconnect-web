@@ -2,13 +2,31 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { HeroSection } from "@/components/hero-section";
 import { ProfileForm } from "@/components/profile-form";
-import { Shield, Building2, Landmark, Award } from "lucide-react";
+import { Shield, Building2, Landmark, Award, BrainCircuit, ClipboardList, Radar } from "lucide-react";
 
 const trustBadges = [
   { icon: Shield, name: "Digital India", desc: "Initiative" },
   { icon: Building2, name: "MeitY", desc: "Government of India" },
   { icon: Landmark, name: "NIC", desc: "National Informatics Centre" },
   { icon: Award, name: "ISO 27001", desc: "Certified" },
+];
+
+const solutionPillars = [
+  {
+    icon: BrainCircuit,
+    title: "Eligibility Prediction Classifier",
+    description: "ML scores each citizen profile against historical approval patterns to rank likely matches first.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Single Profile, Many Schemes",
+    description: "MERN manages citizen records, scheme catalogues, recommendation results, and application history in one flow.",
+  },
+  {
+    icon: Radar,
+    title: "Admin Visibility",
+    description: "Dashboards help officials monitor approval rates, bottlenecks, state trends, and beneficiary coverage.",
+  },
 ];
 
 export default function HomePage() {
@@ -29,6 +47,34 @@ export default function HomePage() {
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-xl">
               <ProfileForm />
+            </div>
+          </div>
+        </section>
+
+        <section className="border-t bg-background py-16 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-accent">
+                Why This Matters
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                Citizens should not have to travel first and discover ineligibility later.
+              </h2>
+              <p className="mt-4 text-lg text-muted-foreground">
+                This platform tackles the gap between welfare availability and citizen awareness by converting scattered scheme rules into a guided digital experience that is faster for people and lighter for government offices.
+              </p>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-3">
+              {solutionPillars.map((pillar) => (
+                <div key={pillar.title} className="rounded-3xl border bg-card p-6 shadow-sm">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                    <pillar.icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="mt-5 text-xl font-semibold">{pillar.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{pillar.description}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
