@@ -10,8 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
 export default function AdminLoginPage() {
-  const [email, setEmail] = useState("admin@schemeconnect.in");
-  const [password, setPassword] = useState("admin123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -53,7 +53,7 @@ export default function AdminLoginPage() {
               <Shield className="h-6 w-6" />
             </div>
             <CardTitle className="pt-2 text-2xl">Admin Login</CardTitle>
-            <CardDescription>Use the seeded administrator account to access the dashboard.</CardDescription>
+            <CardDescription>Sign in with an administrator account to access the dashboard.</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">

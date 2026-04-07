@@ -4,18 +4,31 @@ from pydantic import BaseModel
 from typing import Optional
 import joblib
 import os
+import logging
+
+
+logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO").upper())
+logger = logging.getLogger("schemeconnect.ml")
+
+
+def parse_allowed_origins() -> list[str]:
+    configured_origins = os.getenv("ALLOWED_ORIGINS")
+    if configured_origins:
+        return [origin.strip() for origin in configured_origins.split(",") if origin.strip()]
+
+    return [
+        "http://localhost:3000",
+        "http://localhost:5000",
+        "http://127.0.0.1:3000",
+        "http://192.168.9.73:3000",
+    ]
 
 
 app = FastAPI(title="SchemeConnect ML Service", version="2.0.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:5000",
-        "http://127.0.0.1:3000",
-        "http://192.168.9.73:3000",
-    ],
+    allow_origins=parse_allowed_origins(),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -28,6 +41,7 @@ def load_model(filename):
     path = os.path.join(MODEL_DIR, filename)
     if os.path.exists(path):
         return joblib.load(path)
+    logger.warning("Model file missing: %s", path)
     return None
 
 
@@ -37,6 +51,30 @@ le_gender = load_model("le_gender.pkl")
 le_caste = load_model("le_caste.pkl")
 le_state = load_model("le_state.pkl")
 le_occupation = load_model("le_occupation.pkl")
+
+
+def model_status():
+    return {
+        "eligibility_model": eligibility_model is not None,
+        "fraud_model": fraud_model is not None,
+        "le_gender": le_gender is not None,
+        "le_caste": le_caste is not None,
+        "le_state": le_state is not None,
+        "le_occupation": le_occupation is not None,
+    }
+
+
+@app.on_event("startup")
+def log_startup_status():
+    status = model_status()
+    missing = [name for name, loaded in status.items() if not loaded]
+
+    logger.info("ML service starting on port %s", os.getenv("PORT", "8001"))
+    logger.info("Allowed origins: %s", ", ".join(parse_allowed_origins()))
+    if missing:
+        logger.warning("Some ML assets are unavailable: %s", ", ".join(missing))
+    else:
+        logger.info("All ML models and encoders loaded successfully.")
 
 SCHEMES = [
     {
@@ -835,12 +873,11 @@ def root():
 
 @app.get("/health")
 def health():
+    status = model_status()
     return {
         "status": "healthy",
-        "models_loaded": {
-            "eligibility_model": eligibility_model is not None,
-            "fraud_model": fraud_model is not None,
-        },
+        "models_loaded": status,
+        "missing_models": [name for name, loaded in status.items() if not loaded],
         "schemes_available": len(SCHEMES),
     }
 

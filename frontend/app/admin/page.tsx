@@ -56,6 +56,7 @@ import {
   ShieldAlert,
   Siren,
 } from "lucide-react";
+import { getAdminApplications, type ApplicationRecord } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 // Analytics data
@@ -113,49 +114,6 @@ const schemeApprovalRateData = [
   { month: "Apr", "PM Kisan": 81, "Ayushman": 85, "PM Awas": 72 },
   { month: "May", "PM Kisan": 83, "Ayushman": 84, "PM Awas": 73 },
   { month: "Jun", "PM Kisan": 82, "Ayushman": 85, "PM Awas": 72 },
-];
-
-const recentApplications = [
-  {
-    id: "PM-KISAN-2024-8765432",
-    scheme: "PM Kisan Samman Nidhi",
-    applicant: "Ramesh Kumar",
-    state: "Uttar Pradesh",
-    status: "approved",
-    date: "2 hours ago",
-  },
-  {
-    id: "PMAY-G-2024-1234567",
-    scheme: "PM Awas Yojana",
-    applicant: "Sunita Devi",
-    state: "Bihar",
-    status: "pending",
-    date: "3 hours ago",
-  },
-  {
-    id: "UJJWALA-2024-9876543",
-    scheme: "PM Ujjwala Yojana",
-    applicant: "Lakshmi Bai",
-    state: "Madhya Pradesh",
-    status: "under-review",
-    date: "4 hours ago",
-  },
-  {
-    id: "NSAP-2024-5432167",
-    scheme: "National Social Assistance",
-    applicant: "Mohan Lal",
-    state: "Rajasthan",
-    status: "rejected",
-    date: "5 hours ago",
-  },
-  {
-    id: "STANDUP-2024-7654321",
-    scheme: "Stand Up India",
-    applicant: "Priya Sharma",
-    state: "Maharashtra",
-    status: "approved",
-    date: "6 hours ago",
-  },
 ];
 
 const statsCards = [
@@ -316,7 +274,9 @@ export default function AdminDashboard() {
   const [showAllApplications, setShowAllApplications] = useState(false);
   const [liveFraudQueue, setLiveFraudQueue] = useState(fraudQueue);
   const [fraudLoading, setFraudLoading] = useState(false);
-  const [selectedRecentApplication, setSelectedRecentApplication] = useState<(typeof recentApplications)[number] | null>(null);
+  const [recentApplications, setRecentApplications] = useState<ApplicationRecord[]>([]);
+  const [recentApplicationsLoading, setRecentApplicationsLoading] = useState(false);
+  const [selectedRecentApplication, setSelectedRecentApplication] = useState<ApplicationRecord | null>(null);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("schemeconnect_user");
@@ -384,6 +344,24 @@ export default function AdminDashboard() {
     fetchFraudData();
   }, []);
 
+  useEffect(() => {
+    async function fetchRecentApplications() {
+      setRecentApplicationsLoading(true);
+      try {
+        const data = await getAdminApplications();
+        setRecentApplications(data.applications);
+      } catch {
+        setRecentApplications([]);
+      } finally {
+        setRecentApplicationsLoading(false);
+      }
+    }
+
+    if (isReady) {
+      fetchRecentApplications();
+    }
+  }, [isReady]);
+
   function handleLogout() {
     localStorage.removeItem("schemeconnect_token");
     localStorage.removeItem("schemeconnect_user");
@@ -400,6 +378,19 @@ export default function AdminDashboard() {
     return true;
   });
   const visibleApplications = showAllApplications ? recentApplications : recentApplications.slice(0, 4);
+
+  function formatRelativeTime(createdAt?: string) {
+    if (!createdAt) return "Unknown";
+
+    const diffMinutes = Math.max(1, Math.round((Date.now() - new Date(createdAt).getTime()) / 60000));
+    if (diffMinutes < 60) return `${diffMinutes} min ago`;
+
+    const diffHours = Math.round(diffMinutes / 60);
+    if (diffHours < 24) return `${diffHours} hour${diffHours === 1 ? "" : "s"} ago`;
+
+    const diffDays = Math.round(diffHours / 24);
+    return `${diffDays} day${diffDays === 1 ? "" : "s"} ago`;
+  }
 
   return (
     <div className="min-h-screen bg-muted/30">
@@ -445,6 +436,12 @@ export default function AdminDashboard() {
             <Button variant="ghost" size="icon">
               <Settings className="h-5 w-5" />
             </Button>
+            <Link href="/admin/submissions">
+              <Button variant="outline" size="sm" className="gap-2">
+                <FileText className="h-4 w-4" />
+                View Citizen Submissions
+              </Button>
+            </Link>
             <Button variant="outline" size="sm" className="gap-2" onClick={handleLogout}>
               <LogOut className="h-4 w-4" />
               Logout
@@ -898,91 +895,102 @@ export default function AdminDashboard() {
                   <FileText className="h-5 w-5 text-primary" />
                   Recent Applications
                 </CardTitle>
-                <CardDescription>Latest applications across all schemes</CardDescription>
+                <CardDescription>
+                  {recentApplicationsLoading ? "Loading live submissions..." : "Latest applications across all schemes"}
+                </CardDescription>
               </div>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={() => setShowAllApplications((current) => !current)}
+                disabled={recentApplications.length === 0}
               >
                 {showAllApplications ? "Show Less" : "View All"}
               </Button>
             </div>
           </CardHeader>
           <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b text-left text-sm text-muted-foreground">
-                    <th className="pb-4 font-semibold">Application ID</th>
-                    <th className="pb-4 font-semibold">Scheme</th>
-                    <th className="hidden pb-4 font-semibold sm:table-cell">Applicant</th>
-                    <th className="hidden pb-4 font-semibold md:table-cell">State</th>
-                    <th className="pb-4 font-semibold">Status</th>
-                    <th className="hidden pb-4 text-right font-semibold sm:table-cell">Time</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {visibleApplications.map((app, index) => (
-                    <tr 
-                      key={app.id} 
-                      onClick={() => setSelectedRecentApplication(app)}
-                      className={cn(
-                        "cursor-pointer transition-colors hover:bg-muted/50",
-                        index !== visibleApplications.length - 1 && "border-b",
-                        selectedRecentApplication?.id === app.id && "bg-muted/40"
-                      )}
-                    >
-                      <td className="py-4">
-                        <span className="rounded bg-muted px-2 py-1 font-mono text-xs">
-                          {app.id}
-                        </span>
-                      </td>
-                      <td className="py-4">
-                        <span className="font-medium">{app.scheme}</span>
-                      </td>
-                      <td className="hidden py-4 sm:table-cell">
-                        <span className="text-muted-foreground">{app.applicant}</span>
-                      </td>
-                      <td className="hidden py-4 md:table-cell">
-                        <span className="text-muted-foreground">{app.state}</span>
-                      </td>
-                      <td className="py-4">{getStatusBadge(app.status)}</td>
-                      <td className="hidden py-4 text-right text-sm text-muted-foreground sm:table-cell">
-                        {app.date}
-                      </td>
+            {recentApplicationsLoading ? (
+              <div className="py-12 text-center text-muted-foreground">Loading recent applications...</div>
+            ) : visibleApplications.length === 0 ? (
+              <div className="py-12 text-center text-muted-foreground">No citizen applications have been submitted yet.</div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b text-left text-sm text-muted-foreground">
+                      <th className="pb-4 font-semibold">Application ID</th>
+                      <th className="pb-4 font-semibold">Scheme</th>
+                      <th className="hidden pb-4 font-semibold sm:table-cell">Applicant</th>
+                      <th className="hidden pb-4 font-semibold md:table-cell">State</th>
+                      <th className="pb-4 font-semibold">Status</th>
+                      <th className="hidden pb-4 text-right font-semibold sm:table-cell">Time</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {visibleApplications.map((app, index) => (
+                      <tr
+                        key={app.applicationId}
+                        onClick={() => setSelectedRecentApplication(app)}
+                        className={cn(
+                          "cursor-pointer transition-colors hover:bg-muted/50",
+                          index !== visibleApplications.length - 1 && "border-b",
+                          selectedRecentApplication?.applicationId === app.applicationId && "bg-muted/40",
+                        )}
+                      >
+                        <td className="py-4">
+                          <span className="rounded bg-muted px-2 py-1 font-mono text-xs">
+                            {app.applicationId}
+                          </span>
+                        </td>
+                        <td className="py-4">
+                          <span className="font-medium">{app.schemeName}</span>
+                        </td>
+                        <td className="hidden py-4 sm:table-cell">
+                          <span className="text-muted-foreground">{app.citizenName || "-"}</span>
+                        </td>
+                        <td className="hidden py-4 md:table-cell">
+                          <span className="text-muted-foreground">{app.state || "-"}</span>
+                        </td>
+                        <td className="py-4">{getStatusBadge(app.status)}</td>
+                        <td className="hidden py-4 text-right text-sm text-muted-foreground sm:table-cell">
+                          {formatRelativeTime(app.createdAt)}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
 
             {selectedRecentApplication ? (
               <div className="mt-6 rounded-2xl border bg-muted/20 p-5">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="space-y-1">
                     <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Application Details</p>
-                    <h3 className="text-xl font-semibold">{selectedRecentApplication.scheme}</h3>
-                    <p className="text-sm text-muted-foreground">{selectedRecentApplication.id}</p>
+                    <h3 className="text-xl font-semibold">{selectedRecentApplication.schemeName}</h3>
+                    <p className="text-sm text-muted-foreground">{selectedRecentApplication.applicationId}</p>
                   </div>
                   {getStatusBadge(selectedRecentApplication.status)}
                 </div>
                 <div className="mt-4 grid gap-4 sm:grid-cols-3">
                   <div>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground">Applicant</p>
-                    <p className="mt-1 font-medium">{selectedRecentApplication.applicant}</p>
+                    <p className="mt-1 font-medium">{selectedRecentApplication.citizenName || "-"}</p>
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground">State</p>
-                    <p className="mt-1 font-medium">{selectedRecentApplication.state}</p>
+                    <p className="mt-1 font-medium">{selectedRecentApplication.state || "-"}</p>
                   </div>
                   <div>
                     <p className="text-xs uppercase tracking-wide text-muted-foreground">Received</p>
-                    <p className="mt-1 font-medium">{selectedRecentApplication.date}</p>
+                    <p className="mt-1 font-medium">{formatRelativeTime(selectedRecentApplication.createdAt)}</p>
                   </div>
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
-                  <Button size="sm">Open Full Review</Button>
+                  <Button size="sm" onClick={() => router.push("/admin/submissions")}>
+                    Open Full Review
+                  </Button>
                   <Button variant="outline" size="sm">Request Documents</Button>
                   <Button variant="ghost" size="sm" onClick={() => setSelectedRecentApplication(null)}>Close</Button>
                 </div>

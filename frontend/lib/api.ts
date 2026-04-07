@@ -59,6 +59,21 @@ function getAuthHeaders() {
   return headers;
 }
 
+function getAdminHeaders() {
+  const headers: Record<string, string> = {};
+
+  if (typeof window === "undefined") {
+    return headers;
+  }
+
+  const token = localStorage.getItem("schemeconnect_token");
+  if (token) {
+    headers.Authorization = `Bearer ${token}`;
+  }
+
+  return headers;
+}
+
 function normalizeProfile(profile: CitizenProfile): CitizenProfile {
   const casteMap: Record<string, string> = {
     "OBC (Other Backward Classes)": "OBC",
@@ -87,6 +102,7 @@ export interface CitizenProfile {
   caste: string;
   state: string;
   occupation: string;
+  residence_area?: "rural" | "urban";
   family_size?: number;
   land_owned?: number;
   has_bank_account?: boolean;
@@ -268,6 +284,36 @@ export async function getApplicationById(
     },
   });
   return parseResponse<{ success: boolean; application: ApplicationRecord }>(response, "Failed to fetch application");
+}
+
+export async function getAdminApplications(): Promise<{ success: boolean; applications: ApplicationRecord[] }> {
+  const response = await fetch(`${getApiBase()}/applications/admin/all`, {
+    headers: {
+      ...getAdminHeaders(),
+    },
+  });
+  return parseResponse<{ success: boolean; applications: ApplicationRecord[] }>(
+    response,
+    "Failed to fetch admin applications",
+  );
+}
+
+export async function updateAdminApplicationStatus(
+  applicationId: string,
+  status: ApplicationRecord["status"],
+): Promise<{ success: boolean; application: ApplicationRecord }> {
+  const response = await fetch(`${getApiBase()}/applications/admin/${applicationId}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+      ...getAdminHeaders(),
+    },
+    body: JSON.stringify({ status }),
+  });
+  return parseResponse<{ success: boolean; application: ApplicationRecord }>(
+    response,
+    "Failed to update application status",
+  );
 }
 
 export async function checkHealth(): Promise<boolean> {

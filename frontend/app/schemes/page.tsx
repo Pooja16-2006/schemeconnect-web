@@ -40,6 +40,7 @@ type StoredProfile = {
   caste?: string;
   state?: string;
   occupation?: string;
+  residenceArea?: string;
   familySize?: string;
 };
 
@@ -52,12 +53,16 @@ export default function SchemesPage() {
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [profile, setProfile] = useState<StoredProfile | null>(null);
   const [eligibility, setEligibility] = useState<EligibilityResponse | null>(null);
+  const [eligibilityNotice, setEligibilityNotice] = useState<string | null>(null);
 
   useEffect(() => {
     async function loadEligibility() {
       const storedProfile = sessionStorage.getItem("profileData");
       const storedResults = sessionStorage.getItem("eligibilityResults");
       const storedApiProfile = sessionStorage.getItem("profile");
+      const storedNotice = sessionStorage.getItem("eligibilityNotice");
+
+      setEligibilityNotice(storedNotice);
 
       if (!storedProfile && !storedResults && !storedApiProfile) {
         setEligibility(getFallbackEligibilityResponse());
@@ -149,7 +154,7 @@ export default function SchemesPage() {
         schemeId: targetScheme.id,
         schemeName: targetScheme.name,
         ministry: targetScheme.ministry,
-        state: targetScheme.state,
+        state: profile?.state || targetScheme.state,
         documentsPending: targetScheme.eligible ? [] : targetScheme.documents,
         nextAction: targetScheme.nextSteps[0],
         eta: targetScheme.eligible ? "5-7 working days" : "Document review pending",
@@ -292,6 +297,13 @@ export default function SchemesPage() {
                 </Select>
               </div>
             </div>
+            {eligibilityNotice ? (
+              <Card className="mt-4 border-chart-4/40 bg-chart-4/5">
+                <CardContent className="p-4 text-sm text-chart-4">
+                  {eligibilityNotice}
+                </CardContent>
+              </Card>
+            ) : null}
           </div>
         </section>
 

@@ -350,9 +350,61 @@ function getStoredProfileGender() {
   }
 }
 
-function isWomenOnlyScheme(scheme: Pick<EligibilitySchemeResult, "scheme_name" | "benefits">) {
-  const womenOnlyKeywords = ["women", "woman", "lakshmi", "shakti", "mahila", "girl"];
-  const haystack = `${scheme.scheme_name} ${scheme.benefits}`.toLowerCase();
+function getStoredEligibilityProfile() {
+  if (typeof window === "undefined") {
+    return null;
+  }
+
+  try {
+    const storedProfile = JSON.parse(sessionStorage.getItem("profile") || "{}");
+    return storedProfile as {
+      occupation?: string;
+      land_owned?: number;
+      residence_area?: string;
+      state?: string;
+    };
+  } catch {
+    return null;
+  }
+}
+
+function isPmKisanScheme(scheme: Pick<EligibilitySchemeResult, "scheme_name" | "scheme_id">) {
+  const haystack = scheme.scheme_name.toLowerCase();
+  return scheme.scheme_id === "1" || haystack.includes("pm kisan");
+}
+
+function isFarmerProfile(profile: { occupation?: string; land_owned?: number; residence_area?: string } | null) {
+  if (!profile) {
+    return false;
+  }
+
+  const occupation = profile.occupation?.toLowerCase() ?? "";
+  const landOwned = Number(profile.land_owned ?? 0);
+  const residenceArea = profile.residence_area?.toLowerCase() ?? "";
+
+  return (occupation.includes("farmer") || landOwned > 0) && residenceArea === "rural";
+}
+
+function isWomenOnlyScheme(
+  scheme: Pick<EligibilitySchemeResult, "scheme_name" | "benefits" | "category">,
+) {
+  const womenOnlyKeywords = [
+    "women",
+    "woman",
+    "female",
+    "girl",
+    "girls",
+    "mahila",
+    "lakshmi",
+    "shakti",
+    "widow",
+    "mother",
+    "mothers",
+    "pregnan",
+    "maternal",
+  ];
+  const categoryBeneficiaries = categoryMeta[scheme.category]?.beneficiaries ?? "";
+  const haystack = `${scheme.scheme_name} ${scheme.benefits} ${scheme.category} ${categoryBeneficiaries}`.toLowerCase();
   return womenOnlyKeywords.some((keyword) => haystack.includes(keyword));
 }
 
@@ -440,7 +492,14 @@ export function mapEligibilityResultsToSchemes(
   response: EligibilityResponse | null | undefined,
 ): SchemeViewModel[] {
   const storedGender = getStoredProfileGender();
-  const filteredFallback = fallbackSchemes.filter((scheme) => {
+  const storedEligibilityProfile = getStoredEligibilityProfile();
+  const filterGenderRestrictedSchemes = (
+    scheme: Pick<EligibilitySchemeResult, "scheme_name" | "benefits" | "category" | "scheme_id">,
+  ) => {
+    if (isPmKisanScheme(scheme) && !isFarmerProfile(storedEligibilityProfile)) {
+      return false;
+    }
+
     if (!isWomenOnlyScheme(scheme)) {
       return true;
     }
@@ -450,9 +509,12 @@ export function mapEligibilityResultsToSchemes(
     }
 
     return isFemaleProfileValue(storedGender);
-  });
+  };
 
-  const source = response?.results?.length ? response.results : filteredFallback;
+  const filteredFallback = fallbackSchemes.filter(filterGenderRestrictedSchemes);
+  const filteredResults = response?.results?.filter(filterGenderRestrictedSchemes) ?? [];
+
+  const source = filteredResults.length ? filteredResults : filteredFallback;
 
   return source.map((scheme) => {
     const meta = categoryMeta[scheme.category] ?? {

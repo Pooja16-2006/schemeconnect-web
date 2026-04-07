@@ -19,6 +19,7 @@ interface FormData {
   state: string;
   occupation: string;
   gender: string;
+  residenceArea: string;
   familySize: string;
   landOwned: string;
   hasBankAccount: string;
@@ -27,6 +28,7 @@ interface FormData {
 export function ProfileForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const [submitNotice, setSubmitNotice] = useState("");
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     age: "",
@@ -35,6 +37,7 @@ export function ProfileForm() {
       state: "",
       occupation: "",
       gender: "",
+      residenceArea: "",
       familySize: "4",
       landOwned: "0",
       hasBankAccount: "yes",
@@ -43,6 +46,7 @@ export function ProfileForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setSubmitNotice("");
 
     try {
       // Map form data to ML service format
@@ -53,6 +57,7 @@ export function ProfileForm() {
         caste: formData.caste,
         state: formData.state,
         occupation: formData.occupation,
+        residence_area: formData.residenceArea as "rural" | "urban",
         family_size: parseInt(formData.familySize),
         land_owned: parseFloat(formData.landOwned),
         has_bank_account: formData.hasBankAccount === "yes",
@@ -65,12 +70,30 @@ export function ProfileForm() {
       sessionStorage.setItem("profileData", JSON.stringify(formData));
       sessionStorage.setItem("eligibilityResults", JSON.stringify(result));
       sessionStorage.setItem("profile", JSON.stringify(profile));
+      sessionStorage.removeItem("eligibilityNotice");
 
       router.push("/schemes");
     } catch (error) {
       console.error("Error checking eligibility:", error);
       // Still navigate to schemes page even on error (will show mock data)
       sessionStorage.setItem("profileData", JSON.stringify(formData));
+      sessionStorage.setItem("profile", JSON.stringify({
+        age: parseInt(formData.age),
+        gender: formData.gender,
+        annual_income: parseFloat(formData.annualIncome),
+        caste: formData.caste,
+        state: formData.state,
+        occupation: formData.occupation,
+        residence_area: formData.residenceArea,
+        family_size: parseInt(formData.familySize),
+        land_owned: parseFloat(formData.landOwned),
+        has_bank_account: formData.hasBankAccount === "yes",
+      }));
+      sessionStorage.setItem(
+        "eligibilityNotice",
+        "Live eligibility service is temporarily unavailable, so we're showing a fallback scheme list.",
+      );
+      setSubmitNotice("Live eligibility is unavailable right now. Opening fallback results instead.");
       router.push("/schemes");
     } finally {
       setIsLoading(false);
@@ -88,7 +111,8 @@ export function ProfileForm() {
     formData.caste &&
     formData.state &&
     formData.occupation &&
-    formData.gender;
+    formData.gender &&
+    formData.residenceArea;
 
   const completedFields = Object.values(formData).filter(Boolean).length;
   const totalFields = Object.keys(formData).length;
@@ -262,6 +286,23 @@ export function ProfileForm() {
             </NativeSelect>
           </div>
 
+          <div className="space-y-2">
+            <Label htmlFor="residenceArea" className="flex items-center gap-2 text-sm font-medium">
+              <MapPin className="h-4 w-4 text-muted-foreground" />
+              Residence Area
+            </Label>
+            <NativeSelect
+              id="residenceArea"
+              value={formData.residenceArea}
+              onChange={(e) => updateField("residenceArea", e.target.value)}
+              className="h-12"
+            >
+              <option value="">Select residence area</option>
+              <option value="rural">Rural</option>
+              <option value="urban">Urban</option>
+            </NativeSelect>
+          </div>
+
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="familySize" className="flex items-center gap-2 text-sm font-medium">
@@ -333,6 +374,7 @@ export function ProfileForm() {
                 </>
               )}
             </Button>
+            {submitNotice ? <p className="mt-3 text-sm text-chart-4">{submitNotice}</p> : null}
           </div>
 
           {/* Security notice */}

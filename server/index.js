@@ -12,6 +12,7 @@ const authRoutes = require("./routes/authRoutes");
 const schemeRoutes = require("./routes/schemeRoutes");
 
 const app = express();
+const isProduction = process.env.NODE_ENV === "production";
 
 // Security headers
 app.use(helmet());
@@ -35,8 +36,10 @@ app.use("/api/auth", authLimiter);
 const PORT = process.env.PORT || 5000;
 
 connectDB().then(async () => {
-  await seedSampleData();
-  await seedDemoAdmin();
+  if (!isProduction) {
+    await seedSampleData();
+    await seedDemoAdmin();
+  }
 });
 
 app.use(morgan("dev"));
@@ -50,6 +53,7 @@ app.use(
       const allowedOrigins = [
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
       ];
 
       const isPrivateLanOrigin = /^http:\/\/(192\.168\.\d{1,3}\.\d{1,3}|10\.\d{1,3}\.\d{1,3}\.\d{1,3}|172\.(1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3}):3000$/.test(origin);

@@ -7,6 +7,14 @@ function canUseMongo() {
   return User.db && User.db.readyState === 1;
 }
 
+function getJwtSecret() {
+  if (!process.env.JWT_SECRET) {
+    throw new Error("JWT_SECRET is required.");
+  }
+
+  return process.env.JWT_SECRET;
+}
+
 function signToken(user) {
   return jwt.sign(
     {
@@ -15,7 +23,7 @@ function signToken(user) {
       email: user.email,
       role: user.role,
     },
-    process.env.JWT_SECRET || "schemeconnect-secret",
+    getJwtSecret(),
     { expiresIn: "7d" },
   );
 }

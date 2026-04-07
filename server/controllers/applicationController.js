@@ -210,8 +210,56 @@ async function getApplicationById(req, res) {
   }
 }
 
+async function getAllApplicationsAdmin(req, res) {
+  try {
+    const applications = canUseMongo()
+      ? await Application.find({}).sort({ createdAt: -1 }).limit(100)
+      : [...memoryApplications].reverse();
+
+    return res.json({ success: true, applications });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: "Unable to fetch applications.", error: error.message });
+  }
+}
+
+async function updateApplicationStatusAdmin(req, res) {
+  try {
+    const { status } = req.body;
+    const validStatuses = ["approved", "pending", "under-review", "rejected", "processing"];
+
+    if (!validStatuses.includes(status)) {
+      return res.status(400).json({ success: false, message: "Invalid status." });
+    }
+
+    let application;
+
+    if (canUseMongo()) {
+      application = await Application.findOneAndUpdate(
+        { applicationId: req.params.applicationId },
+        { status },
+        { new: true },
+      );
+    } else {
+      application = memoryApplications.find((item) => item.applicationId === req.params.applicationId);
+      if (application) {
+        application.status = status;
+      }
+    }
+
+    if (!application) {
+      return res.status(404).json({ success: false, message: "Not found." });
+    }
+
+    return res.json({ success: true, application });
+  } catch (error) {
+    return res.status(500).json({ success: false, message: "Unable to update.", error: error.message });
+  }
+}
+
 module.exports = {
   createApplication,
   getApplications,
   getApplicationById,
+  getAllApplicationsAdmin,
+  updateApplicationStatusAdmin,
 };
