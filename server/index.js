@@ -2,6 +2,8 @@ require("dotenv").config();
 
 const cors = require("cors");
 const express = require("express");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
 const connectDB = require("./config/db");
 const { seedDemoAdmin, seedSampleData } = require("./config/memoryStore");
 const applicationRoutes = require("./routes/applicationRoutes");
@@ -9,6 +11,26 @@ const authRoutes = require("./routes/authRoutes");
 const schemeRoutes = require("./routes/schemeRoutes");
 
 const app = express();
+
+// Security headers
+app.use(helmet());
+
+// Rate limiting — 100 requests per 15 minutes per IP
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: { success: false, message: "Too many requests, please try again later." },
+});
+app.use("/api", limiter);
+
+// Stricter limit for auth routes
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  message: { success: false, message: "Too many login attempts, please try again later." },
+});
+app.use("/api/auth", authLimiter);
+
 const PORT = process.env.PORT || 5000;
 
 connectDB();
