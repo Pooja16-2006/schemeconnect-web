@@ -3,6 +3,7 @@ require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
 const helmet = require("helmet");
+const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
 const connectDB = require("./config/db");
 const { seedDemoAdmin, seedSampleData } = require("./config/memoryStore");
@@ -33,10 +34,12 @@ app.use("/api/auth", authLimiter);
 
 const PORT = process.env.PORT || 5000;
 
-connectDB();
-seedSampleData();
-seedDemoAdmin();
+connectDB().then(async () => {
+  await seedSampleData();
+  await seedDemoAdmin();
+});
 
+app.use(morgan("dev"));
 app.use(
   cors({
     origin(origin, callback) {
@@ -82,6 +85,20 @@ app.get("/", (req, res) => {
 app.use("/api", schemeRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(err.status || 500).json({
+    success: false,
+    message: err.message || "Internal server error",
+  });
+});
+
+// 404 handler
+app.use((req, res) => {
+  res.status(404).json({ success: false, message: "Route not found" });
+});
 
 app.listen(PORT, () => {
   console.log(`Express API running on http://localhost:${PORT}`);
