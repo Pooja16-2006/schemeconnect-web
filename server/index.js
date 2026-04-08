@@ -33,9 +33,14 @@ const authLimiter = rateLimit({
 });
 app.use(cors({ origin: "https://schemeconnectweb.vercel.app" }));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on ${PORT}`));
+app.get("/health", (req, res) => {
+  res.json({ success: true, message: "ok" });
+});
 
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on ${PORT}`);
+});
 connectDB().then(async () => {
   if (!isProduction) {
     await seedSampleData();
@@ -86,6 +91,4 @@ app.listen(PORT, () => {
   console.log(`Express API running on http://localhost:${PORT}`);
 });
 
-app.get("/health", (req, res) => {
-  res.json({ success: true, message: "ok" });
-});
+
