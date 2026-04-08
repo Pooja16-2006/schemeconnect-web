@@ -24,7 +24,6 @@ const limiter = rateLimit({
   max: 100,
   message: { success: false, message: "Too many requests, please try again later." },
 });
-app.use("/api", limiter);
 
 // Stricter limit for auth routes
 const authLimiter = rateLimit({
@@ -45,45 +44,69 @@ app.use(morgan("dev"));
 app.use(cors({ origin: process.env.FRONTEND_ORIGIN }));
 app.use(express.json());
 
-// ✅ FIXED: Single health check endpoint with DB status
+// ============================================
+// ✅ CRITICAL: Define health routes FIRST, before /api routes
+// ============================================
+
+// Root health check (no /api prefix)
 app.get("/health", (req, res) => {
   const dbState = mongoose.connection.readyState;
-  // 0 = disconnected, 1 = connected, 2 = connecting, 3 = disconnecting
-
-  let status;
+  
+  let dbStatus;
   switch (dbState) {
     case 0:
-      status = "disconnected";
+      dbStatus = "disconnected";
       break;
     case 1:
-      status = "connected";
+      dbStatus = "connected";
       break;
     case 2:
-      status = "connecting";
+      dbStatus = "connecting";
       break;
     case 3:
-      status = "disconnecting";
+      dbStatus = "disconnecting";
       break;
     default:
-      status = "unknown";
+      dbStatus = "unknown";
   }
 
-  res.json({
+  res.status(200).json({
     success: true,
     message: "Server is running",
     timestamp: new Date().toISOString(),
-    uptime: process.uptime(),
-    database: status,
+    uptime: Math.floor(process.uptime()),
+    database: dbStatus,
     environment: process.env.NODE_ENV || 'development'
   });
 });
 
-// API health check endpoint
+// API health check (with /api prefix)
 app.get("/api/health", (req, res) => {
-  res.json({ 
-    success: true, 
+  const dbState = mongoose.connection.readyState;
+  
+  let dbStatus;
+  switch (dbState) {
+    case 0:
+      dbStatus = "disconnected";
+      break;
+    case 1:
+      dbStatus = "connected";
+      break;
+    case 2:
+      dbStatus = "connecting";
+      break;
+    case 3:
+      dbStatus = "disconnecting";
+      break;
+    default:
+      dbStatus = "unknown";
+  }
+
+  res.status(200).json({
+    success: true,
     message: "API is operational",
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    database: dbStatus
   });
 });
 
@@ -93,42 +116,63 @@ app.get("/", (req, res) => {
     success: true,
     service: "SchemeConnect Express API",
     version: "1.0.0",
+    status: "online",
     endpoints: [
-      "/health",
-      "/api/health",
-      "/api/predict-eligibility",
-      "/api/recommend-schemes",
-      "/api/chat",
-      "/api/auth/login",
-      "/api/auth/register",
-      "/api/applications",
+      "GET /health - Server health check",
+      "GET /api/health - API health check",
+      "POST /api/auth/login - User login",
+      "POST /api/auth/register - User registration",
+      "GET /api/schemes - Get all schemes",
+      "POST /api/applications - Submit application",
+      "GET /api/applications - Get all applications (admin)"
     ],
   });
 });
 
-// Routes
-app.use("/api", schemeRoutes);
+// ============================================
+// ✅ Main Routes (defined AFTER health checks)
+// ============================================
+
+// Apply rate limiting to all /api routes
+app.use("/api", limiter);
+
+// Auth routes with stricter rate limiting
 app.use("/api/auth", authLimiter, authRoutes);
+
+// Application routes
 app.use("/api/applications", applicationRoutes);
+
+// Scheme routes (this was catching /api/health before)
+app.use("/api", schemeRoutes);
+
+// ============================================
+// Error Handlers (must be last)
+// ============================================
 
 // Global error handler
 app.use((err, req, res, next) => {
-  console.error(err.stack);
+  console.error("Error:", err.stack);
   res.status(err.status || 500).json({
     success: false,
     message: err.message || "Internal server error",
+    ...(process.env.NODE_ENV === 'development' && { stack: err.stack })
   });
 });
 
-// 404 handler (must be last)
+// 404 handler (must be absolute last)
 app.use((req, res) => {
-  res.status(404).json({ success: false, message: "Route not found" });
+  res.status(404).json({ 
+    success: false, 
+    message: "Route not found",
+    path: req.path 
+  });
 });
 
-// ✅ Correct port binding for Render
+// ✅ Start server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`🚀 Express API running on port ${PORT}`);
+  console.log(`🚀 SchemeConnect API running on port ${PORT}`);
   console.log(`📊 Environment: ${process.env.NODE_ENV || 'development'}`);
-  console.log(`🔗 Health check: http://localhost:${PORT}/health`);
+  console.log(`🔗 Health: http://localhost:${PORT}/health`);
+  console.log(`🔗 API Health: http://localhost:${PORT}/api/health`);
 });
