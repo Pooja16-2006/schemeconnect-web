@@ -31,9 +31,10 @@ const authLimiter = rateLimit({
   max: 10,
   message: { success: false, message: "Too many login attempts, please try again later." },
 });
-app.use("/api/auth", authLimiter);
+app.use(cors({ origin: "https://schemeconnectweb.vercel.app" }));
 
 const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 connectDB().then(async () => {
   if (!isProduction) {
@@ -43,30 +44,7 @@ connectDB().then(async () => {
 });
 
 app.use(morgan("dev"));
-app.use(
-  cors({
-    origin(origin, callback) {
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      const allowedOrigins = [
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
-      ];
-
-      const isPrivateLanOrigin = /^http:\/\/(192\.168\.\d{1,3}\.\d{1,3}|10\.\d{1,3}\.\d{1,3}\.\d{1,3}|172\.(1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3}):3000$/.test(origin);
-
-      if (allowedOrigins.includes(origin) || isPrivateLanOrigin) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`CORS blocked for origin ${origin}`));
-    },
-    credentials: true,
-  }),
-);
+app.use(cors({ origin: process.env.FRONTEND_ORIGIN }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -106,4 +84,8 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Express API running on http://localhost:${PORT}`);
+});
+
+app.get("/health", (req, res) => {
+  res.json({ success: true, message: "ok" });
 });
