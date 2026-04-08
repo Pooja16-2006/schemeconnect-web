@@ -17,7 +17,7 @@ const isProduction = process.env.NODE_ENV === "production";
 // Security headers
 app.use(helmet());
 
-// Rate limiting — 100 requests per 15 minutes per IP
+// Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
@@ -31,16 +31,8 @@ const authLimiter = rateLimit({
   max: 10,
   message: { success: false, message: "Too many login attempts, please try again later." },
 });
-app.use(cors({ origin: "https://schemeconnectweb.vercel.app" }));
 
-app.get("/health", (req, res) => {
-  res.json({ success: true, message: "ok" });
-});
-
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`);
-});
+// Connect DB and seed demo data in non‑production
 connectDB().then(async () => {
   if (!isProduction) {
     await seedSampleData();
@@ -52,6 +44,16 @@ app.use(morgan("dev"));
 app.use(cors({ origin: process.env.FRONTEND_ORIGIN }));
 app.use(express.json());
 
+// Health check routes
+app.get("/health", (req, res) => {
+  res.json({ success: true, message: "ok" });
+});
+
+app.get("/api/health", (req, res) => {
+  res.json({ success: true, message: "ok" });
+});
+
+// Root info route
 app.get("/", (req, res) => {
   res.json({
     success: true,
@@ -69,6 +71,7 @@ app.get("/", (req, res) => {
   });
 });
 
+// Routes
 app.use("/api", schemeRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/applications", applicationRoutes);
@@ -87,8 +90,9 @@ app.use((req, res) => {
   res.status(404).json({ success: false, message: "Route not found" });
 });
 
+// ✅ Correct port binding for Render
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Express API running on http://localhost:${PORT}`);
+  console.log(`Express API running on port ${PORT}`);
 });
-
 
