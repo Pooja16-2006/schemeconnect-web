@@ -35,7 +35,7 @@ export default function AuthPage() {
 
     try {
       const user = JSON.parse(storedUser) as { role?: string };
-      router.replace(user.role === "admin" ? "/admin" : "/eligibility");
+      router.replace(user.role === "admin" ? "/admin" : "/dashboard");
     } catch {
       localStorage.removeItem("schemeconnect_token");
       localStorage.removeItem("schemeconnect_user");
@@ -55,7 +55,7 @@ export default function AuthPage() {
 
       localStorage.setItem("schemeconnect_token", response.token);
       localStorage.setItem("schemeconnect_user", JSON.stringify(response.user));
-      router.push(response.user.role === "admin" ? "/admin" : "/eligibility");
+      router.push(response.user.role === "admin" ? "/admin" : "/dashboard");
     } catch (submitError) {
       setError(
         submitError instanceof Error
@@ -73,43 +73,52 @@ export default function AuthPage() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <section className="gov-page-hero">
+        <section className="gov-page-hero -mt-6">
           <div className="gov-tricolor-stripe" />
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
             <p className="text-sm text-muted-foreground">
               Home <span className="mx-2 text-[var(--gov-saffron)]">/</span> Account Access
             </p>
-            <div className="mt-5 max-w-4xl">
+            <div className="mt-4 max-w-4xl">
               <div className="gov-section-label">Secure Citizen Access</div>
-              <h1 className="mt-5 font-serif text-4xl font-bold tracking-tight text-[var(--gov-navy)] sm:text-5xl">
-                Login or Create Your SchemeConnect Account
+              <h1 className="mt-4 font-serif text-4xl font-bold tracking-tight text-[var(--gov-navy)] sm:text-5xl">
+                Find schemes you actually qualify for
               </h1>
-              <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-                Use your account to save citizen context, compare schemes faster, and move through a more guided public-service workflow.
+              <p className="mt-3 max-w-3xl text-lg leading-8 text-slate-600">
+                SchemeConnect helps Karnataka citizens check eligibility across 14 schemes including PM-KISAN, Ayushman Bharat and Gruha Lakshmi.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="py-10 sm:py-14">
+        <section className="py-8 sm:py-12">
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
+            <div className="grid gap-8 lg:grid-cols-[1fr_420px]">
               <div className="space-y-6">
                 <div className="gov-card rounded-[2rem] p-6">
-                  <p className="gov-section-label">Citizen Benefits</p>
+                  <p className="gov-section-label">CITIZEN BENEFITS</p>
                   <div className="mt-5 space-y-4">
                     {[
-                      "Save your profile details for faster eligibility checks.",
-                      "Review scheme guidance and official portal readiness from one dashboard.",
-                      "Keep your citizen login separate from the dedicated admin portal.",
-                    ].map((item, index) => (
-                      <div key={item} className="gov-info-row">
+                      {
+                        title: "Instant eligibility checks",
+                        desc: "Quickly see if you qualify for PM-KISAN, Ayushman Bharat, Gruha Lakshmi and other schemes.",
+                      },
+                      {
+                        title: "Application tracking",
+                        desc: "Track applications and portal readiness from a single dashboard.",
+                      },
+                      {
+                        title: "Separate citizen access",
+                        desc: "Keep citizen accounts separate from admin workflows for privacy and clarity.",
+                      },
+                    ].map((item) => (
+                      <div key={item.title} className="gov-info-row">
                         <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--gov-green-soft)]">
                           <FileCheck2 className="h-4 w-4 text-[var(--gov-green)]" />
                         </div>
                         <div>
-                          <p className="font-semibold text-[var(--gov-navy)]">Citizen service {index + 1}</p>
-                          <p className="mt-1 text-sm text-slate-600">{item}</p>
+                          <p className="font-semibold text-[var(--gov-navy)]">{item.title}</p>
+                          <p className="mt-1 text-sm text-slate-600">{item.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -138,64 +147,118 @@ export default function AuthPage() {
                     <h2 className="font-semibold text-[var(--gov-navy)]">Security notice</h2>
                   </div>
                   <p className="mt-3 text-sm leading-7 text-slate-600">
-                    Use a strong password and do not share your credentials. This portal stores account data to support a guided citizen experience, but final scheme approvals still happen only on the official government system.
+                    Use a strong password and do not share your credentials. Final scheme approvals still happen only on the official government system.
                   </p>
                 </div>
               </div>
 
-              <Card className="gov-card overflow-hidden rounded-[2rem] border-0 shadow-xl">
-                <CardHeader className="bg-[var(--gov-navy)] text-white">
-                  <div className="flex gap-2">
-                    <Button variant={mode === "login" ? "secondary" : "ghost"} onClick={() => setMode("login")}>
-                      Login
-                    </Button>
-                    <Button variant={mode === "register" ? "secondary" : "ghost"} onClick={() => setMode("register")}>
-                      Register
-                    </Button>
-                  </div>
-                  <CardTitle className="pt-4 text-2xl">{mode === "login" ? "Welcome back" : "Create your account"}</CardTitle>
-                  <CardDescription className="text-white/75">
-                    {mode === "login"
-                      ? "Login to continue using the citizen service portal."
-                      : "Create a citizen account for a guided welfare discovery flow."}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="bg-[var(--gov-paper)] p-6">
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    {mode === "register" && (
-                      <>
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name</Label>
-                          <Input id="name" value={form.name} onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))} required />
-                        </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="role">Role</Label>
-                          <NativeSelect id="role" value={form.role} onChange={(e) => setForm((prev) => ({ ...prev, role: e.target.value as "citizen" | "admin" }))}>
-                            <option value="citizen">Citizen</option>
-                          </NativeSelect>
-                        </div>
-                      </>
-                    )}
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email</Label>
-                      <Input id="email" type="email" value={form.email} onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))} required />
+              <div className="w-full max-w-[420px] mx-auto">
+                <Card className="gov-card gap-0 py-0 overflow-visible rounded-[2rem] border-0 shadow-xl -mt-6">
+                  <CardHeader className="relative bg-[var(--gov-navy)] text-white pt-20 pb-6 px-6 rounded-t-[2rem] overflow-visible">
+
+                    <div
+                      aria-hidden="true"
+                      className="absolute left-0 right-0 bottom-0 h-14 pointer-events-none bg-gradient-to-b from-[rgba(13,43,85,0)] via-[rgba(13,43,85,0.08)] to-[rgba(13,43,85,0)] backdrop-blur-[6px]"
+                    />
+
+                    <div className="flex gap-3 justify-center mb-4 z-10 relative">
+                      <button
+                        type="button"
+                        onClick={() => setMode("login")}
+                        className={
+                          (mode === "login"
+                            ? "bg-[var(--gov-saffron)] text-[var(--gov-navy)] shadow-sm"
+                            : "bg-white/10 text-white/90 hover:bg-white/20") +
+                          " px-5 py-2 rounded-full text-sm font-semibold transition-colors"
+                        }
+                      >
+                        Login
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => setMode("register")}
+                        className={
+                          (mode === "register"
+                            ? "bg-white text-[var(--gov-navy)] shadow-sm"
+                            : "bg-white/10 text-white/90 hover:bg-white/20") +
+                          " px-5 py-2 rounded-full text-sm font-semibold transition-colors"
+                        }
+                      >
+                        Register
+                      </button>
                     </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="password">Password</Label>
-                      <Input id="password" type="password" value={form.password} onChange={(e) => setForm((prev) => ({ ...prev, password: e.target.value }))} required />
+
+                    <div className="text-center z-10 relative">
+                      <CardTitle className="text-2xl font-semibold">{mode === "login" ? "Welcome back" : "Create your account"}</CardTitle>
+                      <CardDescription className="text-white/80 max-w-[36rem] mx-auto mt-2">
+                        {mode === "login"
+                          ? "Login to continue using the citizen service portal."
+                          : "Create a citizen account for a guided welfare discovery flow."}
+                      </CardDescription>
                     </div>
-                    {error ? <p className="text-sm text-destructive">{error}</p> : null}
-                    <Button type="submit" className="gov-button-primary w-full" disabled={isLoading}>
-                      {isLoading ? "Please wait..." : mode === "login" ? "Login" : "Create Account"}
-                    </Button>
-                    <div className="gov-divider pt-2" />
-                    <div className="flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                      <ShieldCheck className="h-4 w-4 text-[var(--gov-green)]" />
-                      Protected citizen access workflow
-                    </div>
-                  </form>
-                </CardContent>
-              </Card>
+                  </CardHeader>
+
+                  <CardContent className="bg-[var(--gov-paper)] p-6 rounded-b-[2rem]">
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      {mode === "register" && (
+                        <>
+                          <div className="space-y-2">
+                            <Label htmlFor="name">Full Name</Label>
+                            <Input id="name" value={form.name} onChange={(e) => setForm((prev) => ({ ...prev, name: e.target.value }))} required />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="role">Role</Label>
+                            <NativeSelect id="role" value={form.role} onChange={(e) => setForm((prev) => ({ ...prev, role: e.target.value as "citizen" | "admin" }))}>
+                              <option value="citizen">Citizen</option>
+                            </NativeSelect>
+                          </div>
+                        </>
+                      )}
+
+                      <div className="space-y-2">
+                        <Label htmlFor="email">Email</Label>
+                        <Input id="email" type="email" value={form.email} onChange={(e) => setForm((prev) => ({ ...prev, email: e.target.value }))} required />
+                      </div>
+
+                      <div className="space-y-2">
+                        <Label htmlFor="password">Password</Label>
+                        <Input id="password" type="password" value={form.password} onChange={(e) => setForm((prev) => ({ ...prev, password: e.target.value }))} required />
+                      </div>
+
+                      {error ? <p className="text-sm text-destructive">{error}</p> : null}
+
+                      <Button type="submit" className="gov-button-primary w-full bg-[var(--gov-saffron)] text-[var(--gov-navy)]" disabled={isLoading}>
+                        {isLoading ? "Please wait..." : mode === "login" ? "Login" : "Create Account"}
+                      </Button>
+
+                      <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                        <div className="flex-1 h-px bg-slate-200" />
+                        <div className="px-2 text-xs uppercase tracking-wider">or</div>
+                        <div className="flex-1 h-px bg-slate-200" />
+                      </div>
+
+                      <div className="text-center text-sm">
+                        {mode === "login" ? (
+                          <button type="button" onClick={() => setMode("register")} className="text-[var(--gov-saffron)] font-medium">
+                            New to SchemeConnect? Create an account
+                          </button>
+                        ) : (
+                          <button type="button" onClick={() => setMode("login")} className="text-[var(--gov-navy)] font-medium">
+                            Already have an account? Login
+                          </button>
+                        )}
+                      </div>
+
+                      <div className="gov-divider pt-2" />
+                      <div className="flex items-center gap-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                        <ShieldCheck className="h-4 w-4 text-[var(--gov-green)]" />
+                        Protected citizen access workflow
+                      </div>
+                    </form>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>

@@ -1,3 +1,10 @@
 node_modules/
-frontend/.next/
-server/uploads/
+.next/
+dist/
+.env
+.env.local
+.DS_Store
+.vscode/
+*.log
+# OneDrive temp files
+~$*
