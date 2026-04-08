@@ -9,6 +9,20 @@ const applicationSchema = new mongoose.Schema(
     ministry: { type: String },
     state: { type: String },
     documentsPending: { type: [String], default: [] },
+    documents: {
+      type: Map,
+      of: {
+        fieldId: String,
+        label: String,
+        originalName: String,
+        filename: String,
+        mimetype: String,
+        size: Number,
+        relativePath: String,
+        uploadedAt: String,
+      },
+      default: {},
+    },
     nextAction: { type: String, default: "Awaiting review by the department." },
     eta: { type: String, default: "5-7 working days" },
     status: {

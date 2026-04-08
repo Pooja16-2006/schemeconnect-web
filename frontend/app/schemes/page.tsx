@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { CitizenAuthGuard } from "@/components/citizen-auth-guard";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { SchemeCard, SchemeCardSkeleton } from "@/components/scheme-card";
@@ -16,7 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { checkEligibility, createApplication, type CitizenProfile, type EligibilityResponse } from "@/lib/api";
+import { checkEligibility, type CitizenProfile, type EligibilityResponse } from "@/lib/api";
 import {
   formatIndianCurrency,
   getFallbackEligibilityResponse,
@@ -47,7 +48,6 @@ type StoredProfile = {
 export default function SchemesPage() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
-  const [applyingSchemeId, setApplyingSchemeId] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState("eligibility");
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState("all");
@@ -136,43 +136,11 @@ export default function SchemesPage() {
   const categoryCount = Math.max(categories.length - 1, 0);
   const topScheme = schemes[0];
 
-  async function handleApply(schemeId: string) {
-    const token = typeof window !== "undefined" ? localStorage.getItem("schemeconnect_token") : null;
-    const targetScheme = schemes.find((scheme) => scheme.id === schemeId);
-
-    if (!token) {
-      router.push("/auth");
-      return;
-    }
-
-    if (!targetScheme) return;
-
-    try {
-      setApplyingSchemeId(schemeId);
-      const response = await createApplication({
-        citizenName: profile?.fullName,
-        schemeId: targetScheme.id,
-        schemeName: targetScheme.name,
-        ministry: targetScheme.ministry,
-        state: profile?.state || targetScheme.state,
-        documentsPending: targetScheme.eligible ? [] : targetScheme.documents,
-        nextAction: targetScheme.nextSteps[0],
-        eta: targetScheme.eligible ? "5-7 working days" : "Document review pending",
-      });
-
-      sessionStorage.setItem("latestApplicationId", response.application.applicationId);
-      router.push("/track");
-    } catch (error) {
-      window.alert(error instanceof Error ? error.message : "Unable to create application right now. Please try again.");
-    } finally {
-      setApplyingSchemeId(null);
-    }
-  }
-
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1">
+      <CitizenAuthGuard>
+        <main className="flex-1">
         <section className="relative overflow-hidden border-b">
           <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary/10 via-background to-accent/10" />
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14 lg:px-8">
@@ -248,15 +216,8 @@ export default function SchemesPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-primary-foreground/85">
-                    Start with <span className="font-semibold">{topScheme?.name ?? "your strongest scheme match"}</span>, then prepare Aadhaar, income proof, and bank-linked documents before applying.
+                    Start with <span className="font-semibold">{topScheme?.name ?? "your strongest scheme match"}</span>, review the checklist, and continue on the official government portal with your documents ready.
                   </p>
-                  <Button
-                    className="mt-4 gap-2 bg-background text-foreground hover:bg-background/90"
-                    onClick={() => router.push("/track")}
-                  >
-                    Track application journey
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -350,7 +311,7 @@ export default function SchemesPage() {
                               className="animate-in fade-in slide-in-from-bottom-4 duration-500"
                               style={{ animationDelay: `${index * 60}ms` }}
                             >
-                              <SchemeCard scheme={scheme} onApply={handleApply} isApplying={applyingSchemeId === scheme.id} />
+                              <SchemeCard scheme={scheme} />
                             </div>
                           ))}
                         </div>
@@ -376,7 +337,7 @@ export default function SchemesPage() {
                               className="animate-in fade-in slide-in-from-bottom-4 duration-500"
                               style={{ animationDelay: `${index * 60}ms` }}
                             >
-                              <SchemeCard scheme={scheme} onApply={handleApply} isApplying={applyingSchemeId === scheme.id} />
+                              <SchemeCard scheme={scheme} />
                             </div>
                           ))}
                         </div>
@@ -411,7 +372,8 @@ export default function SchemesPage() {
             )}
           </div>
         </section>
-      </main>
+        </main>
+      </CitizenAuthGuard>
       <Footer />
     </div>
   );

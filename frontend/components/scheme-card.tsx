@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,8 +32,6 @@ import type { SchemeViewModel } from "@/lib/portal-data";
 
 interface SchemeCardProps {
   scheme: SchemeViewModel;
-  onApply?: (schemeId: string) => void;
-  isApplying?: boolean;
 }
 
 export interface EligibilityFactor {
@@ -154,42 +153,40 @@ function ConfidencePanel({
   );
 }
 
-export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardProps) {
+export function SchemeCard({ scheme }: SchemeCardProps) {
   const scoreStyles = getScoreStyles(scheme.eligibilityScore);
   const [showConfidence, setShowConfidence] = useState(false);
   const factors = scheme.eligibilityFactors;
   const metCount = factors?.filter((factor) => factor.met).length ?? 0;
   
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden border-2 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl">
-      {/* Top accent line */}
-      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-primary via-accent to-primary opacity-0 transition-opacity group-hover:opacity-100" />
+    <Card className="group relative flex h-full flex-col overflow-hidden border border-[var(--gov-border)] bg-[var(--gov-paper)] shadow-[0_16px_30px_rgba(0,51,102,0.07)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_40px_rgba(0,51,102,0.14)]">
+      <div className="gov-tricolor-stripe opacity-90" />
       
       <CardHeader className="pb-4">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 space-y-2">
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="border-primary/30 bg-primary/5 text-xs font-medium text-primary">
+              <Badge variant="outline" className="border-[var(--gov-gold)] bg-white text-xs font-semibold uppercase tracking-[0.14em] text-[var(--gov-navy)]">
                 {scheme.category}
               </Badge>
               {scheme.eligibilityScore >= 90 && (
-                <Badge variant="outline" className={cn("gap-1 text-xs", scoreStyles.badge)}>
+                <Badge variant="outline" className="gap-1 border-[var(--gov-green)] bg-[var(--gov-green-soft)] text-xs font-semibold text-[var(--gov-green)]">
                   <Sparkles className="h-3 w-3" />
                   Top Match
                 </Badge>
               )}
             </div>
-            <CardTitle className="line-clamp-2 text-lg leading-snug transition-colors group-hover:text-primary">
+            <CardTitle className="line-clamp-2 font-serif text-xl leading-snug text-[var(--gov-navy)] transition-colors group-hover:text-[var(--gov-saffron)]">
               {scheme.name}
             </CardTitle>
           </div>
           
-          {/* Score badge */}
           <button
             type="button"
             onClick={() => factors?.length && setShowConfidence((current) => !current)}
             className={cn(
-              "flex flex-col items-center rounded-xl px-3 py-2.5 text-center shadow-lg transition-transform",
+              "flex min-w-[76px] flex-col items-center rounded-2xl border border-white/40 px-3 py-3 text-center shadow-lg transition-transform",
               factors?.length ? "cursor-pointer hover:scale-[1.02]" : "cursor-default",
               scoreStyles.bg,
               scoreStyles.text,
@@ -213,41 +210,41 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
       </CardHeader>
 
       <CardContent className="flex-1 space-y-4">
-        <CardDescription className="line-clamp-2 text-sm leading-relaxed">
+        <CardDescription className="line-clamp-2 text-sm leading-relaxed text-slate-600">
           {scheme.description}
         </CardDescription>
 
         <div className="space-y-2.5">
           <div className="flex items-center gap-3 text-sm">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-              <Building2 className="h-4 w-4 text-muted-foreground" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm">
+              <Building2 className="h-4 w-4 text-[var(--gov-navy)]" />
             </div>
-            <span className="truncate text-muted-foreground">{scheme.ministry}</span>
+            <span className="truncate text-slate-600">{scheme.ministry}</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/10">
-              <IndianRupee className="h-4 w-4 text-accent" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--gov-saffron-soft)]">
+              <IndianRupee className="h-4 w-4 text-[var(--gov-saffron)]" />
             </div>
-            <span className="truncate font-medium text-foreground">{scheme.benefits}</span>
+            <span className="truncate font-medium text-[var(--gov-navy)]">{scheme.benefits}</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-              <Users className="h-4 w-4 text-muted-foreground" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm">
+              <Users className="h-4 w-4 text-[var(--gov-green)]" />
             </div>
-            <span className="truncate text-muted-foreground">{scheme.beneficiaries}</span>
+            <span className="truncate text-slate-600">{scheme.beneficiaries}</span>
           </div>
           <div className="flex items-center gap-3 text-sm">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted">
-              <MapPinned className="h-4 w-4 text-muted-foreground" />
+            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white shadow-sm">
+              <MapPinned className="h-4 w-4 text-[var(--gov-navy)]" />
             </div>
-            <span className="truncate text-muted-foreground">{scheme.state}</span>
+            <span className="truncate text-slate-600">{scheme.state}</span>
           </div>
           {scheme.deadline && (
             <div className="flex items-center gap-3 text-sm">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-destructive/10">
-                <Calendar className="h-4 w-4 text-destructive" />
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100">
+                <Calendar className="h-4 w-4 text-[var(--gov-saffron)]" />
               </div>
-              <span className="truncate font-medium text-destructive">Deadline: {scheme.deadline}</span>
+              <span className="truncate font-medium text-[var(--gov-saffron)]">Deadline: {scheme.deadline}</span>
             </div>
           )}
         </div>
@@ -262,7 +259,7 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
               <div className="flex items-center gap-2 text-sm font-medium">
                 <ListChecks className="h-4 w-4 text-primary" />
                 <div>
-                  <p>AI Confidence Breakdown</p>
+                  <p className="text-[var(--gov-navy)]">AI Confidence Breakdown</p>
                   <p className="text-xs font-normal text-muted-foreground">
                     {metCount}/{factors.length} criteria met
                   </p>
@@ -288,7 +285,7 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
                     ) : null}
                   </div>
                 ) : null}
-                <Badge variant="outline" className="border-primary/20 bg-background/80 text-xs">
+                <Badge variant="outline" className="border-[var(--gov-border)] bg-white text-xs text-[var(--gov-navy)]">
                   {scheme.confidenceLabel ?? getScoreLabel(scheme.eligibilityScore)}
                 </Badge>
                 <ChevronDown
@@ -309,7 +306,7 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
             ) : null}
           </div>
         ) : (
-          <div className="rounded-xl border bg-muted/30 p-3">
+          <div className="rounded-xl border border-[var(--gov-border)] bg-white/70 p-3">
             <div className="flex items-center gap-2 text-sm font-medium">
               <ListChecks className="h-4 w-4 text-primary" />
               {scheme.fitLabel}
@@ -327,7 +324,7 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
         )}
 
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-xl border bg-background p-3">
+          <div className="rounded-xl border border-[var(--gov-border)] bg-white p-3">
             <div className="flex items-center gap-2 text-sm font-medium">
               <ClipboardList className="h-4 w-4 text-primary" />
               Documents
@@ -337,7 +334,7 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
               {scheme.documents.length > 2 ? "..." : ""}
             </p>
           </div>
-          <div className="rounded-xl border bg-background p-3">
+          <div className="rounded-xl border border-[var(--gov-border)] bg-white p-3">
             <div className="flex items-center gap-2 text-sm font-medium">
               <MoveRight className="h-4 w-4 text-primary" />
               Next Step
@@ -366,24 +363,16 @@ export function SchemeCard({ scheme, onApply, isApplying = false }: SchemeCardPr
         </div>
       </CardContent>
 
-      <CardFooter className="flex gap-3 border-t bg-muted/30 p-4">
-        <Button
-          variant="outline"
-          className="flex-1 transition-all hover:bg-background"
-          size="sm"
-        >
-          View Checklist
-        </Button>
-        <Button
-          className="flex-1 gap-1.5 shadow-md shadow-primary/20 transition-all hover:shadow-lg hover:shadow-primary/30"
-          size="sm"
-          onClick={() => onApply?.(scheme.id)}
-          variant="default"
-          disabled={isApplying}
-        >
-          {isApplying ? "Submitting..." : "Apply Now"}
-          <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-        </Button>
+      <CardFooter className="flex gap-3 border-t border-[var(--gov-border)] bg-white/60 p-4">
+        <Link href={`/schemes/${scheme.id}`} className="flex-1">
+          <Button
+            variant="default"
+            className="gov-button-primary w-full"
+            size="sm"
+          >
+            View Details
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

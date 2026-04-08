@@ -82,6 +82,10 @@ function StepIcon({ status }: { status: ApplicationStep["status"] }) {
   }
 }
 
+function getUploadedDocuments(app: ApplicationRecord) {
+  return Object.values(app.documents || {});
+}
+
 export function ApplicationTracker() {
   const [searchQuery, setSearchQuery] = useState("");
   const [applications, setApplications] = useState<ApplicationRecord[]>([]);
@@ -129,7 +133,7 @@ export function ApplicationTracker() {
     return {
       active: applications.filter((app) => app.status !== "approved").length,
       approved: applications.filter((app) => app.status === "approved").length,
-      documents: applications.reduce((count, app) => count + app.documentsPending.length, 0),
+      documents: applications.reduce((count, app) => count + Math.max(app.documentsPending.length, getUploadedDocuments(app).length), 0),
     };
   }, [applications]);
 
@@ -296,11 +300,22 @@ export function ApplicationTracker() {
               </CardContent>
             </Card>
 
-            <Card className="border-2">
+              <Card className="border-2">
               <CardHeader>
                 <CardTitle className="text-lg">Document readiness</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
+                {getUploadedDocuments(selectedApp).length ? (
+                  getUploadedDocuments(selectedApp).map((document) => (
+                    <div key={`${document.fieldId}-${document.filename}`} className="flex items-center gap-3 rounded-xl border bg-muted/30 px-4 py-3">
+                      <FileCheck2 className="h-4 w-4 text-accent" />
+                      <div className="min-w-0">
+                        <p className="truncate text-sm font-medium">{document.label || document.fieldId}</p>
+                        <p className="truncate text-xs text-muted-foreground">{document.originalName}</p>
+                      </div>
+                    </div>
+                  ))
+                ) : null}
                 {selectedApp.documentsPending.length ? (
                   selectedApp.documentsPending.map((document) => (
                     <div key={document} className="flex items-center gap-3 rounded-xl border bg-muted/30 px-4 py-3">

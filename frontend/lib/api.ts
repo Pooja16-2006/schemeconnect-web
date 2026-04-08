@@ -158,6 +158,17 @@ export interface ApplicationStep {
   remarks?: string;
 }
 
+export interface UploadedDocumentRecord {
+  fieldId: string;
+  label?: string;
+  originalName: string;
+  filename: string;
+  mimetype: string;
+  size: number;
+  relativePath: string;
+  uploadedAt?: string;
+}
+
 export interface ApplicationRecord {
   id?: string;
   _id?: string;
@@ -176,6 +187,7 @@ export interface ApplicationRecord {
   nextAction: string;
   eta: string;
   documentsPending: string[];
+  documents?: Record<string, UploadedDocumentRecord>;
   steps: ApplicationStep[];
   createdAt?: string;
 }
@@ -264,6 +276,23 @@ export async function createApplication(
     body: JSON.stringify(payload),
   });
   return parseResponse<{ success: boolean; application: ApplicationRecord }>(response, "Failed to create application");
+}
+
+export async function submitApplicationWithDocuments(
+  payload: FormData,
+): Promise<{ success: boolean; application: ApplicationRecord }> {
+  const response = await fetch(`${getApiBase()}/applications`, {
+    method: "POST",
+    headers: {
+      ...getAuthHeaders(),
+    },
+    body: payload,
+  });
+
+  return parseResponse<{ success: boolean; application: ApplicationRecord }>(
+    response,
+    "Failed to submit application",
+  );
 }
 
 export async function getApplications(): Promise<{ success: boolean; applications: ApplicationRecord[] }> {

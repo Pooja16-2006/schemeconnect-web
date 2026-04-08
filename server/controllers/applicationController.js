@@ -1,4 +1,5 @@
 const crypto = require("crypto");
+const path = require("path");
 const Application = require("../models/Application");
 const { memoryApplications } = require("../config/memoryStore");
 const { callMlService } = require("../services/mlService");
@@ -17,6 +18,57 @@ function deriveRiskLevel(score) {
   if (score >= 70) return "high";
   if (score >= 40) return "medium";
   return "low";
+}
+
+function parseJsonArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (typeof value !== "string" || !value.trim()) {
+    return [];
+  }
+
+  try {
+    const parsed = JSON.parse(value);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function buildUploadedDocuments(files = []) {
+  return files.reduce((accumulator, file) => {
+    accumulator[file.fieldname] = {
+      fieldId: file.fieldname,
+      originalName: file.originalname,
+      filename: file.filename,
+      mimetype: file.mimetype,
+      size: file.size,
+      relativePath: path.relative(process.cwd(), file.path).replace(/\\/g, "/"),
+      uploadedAt: new Date().toISOString(),
+    };
+    return accumulator;
+  }, {});
+}
+
+function applyDocumentLabels(uploadedDocuments, documentRequirements) {
+  if (!documentRequirements.length) {
+    return uploadedDocuments;
+  }
+
+  const labelsById = documentRequirements.reduce((accumulator, requirement) => {
+    if (requirement && requirement.id && requirement.name) {
+      accumulator[requirement.id] = requirement.name;
+    }
+    return accumulator;
+  }, {});
+
+  for (const [fieldId, document] of Object.entries(uploadedDocuments)) {
+    document.label = labelsById[fieldId] || fieldId;
+  }
+
+  return uploadedDocuments;
 }
 
 function buildFraudReviewStep(fraudResult) {
@@ -123,7 +175,6 @@ async function createApplication(req, res) {
       schemeName,
       ministry,
       state,
-      documentsPending = [],
       nextAction,
       eta,
     } = req.body;
@@ -134,6 +185,17 @@ async function createApplication(req, res) {
 
     const resolvedCitizenName = citizenName || req.user.name;
     const resolvedState = state || "National";
+    const documentRequirements = parseJsonArray(req.body.documentRequirements);
+    const uploadedDocuments = applyDocumentLabels(buildUploadedDocuments(req.files), documentRequirements);
+    const requiredDocuments = documentRequirements
+      .filter((document) => document && document.required)
+      .map((document) => document.name);
+    const uploadedLabels = new Set(
+      Object.values(uploadedDocuments).map((document) => document.label || document.fieldId),
+    );
+    const documentsPending = requiredDocuments.length
+      ? requiredDocuments.filter((label) => !uploadedLabels.has(label))
+      : parseJsonArray(req.body.documentsPending);
     const fraudResult = await assessFraudRisk({
       req,
       citizenName: resolvedCitizenName,
@@ -148,9 +210,12 @@ async function createApplication(req, res) {
       ministry: ministry || "Government of India",
       state: resolvedState,
       documentsPending,
+      documents: uploadedDocuments,
       nextAction: fraudResult.manualReviewRequired
         ? "Please keep identity, income, and address documents ready for manual verification."
-        : nextAction || "Keep your documents ready for verification.",
+        : documentsPending.length
+          ? "Upload the remaining required documents so verification can continue."
+          : nextAction || "Keep your documents ready for verification.",
       eta: fraudResult.manualReviewRequired ? "Manual review in progress" : eta || "5-7 working days",
       status: fraudResult.manualReviewRequired ? "under-review" : "pending",
       riskLevel: fraudResult.riskLevel || (documentsPending.length ? "medium" : "low"),
