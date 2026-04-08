@@ -5,7 +5,6 @@ const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
-const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const { seedDemoAdmin, seedSampleData } = require("./config/memoryStore");
 const applicationRoutes = require("./routes/applicationRoutes");
@@ -45,29 +44,19 @@ app.use(cors({ origin: process.env.FRONTEND_ORIGIN }));
 app.use(express.json());
 
 // ============================================
-// ✅ CRITICAL: Define health routes FIRST, before /api routes
+// ✅ Root-level health check (no /api prefix)
 // ============================================
-
-// Root health check (no /api prefix)
 app.get("/health", (req, res) => {
+  const mongoose = require("mongoose");
   const dbState = mongoose.connection.readyState;
   
   let dbStatus;
   switch (dbState) {
-    case 0:
-      dbStatus = "disconnected";
-      break;
-    case 1:
-      dbStatus = "connected";
-      break;
-    case 2:
-      dbStatus = "connecting";
-      break;
-    case 3:
-      dbStatus = "disconnecting";
-      break;
-    default:
-      dbStatus = "unknown";
+    case 0: dbStatus = "disconnected"; break;
+    case 1: dbStatus = "connected"; break;
+    case 2: dbStatus = "connecting"; break;
+    case 3: dbStatus = "disconnecting"; break;
+    default: dbStatus = "unknown";
   }
 
   res.status(200).json({
@@ -80,36 +69,6 @@ app.get("/health", (req, res) => {
   });
 });
 
-// API health check (with /api prefix)
-app.get("/api/health", (req, res) => {
-  const dbState = mongoose.connection.readyState;
-  
-  let dbStatus;
-  switch (dbState) {
-    case 0:
-      dbStatus = "disconnected";
-      break;
-    case 1:
-      dbStatus = "connected";
-      break;
-    case 2:
-      dbStatus = "connecting";
-      break;
-    case 3:
-      dbStatus = "disconnecting";
-      break;
-    default:
-      dbStatus = "unknown";
-  }
-
-  res.status(200).json({
-    success: true,
-    message: "API is operational",
-    timestamp: new Date().toISOString(),
-    database: dbStatus
-  });
-});
-
 // Root info route
 app.get("/", (req, res) => {
   res.json({
@@ -119,18 +78,22 @@ app.get("/", (req, res) => {
     status: "online",
     endpoints: [
       "GET /health - Server health check",
-      "GET /api/health - API health check",
+      "GET /api/health - API health check (from schemeRoutes)",
       "POST /api/auth/login - User login",
       "POST /api/auth/register - User registration",
-      "GET /api/schemes - Get all schemes",
+      "GET /api/schemes/catalog - Get all schemes",
       "POST /api/applications - Submit application",
-      "GET /api/applications - Get all applications (admin)"
+      "GET /api/applications - Get all applications (admin)",
+      "POST /api/predict-eligibility - Predict scheme eligibility",
+      "POST /api/recommend-schemes - Get scheme recommendations",
+      "POST /api/chat - Chat with AI assistant",
+      "GET /api/notifications/:userId - Get user notifications"
     ],
   });
 });
 
 // ============================================
-// ✅ Main Routes (defined AFTER health checks)
+// ✅ API Routes
 // ============================================
 
 // Apply rate limiting to all /api routes
@@ -142,7 +105,14 @@ app.use("/api/auth", authLimiter, authRoutes);
 // Application routes
 app.use("/api/applications", applicationRoutes);
 
-// Scheme routes (this was catching /api/health before)
+// Scheme routes (includes /api/health via schemeController)
+// This will handle:
+// - GET /api/health
+// - GET /api/schemes/catalog
+// - GET /api/notifications/:userId
+// - POST /api/predict-eligibility
+// - POST /api/recommend-schemes
+// - POST /api/chat
 app.use("/api", schemeRoutes);
 
 // ============================================
@@ -164,7 +134,8 @@ app.use((req, res) => {
   res.status(404).json({ 
     success: false, 
     message: "Route not found",
-    path: req.path 
+    path: req.path,
+    method: req.method
   });
 });
 
