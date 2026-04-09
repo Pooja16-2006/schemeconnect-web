@@ -1,24 +1,10 @@
 function getApiBase() {
-  if (typeof window !== "undefined") {
-    const browserBase = `${window.location.protocol}//${window.location.hostname}:5000/api`;
-
-    if (!process.env.NEXT_PUBLIC_API_URL) {
-      return browserBase;
-    }
-
-    try {
-      const configuredUrl = new URL(process.env.NEXT_PUBLIC_API_URL);
-      if (configuredUrl.hostname === window.location.hostname || configuredUrl.hostname === "localhost") {
-        return process.env.NEXT_PUBLIC_API_URL;
-      }
-      return browserBase;
-    } catch {
-      return browserBase;
-    }
-  }
-
   if (process.env.NEXT_PUBLIC_API_URL) {
     return process.env.NEXT_PUBLIC_API_URL;
+  }
+
+  if (typeof window !== "undefined") {
+    return `${window.location.protocol}//${window.location.hostname}:5000/api`;
   }
 
   return "http://localhost:5000/api";
