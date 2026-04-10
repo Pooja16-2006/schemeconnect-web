@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { SchemeViewModel } from "@/lib/portal-data";
+import { useLanguage } from "@/components/language-provider";
 
 interface SchemeCardProps {
   scheme: SchemeViewModel;
@@ -56,9 +57,9 @@ function getScoreStyles(score: number) {
   };
 }
 
-function getScoreLabel(score: number) {
-  if (score >= 90) return "Highly Eligible";
-  return "Highly Eligible";
+function getScoreLabel(score: number, label: string) {
+  if (score >= 90) return label;
+  return label;
 }
 
 function getWeightBadgeStyles(weight: EligibilityFactor["weight"]) {
@@ -80,6 +81,7 @@ function ConfidencePanel({
   score: number;
   summary?: { positives: number; concerns: number; blockers: number };
 }) {
+  const { t } = useLanguage();
   const metCount = factors.filter((factor) => factor.met).length;
   const highImpactCount = factors.filter((factor) => factor.weight === "high" && factor.met).length;
 
@@ -89,40 +91,39 @@ function ConfidencePanel({
         <div className="mb-4 flex gap-2">
           <div className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-accent/10 py-2">
             <span className="text-lg font-bold text-accent">{summary.positives}</span>
-            <span className="text-xs text-accent/80">positive</span>
+            <span className="text-xs text-accent/80">{t("schemeCardPositive")}</span>
           </div>
           <div className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-chart-4/10 py-2">
             <span className="text-lg font-bold text-chart-4">{summary.concerns}</span>
-            <span className="text-xs text-chart-4/80">concern{summary.concerns !== 1 ? "s" : ""}</span>
+            <span className="text-xs text-chart-4/80">{summary.concerns === 1 ? t("schemeCardConcern") : t("schemeCardConcerns")}</span>
           </div>
           <div className="flex flex-1 items-center justify-center gap-1.5 rounded-lg bg-destructive/10 py-2">
             <span className="text-lg font-bold text-destructive">{summary.blockers}</span>
-            <span className="text-xs text-destructive/80">blocker{summary.blockers !== 1 ? "s" : ""}</span>
+            <span className="text-xs text-destructive/80">{summary.blockers === 1 ? t("schemeCardBlocker") : t("schemeCardBlockers")}</span>
           </div>
         </div>
       ) : null}
 
       <div className="flex items-center justify-between gap-3">
         <div>
-          <p className="text-sm font-semibold">AI Confidence Breakdown</p>
-          <p className="text-xs text-muted-foreground">{metCount}/{factors.length} criteria met</p>
+          <p className="text-sm font-semibold">{t("schemeCardConfidenceBreakdown")}</p>
+          <p className="text-xs text-muted-foreground">{metCount}/{factors.length} {t("schemeCardCriteriaMet")}</p>
         </div>
         <Badge variant="outline" className="border-primary/30 bg-primary/5 text-primary">
-          {highImpactCount} high-impact
+          {highImpactCount} {t("schemeCardHighImpact")}
         </Badge>
       </div>
 
       <div className="mt-4 space-y-2">
         <div className="flex items-center justify-between text-xs text-muted-foreground">
-          <span>Eligibility confidence</span>
+          <span>{t("schemeCardEligibilityConfidence")}</span>
           <span>{score}%</span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-muted">
-          <div
-            className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary transition-all duration-500"
-            style={{ width: `${Math.max(0, Math.min(score, 100))}%` }}
-          />
-        </div>
+        <progress
+          className="h-2 w-full overflow-hidden rounded-full [&::-webkit-progress-bar]:bg-muted [&::-webkit-progress-value]:bg-gradient-to-r [&::-webkit-progress-value]:from-primary [&::-webkit-progress-value]:via-accent [&::-webkit-progress-value]:to-primary"
+          max={100}
+          value={Math.max(0, Math.min(score, 100))}
+        />
       </div>
 
       <div className="mt-4 space-y-2.5">
@@ -154,6 +155,8 @@ function ConfidencePanel({
 }
 
 export function SchemeCard({ scheme }: SchemeCardProps) {
+  const { locale, t } = useLanguage();
+  const deadlineLabel = locale === "hi" ? "अंतिम तिथि" : locale === "kn" ? "ಕೊನೆಯ ದಿನಾಂಕ" : "Deadline";
   const scoreStyles = getScoreStyles(scheme.eligibilityScore);
   const [showConfidence, setShowConfidence] = useState(false);
   const factors = scheme.eligibilityFactors;
@@ -173,7 +176,7 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
               {scheme.eligibilityScore >= 90 && (
                 <Badge variant="outline" className="gap-1 border-[var(--gov-green)] bg-[var(--gov-green-soft)] text-xs font-semibold text-[var(--gov-green)]">
                   <Sparkles className="h-3 w-3" />
-                  Top Match
+                  {t("schemeCardTopMatch")}
                 </Badge>
               )}
             </div>
@@ -198,11 +201,11 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
               <span className="text-xs font-medium">%</span>
             </div>
             <span className="text-[9px] font-semibold uppercase tracking-wider opacity-90">
-              Match
+              {t("schemeCardMatch")}
             </span>
             {factors?.length ? (
               <span className="mt-1 text-[9px] font-semibold uppercase tracking-wider opacity-80">
-                {showConfidence ? "Hide why?" : "Why?"}
+                {showConfidence ? t("schemeCardHideWhy") : t("schemeCardWhy")}
               </span>
             ) : null}
           </button>
@@ -244,7 +247,7 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-100">
                 <Calendar className="h-4 w-4 text-[var(--gov-saffron)]" />
               </div>
-              <span className="truncate font-medium text-[var(--gov-saffron)]">Deadline: {scheme.deadline}</span>
+              <span className="truncate font-medium text-[var(--gov-saffron)]">{deadlineLabel}: {scheme.deadline}</span>
             </div>
           )}
         </div>
@@ -259,9 +262,9 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
               <div className="flex items-center gap-2 text-sm font-medium">
                 <ListChecks className="h-4 w-4 text-primary" />
                 <div>
-                  <p className="text-[var(--gov-navy)]">AI Confidence Breakdown</p>
+                  <p className="text-[var(--gov-navy)]">{t("schemeCardConfidenceBreakdown")}</p>
                   <p className="text-xs font-normal text-muted-foreground">
-                    {metCount}/{factors.length} criteria met
+                    {metCount}/{factors.length} {t("schemeCardCriteriaMet")}
                   </p>
                 </div>
               </div>
@@ -286,7 +289,7 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
                   </div>
                 ) : null}
                 <Badge variant="outline" className="border-[var(--gov-border)] bg-white text-xs text-[var(--gov-navy)]">
-                  {scheme.confidenceLabel ?? getScoreLabel(scheme.eligibilityScore)}
+                  {scheme.confidenceLabel ?? getScoreLabel(scheme.eligibilityScore, t("schemeCardHighlyEligibleLabel"))}
                 </Badge>
                 <ChevronDown
                   className={cn(
@@ -313,11 +316,11 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
             </div>
             {scheme.eligible ? (
               <p className="mt-2 text-sm text-muted-foreground">
-                You meet the strongest visible criteria for this scheme.
+                {t("schemeCardMeetCriteria")}
               </p>
             ) : (
               <p className="mt-2 text-sm text-muted-foreground">
-                {scheme.reasons[0] ?? "Review detailed criteria before applying."}
+                {scheme.reasons[0] ?? t("schemeCardReviewCriteria")}
               </p>
             )}
           </div>
@@ -327,7 +330,7 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
           <div className="rounded-xl border border-[var(--gov-border)] bg-white p-3">
             <div className="flex items-center gap-2 text-sm font-medium">
               <ClipboardList className="h-4 w-4 text-primary" />
-              Documents
+              {t("schemeCardDocuments")}
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
               {scheme.documents.slice(0, 2).join(", ")}
@@ -337,10 +340,10 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
           <div className="rounded-xl border border-[var(--gov-border)] bg-white p-3">
             <div className="flex items-center gap-2 text-sm font-medium">
               <MoveRight className="h-4 w-4 text-primary" />
-              Next Step
+              {t("schemeCardNextStep")}
             </div>
             <p className="mt-2 text-sm text-muted-foreground">
-              {scheme.nextSteps[0] ?? "Prepare and submit your application."}
+              {scheme.nextSteps[0] ?? t("schemeCardPrepareSubmit")}
             </p>
           </div>
         </div>
@@ -370,7 +373,7 @@ export function SchemeCard({ scheme }: SchemeCardProps) {
             className="gov-button-primary w-full"
             size="sm"
           >
-            View Details
+            {t("schemeCardViewDetails")}
           </Button>
         </Link>
       </CardFooter>

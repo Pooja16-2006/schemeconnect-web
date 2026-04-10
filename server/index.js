@@ -9,6 +9,7 @@ const connectDB = require("./config/db");
 const { seedDemoAdmin, seedSampleData } = require("./config/memoryStore");
 const applicationRoutes = require("./routes/applicationRoutes");
 const authRoutes = require("./routes/authRoutes");
+const chatRoutes = require("./routes/chat");
 const schemeRoutes = require("./routes/schemeRoutes");
 
 const app = express();
@@ -116,6 +117,9 @@ app.use("/api", limiter);
 
 // Auth routes with stricter rate limiting
 app.use("/api/auth", authLimiter, authRoutes);
+
+// Chat route
+app.use("/api/chat", chatRoutes);
 
 // Application routes
 app.use("/api/applications", applicationRoutes);

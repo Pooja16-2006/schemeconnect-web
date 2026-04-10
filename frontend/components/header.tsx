@@ -27,8 +27,8 @@ export function Header() {
 
   const languages: { code: Locale; label: string }[] = [
     { code: "en", label: "EN" },
-    { code: "kn", label: "ಕನ್ನಡ" },
-    { code: "hi", label: "हिंदी" },
+    { code: "kn", label: t("langKn") },
+    { code: "hi", label: t("langHi") },
   ];
 
   useEffect(() => {
@@ -56,7 +56,6 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-[var(--gov-border)] bg-background shadow-[0_10px_30px_rgba(0,51,102,0.08)]">
       <div className="gov-tricolor-stripe" />
 
-      {/* Top utility bar */}
       <div className="border-b border-[var(--gov-border)] bg-[var(--gov-navy)] text-[11px] text-white/90">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-3 px-4 py-2 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3">
@@ -70,30 +69,28 @@ export function Header() {
               <Volume2 className="inline h-3 w-3 mr-1" />
               Screen Reader
             </button>
-           {/* Language switcher buttons */}
             <div className="ml-2 flex items-center gap-1 rounded-full border border-white/20 bg-white/5 p-0.5">
               <Globe2 className="h-3.5 w-3.5 ml-2 mr-0.5 text-white/60" />
-                {languages.map((lang) => (
+              {languages.map((lang) => (
                 <button
-                   key={lang.code}
+                  key={lang.code}
                   type="button"
                   onClick={() => setLocale(lang.code)}
                   className={cn(
-                  "rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide transition-all duration-200",
-                  locale === lang.code
-                  ? "bg-[var(--gov-saffron)] text-white shadow-md scale-105"
-                  : "text-white/60 hover:text-white hover:bg-white/10"
+                    "rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide transition-all duration-200",
+                    locale === lang.code
+                      ? "bg-[var(--gov-saffron)] text-white shadow-md scale-105"
+                      : "text-white/60 hover:text-white hover:bg-white/10"
                   )}
                 >
-                {lang.label}
-              </button>
-             ))}
+                  {lang.label}
+                </button>
+              ))}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Marquee */}
       <div className="border-b border-[var(--gov-border)] bg-[var(--gov-saffron)] px-4 py-2 text-xs font-medium text-white sm:px-6 lg:px-8">
         <div className="mx-auto flex max-w-7xl items-center gap-3 overflow-hidden">
           <span className="rounded-full bg-white/15 px-2 py-1 text-[10px] font-bold uppercase tracking-[0.2em]">New</span>
@@ -103,7 +100,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Brand bar */}
       <div className="bg-[var(--gov-paper)]">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-4">
@@ -127,7 +123,6 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Mobile menu */}
           <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
               <Button variant="outline" size="icon" className="border-[var(--gov-border)] bg-white">
@@ -142,7 +137,6 @@ export function Header() {
                 <div className="border-b border-[var(--gov-border)] p-6">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--gov-saffron)]">SchemeConnect</p>
                   <p className="mt-2 text-sm text-muted-foreground">Official-style citizen service navigation</p>
-                  {/* Mobile language switcher */}
                   <div className="mt-3 flex gap-2">
                     {languages.map((lang) => (
                       <button
@@ -206,7 +200,6 @@ export function Header() {
         </div>
       </div>
 
-      {/* Desktop nav */}
       <div className="hidden border-t border-[var(--gov-border)] bg-white md:block">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-1">

@@ -1,4 +1,5 @@
 import type { EligibilityResponse, EligibilitySchemeResult } from "@/lib/api";
+import type { Locale } from "@/lib/i18n";
 
 export const indianStates = [
   "Andhra Pradesh",
@@ -85,6 +86,125 @@ export interface SchemeViewModel {
     weight: "high" | "medium" | "low";
     detail?: string;
   }>;
+}
+
+const localeText = {
+  en: {
+    highConfidence: "High confidence",
+    strongMatch: "Strong match",
+    worthReviewing: "Worth reviewing",
+    lowConfidence: "Low confidence",
+    panIndia: "Pan-India",
+    eligibleNow: "Eligible now",
+    needsReview: "Needs review",
+    eligibleDescription: (category: string) =>
+      `You appear to satisfy the core conditions for this ${category.toLowerCase()} benefit.`,
+    nearMatchDescription:
+      "You are close, but some criteria still need attention before this scheme becomes a strong match.",
+    stateAvailabilityCheck: "State availability check",
+    stateAvailableAcrossIndia: "Available across India.",
+    stateAvailableIn: (state: string) => `Available in ${state}.`,
+    overallEligibilityConfidence: "Overall eligibility confidence",
+    currentMatchScore: (score: number) => `Current match score: ${score}%`,
+    incomeFit: "Income fit",
+    incomeFits: "Income appears to fit the preferred band.",
+    occupationAlignment: "Occupation alignment",
+    occupationTargetMismatch: "Occupation may not be in the core target group.",
+    occupationTargetMatch: "Occupation aligns with the target beneficiary group.",
+    ageCriteriaReview: "Age criteria review",
+    ageInRange: "Age falls inside the preferred range.",
+    docsAndPayoutReadiness: "Documents and payout readiness",
+    payoutReadinessBlocked: "A linked bank account may still be required.",
+    payoutReadinessClean: "No major payout-readiness blockers are currently highlighted.",
+    highlyEligible: "Highly Eligible",
+    fallbackMessage: (count: number) => `Found ${count} strong scheme matches based on your profile.`,
+    openEnrollment: "Open enrollment",
+    checkOfficialPortal: "Check official portal",
+  },
+  hi: {
+    highConfidence: "उच्च विश्वास",
+    strongMatch: "मजबूत मिलान",
+    worthReviewing: "समीक्षा योग्य",
+    lowConfidence: "कम विश्वास",
+    panIndia: "संपूर्ण भारत",
+    eligibleNow: "अभी पात्र",
+    needsReview: "समीक्षा आवश्यक",
+    eligibleDescription: (_category: string) => "आप इस लाभ के मुख्य मानदंडों को पूरा करते हुए दिखाई देते हैं।",
+    nearMatchDescription:
+      "आप करीब हैं, लेकिन इस योजना के मजबूत मिलान बनने से पहले कुछ मानदंडों पर ध्यान देना होगा।",
+    stateAvailabilityCheck: "राज्य उपलब्धता जांच",
+    stateAvailableAcrossIndia: "भारत भर में उपलब्ध।",
+    stateAvailableIn: (state: string) => `${state} में उपलब्ध।`,
+    overallEligibilityConfidence: "कुल पात्रता विश्वास",
+    currentMatchScore: (score: number) => `वर्तमान मिलान स्कोर: ${score}%`,
+    incomeFit: "आय उपयुक्तता",
+    incomeFits: "आय पसंदीदा सीमा में प्रतीत होती है।",
+    occupationAlignment: "पेशा अनुरूपता",
+    occupationTargetMismatch: "पेशा मुख्य लक्षित समूह में नहीं हो सकता।",
+    occupationTargetMatch: "पेशा लक्षित लाभार्थी समूह से मेल खाता है।",
+    ageCriteriaReview: "आयु मानदंड समीक्षा",
+    ageInRange: "आयु पसंदीदा सीमा में है।",
+    docsAndPayoutReadiness: "दस्तावेज़ और भुगतान तैयारी",
+    payoutReadinessBlocked: "लिंक किया गया बैंक खाता अभी भी आवश्यक हो सकता है।",
+    payoutReadinessClean: "फिलहाल भुगतान तैयारी में कोई बड़ा अवरोध नहीं दिख रहा है।",
+    highlyEligible: "अत्यधिक पात्र",
+    fallbackMessage: (count: number) => `आपकी प्रोफ़ाइल के आधार पर ${count} मजबूत योजना मिलान मिले।`,
+    openEnrollment: "खुला पंजीकरण",
+    checkOfficialPortal: "आधिकारिक पोर्टल देखें",
+  },
+  kn: {
+    highConfidence: "ಹೆಚ್ಚಿನ ವಿಶ್ವಾಸ",
+    strongMatch: "ಬಲವಾದ ಹೊಂದಾಣಿಕೆ",
+    worthReviewing: "ಪರಿಶೀಲನೆಗೆ ಯೋಗ್ಯ",
+    lowConfidence: "ಕಡಿಮೆ ವಿಶ್ವಾಸ",
+    panIndia: "ಭಾರತವ್ಯಾಪಿ",
+    eligibleNow: "ಈಗ ಅರ್ಹ",
+    needsReview: "ಪರಿಶೀಲನೆ ಅಗತ್ಯ",
+    eligibleDescription: (_category: string) => "ಈ ಪ್ರಯೋಜನದ ಪ್ರಮುಖ ಮಾನದಂಡಗಳನ್ನು ನೀವು ಪೂರೈಸಿರುವಂತೆ ಕಾಣುತ್ತದೆ.",
+    nearMatchDescription:
+      "ನೀವು ಹತ್ತಿರದಲ್ಲಿದ್ದರೂ, ಈ ಯೋಜನೆ ಬಲವಾದ ಹೊಂದಾಣಿಕೆಯಾಗಲು ಇನ್ನೂ ಕೆಲವು ಮಾನದಂಡಗಳಿಗೆ ಗಮನ ಬೇಕಿದೆ.",
+    stateAvailabilityCheck: "ರಾಜ್ಯ ಲಭ್ಯತೆ ಪರಿಶೀಲನೆ",
+    stateAvailableAcrossIndia: "ಭಾರತದಾದ್ಯಂತ ಲಭ್ಯ.",
+    stateAvailableIn: (state: string) => `${state} ನಲ್ಲಿ ಲಭ್ಯ.`,
+    overallEligibilityConfidence: "ಒಟ್ಟು ಅರ್ಹತಾ ವಿಶ್ವಾಸ",
+    currentMatchScore: (score: number) => `ಪ್ರಸ್ತುತ ಹೊಂದಾಣಿಕೆ ಅಂಕ: ${score}%`,
+    incomeFit: "ಆದಾಯ ಹೊಂದಾಣಿಕೆ",
+    incomeFits: "ಆದಾಯವು ಆದ್ಯತೆಯ ಮಿತಿಗೆ ಹೊಂದುವಂತೆ ಕಾಣುತ್ತದೆ.",
+    occupationAlignment: "ಉದ್ಯೋಗ ಹೊಂದಾಣಿಕೆ",
+    occupationTargetMismatch: "ಉದ್ಯೋಗವು ಮುಖ್ಯ ಗುರಿ ಗುಂಪಿಗೆ ಸೇರದಿರಬಹುದು.",
+    occupationTargetMatch: "ಉದ್ಯೋಗವು ಗುರಿ ಪ್ರಯೋಜನಾರ್ಥಿ ಗುಂಪಿಗೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ.",
+    ageCriteriaReview: "ವಯಸ್ಸಿನ ಮಾನದಂಡ ಪರಿಶೀಲನೆ",
+    ageInRange: "ವಯಸ್ಸು ಆದ್ಯತೆಯ ಮಿತಿಯೊಳಗೆ ಬರುತ್ತದೆ.",
+    docsAndPayoutReadiness: "ದಾಖಲೆ ಮತ್ತು ಪಾವತಿ ಸಿದ್ಧತೆ",
+    payoutReadinessBlocked: "ಬ್ಯಾಂಕ್ ಖಾತೆ ಲಿಂಕ್ ಇನ್ನೂ ಅಗತ್ಯವಾಗಿರಬಹುದು.",
+    payoutReadinessClean: "ಈಗಾಗಲೇ ಪಾವತಿ ಸಿದ್ಧತೆಯಲ್ಲಿ ದೊಡ್ಡ ಅಡಚಣೆಗಳು ಕಾಣುತ್ತಿಲ್ಲ.",
+    highlyEligible: "ಅತ್ಯಂತ ಅರ್ಹ",
+    fallbackMessage: (count: number) => `ನಿಮ್ಮ ಪ್ರೊಫೈಲ್ ಆಧರಿಸಿ ${count} ಬಲವಾದ ಯೋಜನೆ ಹೊಂದಾಣಿಕೆಗಳು ಸಿಕ್ಕಿವೆ.`,
+    openEnrollment: "ಮುಕ್ತ ನೋಂದಣಿ",
+    checkOfficialPortal: "ಅಧಿಕೃತ ಪೋರ್ಟಲ್ ಪರಿಶೀಲಿಸಿ",
+  },
+} as const;
+
+const localizedBenefitsBySchemeId: Partial<Record<string, Record<Exclude<Locale, "en">, string>>> = {
+  "3": {
+    hi: "परिवार के लिए प्रति वर्ष रु. 5 लाख तक स्वास्थ्य कवर।",
+    kn: "ಒಂದು ಕುಟುಂಬಕ್ಕೆ ವರ್ಷಕ್ಕೆ ರೂ. 5 ಲಕ್ಷದವರೆಗೆ ಆರೋಗ್ಯ ಕವರ್.",
+  },
+};
+
+function getLocaleText(locale: Locale) {
+  return localeText[locale] ?? localeText.en;
+}
+
+function getLocalizedBenefitSummary(
+  scheme: Pick<EligibilitySchemeResult, "scheme_id" | "benefits">,
+  locale: Locale,
+) {
+  if (locale === "en") {
+    return scheme.benefits;
+  }
+
+  return localizedBenefitsBySchemeId[scheme.scheme_id]?.[locale] ?? scheme.benefits;
 }
 
 const categoryMeta: Record<
@@ -287,11 +407,12 @@ const fallbackSchemes: EligibilitySchemeResult[] = [
   },
 ];
 
-export function getEligibilityFitLabel(score: number) {
-  if (score >= 90) return "High confidence";
-  if (score >= 75) return "Strong match";
-  if (score >= 60) return "Worth reviewing";
-  return "Low confidence";
+export function getEligibilityFitLabel(score: number, locale: Locale = "en") {
+  const text = getLocaleText(locale);
+  if (score >= 90) return text.highConfidence;
+  if (score >= 75) return text.strongMatch;
+  if (score >= 60) return text.worthReviewing;
+  return text.lowConfidence;
 }
 
 export function getFallbackEligibilityResponse(): EligibilityResponse {
@@ -302,11 +423,11 @@ export function getFallbackEligibilityResponse(): EligibilityResponse {
     total_schemes_checked: fallbackSchemes.length,
     eligible_count: eligibleCount,
     results: fallbackSchemes,
-    message: `Found ${eligibleCount} strong scheme matches based on your profile.`,
+    message: localeText.en.fallbackMessage(eligibleCount),
   };
 }
 
-function getSchemeDeadline(schemeId: string) {
+function getSchemeDeadline(schemeId: string, locale: Locale = "en") {
   const deadlines: Record<string, string> = {
     "1": "31 March 2027",
     "2": "30 June 2026",
@@ -328,7 +449,17 @@ function getSchemeDeadline(schemeId: string) {
     "18": "31 July 2026",
   };
 
-  return deadlines[schemeId] ?? "Check official portal";
+  const text = getLocaleText(locale);
+  const value = deadlines[schemeId];
+  if (!value) {
+    return text.checkOfficialPortal;
+  }
+
+  if (value === "Open enrollment") {
+    return text.openEnrollment;
+  }
+
+  return value;
 }
 
 function isFemaleProfileValue(value: string | undefined | null) {
@@ -408,7 +539,8 @@ function isWomenOnlyScheme(
   return womenOnlyKeywords.some((keyword) => haystack.includes(keyword));
 }
 
-function buildEligibilityFactors(scheme: EligibilitySchemeResult) {
+function buildEligibilityFactors(scheme: EligibilitySchemeResult, locale: Locale = "en") {
+  const text = getLocaleText(locale);
   const factors = (scheme as EligibilitySchemeResult & {
     confidence_factors?: {
       factors?: Array<{
@@ -444,53 +576,58 @@ function buildEligibilityFactors(scheme: EligibilitySchemeResult) {
 
   return [
     {
-      label: "State availability check",
+      label: text.stateAvailabilityCheck,
       met: !stateBlocked,
       weight: "high" as const,
-      detail: scheme.state === "National" ? "Available across India." : `Available in ${scheme.state}.`,
+      detail:
+        scheme.state === "National"
+          ? text.stateAvailableAcrossIndia
+          : text.stateAvailableIn(scheme.state),
     },
     {
-      label: "Overall eligibility confidence",
+      label: text.overallEligibilityConfidence,
       met: scheme.eligibility_score >= 70,
       weight: "high" as const,
-      detail: `Current match score: ${scheme.eligibility_score}%`,
+      detail: text.currentMatchScore(scheme.eligibility_score),
     },
     {
-      label: "Income fit",
+      label: text.incomeFit,
       met: !incomeBlocked,
       weight: "high" as const,
-      detail: incomeBlocked ? reasons.find((reason) => reason.toLowerCase().includes("income is outside")) : "Income appears to fit the preferred band.",
+      detail: incomeBlocked ? reasons.find((reason) => reason.toLowerCase().includes("income is outside")) : text.incomeFits,
     },
     {
-      label: "Occupation alignment",
+      label: text.occupationAlignment,
       met: !occupationConcern,
       weight: "medium" as const,
       detail: occupationConcern
-        ? "Occupation may not be in the core target group."
-        : "Occupation aligns with the target beneficiary group.",
+        ? text.occupationTargetMismatch
+        : text.occupationTargetMatch,
     },
     {
-      label: "Age criteria review",
+      label: text.ageCriteriaReview,
       met: !ageConcern,
       weight: "medium" as const,
       detail: ageConcern
         ? reasons.find((reason) => reason.toLowerCase().includes("age should be between"))
-        : "Age falls inside the preferred range.",
+        : text.ageInRange,
     },
     {
-      label: "Documents and payout readiness",
+      label: text.docsAndPayoutReadiness,
       met: !bankConcern,
       weight: "low" as const,
       detail: bankConcern
-        ? "A linked bank account may still be required."
-        : "No major payout-readiness blockers are currently highlighted.",
+        ? text.payoutReadinessBlocked
+        : text.payoutReadinessClean,
     },
   ];
 }
 
 export function mapEligibilityResultsToSchemes(
   response: EligibilityResponse | null | undefined,
+  locale: Locale = "en",
 ): SchemeViewModel[] {
+  const text = getLocaleText(locale);
   const storedGender = getStoredProfileGender();
   const storedEligibilityProfile = getStoredEligibilityProfile();
   const filterGenderRestrictedSchemes = (
@@ -526,29 +663,29 @@ export function mapEligibilityResultsToSchemes(
 
     const tags = [
       scheme.category,
-      scheme.state === "National" ? "Pan-India" : scheme.state,
-      scheme.eligible ? "Eligible now" : "Needs review",
+      scheme.state === "National" ? text.panIndia : scheme.state,
+      scheme.eligible ? text.eligibleNow : text.needsReview,
     ];
 
     return {
       id: scheme.scheme_id,
       name: scheme.scheme_name,
       description: scheme.eligible
-        ? `You appear to satisfy the core conditions for this ${scheme.category.toLowerCase()} benefit.`
-        : `You are close, but some criteria still need attention before this scheme becomes a strong match.`,
+        ? text.eligibleDescription(scheme.category)
+        : text.nearMatchDescription,
       ministry: meta.ministry,
       category: scheme.category,
       eligibilityScore: scheme.eligibility_score,
-      benefits: scheme.benefits,
+      benefits: getLocalizedBenefitSummary(scheme, locale),
       beneficiaries: meta.beneficiaries,
-      deadline: scheme.eligible ? getSchemeDeadline(scheme.scheme_id) : undefined,
+      deadline: scheme.eligible ? getSchemeDeadline(scheme.scheme_id, locale) : undefined,
       tags,
       eligible: true,
       reasons: scheme.reasons,
       state: scheme.state,
       documents: scheme.documents_required?.length ? scheme.documents_required : meta.documents,
       nextSteps: scheme.next_steps?.length ? scheme.next_steps : meta.nextSteps,
-      fitLabel: "Highly Eligible",
+      fitLabel: text.highlyEligible,
       confidenceLabel: (scheme as EligibilitySchemeResult & { confidence_label?: string }).confidence_label ?? undefined,
       confidenceSummary: (
         scheme as EligibilitySchemeResult & {
@@ -561,7 +698,7 @@ export function mapEligibilityResultsToSchemes(
           };
         }
       ).confidence_factors?.summary ?? undefined,
-      eligibilityFactors: buildEligibilityFactors(scheme),
+      eligibilityFactors: buildEligibilityFactors(scheme, locale),
     };
   });
 }
