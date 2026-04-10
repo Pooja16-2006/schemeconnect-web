@@ -112,7 +112,7 @@ export default function AdminDashboard() {
       try {
         const results = await Promise.all(
           sampleProfiles.map((profile) =>
-            fetch("http://localhost:8001/check-fraud", {
+            fetch("${getMLBase()}/check-fraud", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(profile),

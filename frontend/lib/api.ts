@@ -1,3 +1,7 @@
+function getMLBase() {
+  return process.env.NEXT_PUBLIC_ML_URL || "http://localhost:8001";
+}
+
 function getApiBase() {
   if (process.env.NEXT_PUBLIC_API_URL) {
     return process.env.NEXT_PUBLIC_API_URL;
@@ -190,7 +194,7 @@ export interface CreateApplicationPayload {
 }
 
 export async function checkEligibility(profile: CitizenProfile): Promise<EligibilityResponse> {
-  const response = await fetch(`${getApiBase()}/predict-eligibility`, {
+  const response = await fetch(`${getMLBase()}/predict-eligibility`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(normalizeProfile(profile)),
@@ -201,7 +205,7 @@ export async function checkEligibility(profile: CitizenProfile): Promise<Eligibi
 export async function getRecommendations(
   profile: CitizenProfile,
 ): Promise<{ recommendations: EligibilitySchemeResult[] }> {
-  const response = await fetch(`${getApiBase()}/recommend-schemes`, {
+  const response = await fetch(`${getMLBase()}/recommend-schemes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(normalizeProfile(profile)),
