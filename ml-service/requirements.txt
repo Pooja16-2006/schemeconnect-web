@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+scikit-learn
+pandas
+numpy
+fuzzywuzzy
+nltk
+joblib
+python-levenshtein
