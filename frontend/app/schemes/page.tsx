@@ -33,6 +33,7 @@ import {
   Sparkles,
   UserRound,
 } from "lucide-react";
+import { useLanguage } from "@/components/language-provider";
 
 type StoredProfile = {
   fullName?: string;
@@ -47,6 +48,7 @@ type StoredProfile = {
 
 export default function SchemesPage() {
   const router = useRouter();
+  const { locale, t } = useLanguage();
   const [isLoading, setIsLoading] = useState(true);
   const [sortBy, setSortBy] = useState("eligibility");
   const [searchQuery, setSearchQuery] = useState("");
@@ -105,7 +107,7 @@ export default function SchemesPage() {
     void loadEligibility();
   }, []);
 
-  const schemes = useMemo(() => mapEligibilityResultsToSchemes(eligibility), [eligibility]);
+  const schemes = useMemo(() => mapEligibilityResultsToSchemes(eligibility, locale), [eligibility, locale]);
   const topSchemes = useMemo(() => schemes.filter((scheme) => scheme.eligibilityScore >= 90), [schemes]);
   const otherSchemes = useMemo(() => schemes.filter((scheme) => scheme.eligibilityScore < 90), [schemes]);
   const categories = useMemo(
@@ -148,32 +150,32 @@ export default function SchemesPage() {
               <div className="max-w-2xl">
                 <div className="inline-flex items-center gap-2 rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
                   <Sparkles className="h-3.5 w-3.5" />
-                  Eligibility engine results
+                  {t("schemesResultsLabel")}
                 </div>
                 <h1 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">
-                  {profile?.fullName ? `${profile.fullName}, here are your best scheme matches` : "Your scheme eligibility results"}
+                  {profile?.fullName ? `${profile.fullName}, ${t("schemesResultsTitleWithName")}` : t("schemesResultsTitle")}
                 </h1>
                 <p className="mt-3 text-muted-foreground">
-                  We ranked schemes using your citizen profile, rule-based checks, and match confidence so you can act on the strongest opportunities first.
+                  {t("schemesResultsSubtitle")}
                 </p>
               </div>
 
               <div className="grid gap-3 sm:grid-cols-3">
                 <Card className="min-w-[160px] border-2">
                   <CardContent className="p-4">
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Eligible now</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesEligibleNow")}</p>
                     <p className="mt-2 text-3xl font-bold text-accent">{eligibleNowCount}</p>
                   </CardContent>
                 </Card>
                 <Card className="min-w-[160px] border-2">
                   <CardContent className="p-4">
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Categories</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesCategories")}</p>
                     <p className="mt-2 text-3xl font-bold text-chart-4">{categoryCount}</p>
                   </CardContent>
                 </Card>
                 <Card className="min-w-[160px] border-2">
                   <CardContent className="p-4">
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Top confidence</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesTopConfidence")}</p>
                     <p className="mt-2 text-3xl font-bold text-primary">{topScheme?.eligibilityScore ?? 0}%</p>
                   </CardContent>
                 </Card>
@@ -185,38 +187,38 @@ export default function SchemesPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg">
                     <UserRound className="h-5 w-5 text-primary" />
-                    Citizen snapshot
+                    {t("schemesCitizenSnapshot")}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
                   <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">State</p>
-                    <p className="mt-1 font-semibold">{profile?.state ?? "Demo profile"}</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesState")}</p>
+                    <p className="mt-1 font-semibold">{profile?.state ?? t("schemesDemoProfile")}</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Occupation</p>
-                    <p className="mt-1 font-semibold">{profile?.occupation ?? "Farmer"}</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesOccupation")}</p>
+                    <p className="mt-1 font-semibold">{profile?.occupation ?? t("schemesDefaultOccupation")}</p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Income</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesIncome")}</p>
                     <p className="mt-1 font-semibold">
-                      {profile?.annualIncome ? formatIndianCurrency(Number(profile.annualIncome)) : "Rs. 2,40,000"}
+                      {profile?.annualIncome ? formatIndianCurrency(Number(profile.annualIncome)) : t("schemesDefaultIncome")}
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wide text-muted-foreground">Family size</p>
-                    <p className="mt-1 font-semibold">{profile?.familySize ?? "4 members"}</p>
+                    <p className="text-xs uppercase tracking-wide text-muted-foreground">{t("schemesFamilySize")}</p>
+                    <p className="mt-1 font-semibold">{profile?.familySize ?? t("schemesDefaultFamilySize")}</p>
                   </div>
                 </CardContent>
               </Card>
 
               <Card className="border-2 bg-primary text-primary-foreground">
                 <CardHeader>
-                  <CardTitle className="text-lg">Best next action</CardTitle>
+                  <CardTitle className="text-lg">{t("schemesBestNextAction")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-primary-foreground/85">
-                    Start with <span className="font-semibold">{topScheme?.name ?? "your strongest scheme match"}</span>, review the checklist, and continue on the official government portal with your documents ready.
+                    {t("schemesBestNextActionText")}
                   </p>
                 </CardContent>
               </Card>
@@ -227,7 +229,7 @@ export default function SchemesPage() {
                 <Search className="absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
                 <Input
                   className="h-12 pl-11"
-                  placeholder="Search by scheme, benefit, or tag"
+                  placeholder={t("schemesSearchPlaceholder")}
                   value={searchQuery}
                   onChange={(event) => setSearchQuery(event.target.value)}
                 />
@@ -241,7 +243,7 @@ export default function SchemesPage() {
                   <SelectContent>
                     {categories.map((category) => (
                       <SelectItem key={category} value={category}>
-                        {category === "all" ? "All categories" : category}
+                        {category === "all" ? t("schemesAllCategories") : category}
                       </SelectItem>
                     ))}
                   </SelectContent>
@@ -252,8 +254,8 @@ export default function SchemesPage() {
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="eligibility">Highest confidence</SelectItem>
-                    <SelectItem value="name">Alphabetical</SelectItem>
+                    <SelectItem value="eligibility">{t("schemesHighestConfidence")}</SelectItem>
+                    <SelectItem value="name">{t("schemesAlphabetical")}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -281,15 +283,15 @@ export default function SchemesPage() {
                 <div className="mb-6 flex flex-wrap items-center gap-3">
                   <Badge className="gap-1 border-accent/30 bg-accent/10 text-accent hover:bg-accent/10">
                     <BadgeCheck className="h-3.5 w-3.5" />
-                    {eligibleNowCount} highly eligible
+                    {eligibleNowCount} {t("schemesHighlyEligible")}
                   </Badge>
                   <Badge className="gap-1 border-chart-4/30 bg-chart-4/10 text-chart-4 hover:bg-chart-4/10">
                     <Filter className="h-3.5 w-3.5" />
-                    {otherSchemes.length ? "Includes strong and emerging matches" : "90%+ match threshold applied"}
+                    {otherSchemes.length ? t("schemesIncludesStrong") : t("schemesThresholdApplied")}
                   </Badge>
                   <Badge variant="outline" className="gap-1">
                     <FileText className="h-3.5 w-3.5" />
-                    {filteredSchemes.length} showing
+                    {filteredSchemes.length} {t("schemesShowing")}
                   </Badge>
                 </div>
 
@@ -299,17 +301,16 @@ export default function SchemesPage() {
                       <>
                         <div className="mb-4 flex items-center gap-3">
                           <BadgeCheck className="h-5 w-5 text-accent" />
-                          <h2 className="text-lg font-semibold">Highly Eligible - 90%+ Match</h2>
+                          <h2 className="text-lg font-semibold">{t("schemesHighlyEligibleSection")}</h2>
                           <Badge className="border-accent/30 bg-accent/10 text-accent hover:bg-accent/10">
-                            {filteredSchemes.filter((scheme) => scheme.eligibilityScore >= 90).length} schemes
+                            {filteredSchemes.filter((scheme) => scheme.eligibilityScore >= 90).length} {t("schemesCountLabel")}
                           </Badge>
                         </div>
                         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                          {filteredSchemes.filter((scheme) => scheme.eligibilityScore >= 90).map((scheme, index) => (
+                          {filteredSchemes.filter((scheme) => scheme.eligibilityScore >= 90).map((scheme) => (
                             <div
                               key={scheme.id}
                               className="animate-in fade-in slide-in-from-bottom-4 duration-500"
-                              style={{ animationDelay: `${index * 60}ms` }}
                             >
                               <SchemeCard scheme={scheme} />
                             </div>
@@ -322,20 +323,19 @@ export default function SchemesPage() {
                       <>
                         <div className="mb-4 mt-12 flex items-center gap-3">
                           <Filter className="h-5 w-5 text-muted-foreground" />
-                          <h2 className="text-lg font-semibold">Other Schemes You May Qualify For</h2>
+                          <h2 className="text-lg font-semibold">{t("schemesOtherSection")}</h2>
                           <Badge variant="outline">
-                            {filteredSchemes.filter((scheme) => scheme.eligibilityScore < 90).length} schemes
+                            {filteredSchemes.filter((scheme) => scheme.eligibilityScore < 90).length} {t("schemesCountLabel")}
                           </Badge>
                         </div>
                         <p className="mb-6 text-sm text-muted-foreground">
-                          These schemes have a lower match score but may still be relevant depending on your specific situation.
+                          {t("schemesOtherDescription")}
                         </p>
                         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-                          {filteredSchemes.filter((scheme) => scheme.eligibilityScore < 90).map((scheme, index) => (
+                          {filteredSchemes.filter((scheme) => scheme.eligibilityScore < 90).map((scheme) => (
                             <div
                               key={scheme.id}
                               className="animate-in fade-in slide-in-from-bottom-4 duration-500"
-                              style={{ animationDelay: `${index * 60}ms` }}
                             >
                               <SchemeCard scheme={scheme} />
                             </div>
@@ -348,9 +348,9 @@ export default function SchemesPage() {
                   <Card className="border-2 border-dashed">
                     <CardContent className="flex flex-col items-center py-16 text-center">
                       <Search className="h-10 w-10 text-muted-foreground" />
-                      <h2 className="mt-4 text-xl font-semibold">No matching schemes found</h2>
+                      <h2 className="mt-4 text-xl font-semibold">{t("schemesNoMatchTitle")}</h2>
                       <p className="mt-2 max-w-md text-muted-foreground">
-                        No schemes match your current search or filter settings. Update your filters or profile details and try again.
+                        {t("schemesNoMatchDescription")}
                       </p>
                       <Button
                         className="mt-6"
@@ -363,7 +363,7 @@ export default function SchemesPage() {
                           }
                         }}
                       >
-                        {schemes.length === 0 ? "Update profile" : "Reset filters"}
+                        {schemes.length === 0 ? t("schemesUpdateProfile") : t("schemesResetFilters")}
                       </Button>
                     </CardContent>
                   </Card>
