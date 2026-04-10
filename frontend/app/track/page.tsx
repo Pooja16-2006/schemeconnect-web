@@ -1,3 +1,5 @@
+"use client";
+
 import { Header } from "@/components/header";
 import { CitizenAuthGuard } from "@/components/citizen-auth-guard";
 import { Footer } from "@/components/footer";
