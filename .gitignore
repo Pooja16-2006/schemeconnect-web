@@ -8,3 +8,5 @@ dist/
 *.log
 # OneDrive temp files
 ~$*
+
+server/.env

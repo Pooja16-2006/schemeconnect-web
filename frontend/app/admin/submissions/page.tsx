@@ -1,9 +1,9 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, CheckCircle2, Clock, Activity, RefreshCw, XCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Clock, Activity, RefreshCw, XCircle, ShieldAlert, AlertTriangle } from "lucide-react";
 import { getAdminApplications, updateAdminApplicationStatus, type ApplicationRecord } from "@/lib/api";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -131,6 +131,7 @@ export default function SubmissionsPage() {
                       <th className="pb-3 font-semibold">Scheme</th>
                       <th className="hidden pb-3 font-semibold md:table-cell">State</th>
                       <th className="hidden pb-3 font-semibold md:table-cell">Fraud Score</th>
+                      <th className="hidden pb-3 font-semibold md:table-cell">Risk</th>
                       <th className="pb-3 font-semibold">Status</th>
                       <th className="hidden pb-3 font-semibold sm:table-cell">Submitted</th>
                       <th className="pb-3 font-semibold">Actions</th>
@@ -149,18 +150,34 @@ export default function SubmissionsPage() {
                         <td className="py-3">{app.schemeName}</td>
                         <td className="hidden py-3 text-muted-foreground md:table-cell">{app.state || "-"}</td>
                         <td className="hidden py-3 md:table-cell">
-                          <span
-                            className={`font-semibold ${
-                              (app.fraudScore ?? 0) >= 70
-                                ? "text-red-600"
-                                : (app.fraudScore ?? 0) >= 40
-                                  ? "text-yellow-600"
-                                  : "text-green-600"
-                            }`}
-                          >
-                            {app.fraudScore ?? 0}
+                          <div className="flex flex-col gap-1">
+                            <span className={`font-semibold ${(app.fraudScore ?? 0) >= 70 ? "text-red-600" : (app.fraudScore ?? 0) >= 40 ? "text-yellow-600" : "text-green-600"}`}>
+                              {app.fraudScore ?? 0}
+                            </span>
+                            {app.manualReviewRequired ? (
+                              <span className="inline-flex items-center gap-1 text-xs text-red-500 font-semibold">
+                                <ShieldAlert className="h-3 w-3" /> Manual Review
+                              </span>
+                            ) : null}
+                            {(app.fraudFlags ?? []).length > 0 ? (
+                              <div className="mt-1 space-y-0.5">
+                                {(app.fraudFlags ?? []).map((flag) => (
+                                  <div key={flag} className="flex items-center gap-1 text-xs text-yellow-700 bg-yellow-50 rounded px-1.5 py-0.5">
+                                    <AlertTriangle className="h-2.5 w-2.5" />{flag}
+                                  </div>
+                                ))}
+                              </div>
+                            ) : null}
+                          </div>
+                        </td>
+                        <td className="hidden py-3 md:table-cell">
+                          <span className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-semibold ${
+                            app.riskLevel === "high" ? "bg-red-100 text-red-700" :
+                            app.riskLevel === "medium" ? "bg-yellow-100 text-yellow-700" :
+                            "bg-green-100 text-green-700"
+                          }`}>
+                            {app.riskLevel === "high" ? "🔴 High" : app.riskLevel === "medium" ? "🟡 Medium" : "🟢 Low"}
                           </span>
-                          {app.manualReviewRequired ? <span className="ml-2 text-xs text-red-500">Review</span> : null}
                         </td>
                         <td className="py-3"><StatusBadge status={app.status} /></td>
                         <td className="hidden py-3 text-xs text-muted-foreground sm:table-cell">
@@ -203,3 +220,6 @@ export default function SubmissionsPage() {
     </div>
   );
 }
+
+
+

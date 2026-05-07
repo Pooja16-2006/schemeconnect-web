@@ -446,6 +446,20 @@ export function ApplicationTracker() {
               </CardContent>
             </Card>
 
+            {((selectedApp.fraudScore ?? 0) >= 70 || selectedApp.manualReviewRequired) ? (
+              <Card className="border-2 border-red-300 bg-red-50">
+                <CardContent className="flex items-start gap-3 p-4">
+                  <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-red-600" />
+                  <div>
+                    <p className="font-semibold text-red-700">Application Flagged for Review</p>
+                    <p className="mt-0.5 text-sm text-red-600">
+                      Our system has flagged this application for manual review. This does not mean your application is rejected — a government official will verify your details. No action is needed from your side.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            ) : null}
+
             {selectedApp.fraudFlags?.length ? (
               <Card className="border-2">
                 <CardHeader>
